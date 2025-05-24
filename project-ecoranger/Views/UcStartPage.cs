@@ -32,8 +32,8 @@ namespace project_ecoranger.Views
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Welcome to EcoRanger! Click on the buttons to navigate through the application.", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
-           
+            mainForm.ShowRegisterPage();
+
         }
     }
 }

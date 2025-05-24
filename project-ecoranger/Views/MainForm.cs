@@ -8,14 +8,17 @@ namespace project_ecoranger
         UcLoadingScreen loadingScreen;
         UcStartPage startPage;
         UcLogin loginPage;
+        UcRegister registerpage;
         System.Windows.Forms.Timer timer;
         public MainForm()
         {
             InitializeComponent();
             loadingScreen = new UcLoadingScreen();
             startPage = new UcStartPage(this);
-            loginPage = new UcLogin();
+            loginPage = new UcLogin(this);
+            registerpage = new UcRegister(this);
 
+            this.Controls.Add(registerpage);
             this.Controls.Add(startPage);
             this.Controls.Add(loginPage);
             HideAllPage();
@@ -49,6 +52,11 @@ namespace project_ecoranger
         {
             HideAllPage();
             loginPage.Visible = true;
+        }
+        public void ShowRegisterPage()
+        {
+            HideAllPage();
+            registerpage.Visible = true;
         }
 
     }

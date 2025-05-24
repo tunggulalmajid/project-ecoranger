@@ -123,9 +123,29 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap formRegisterPage {
+            get {
+                object obj = ResourceManager.GetObject("formRegisterPage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loading_ecoranger {
             get {
                 object obj = ResourceManager.GetObject("loading ecoranger", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NotesRegisterPage {
+            get {
+                object obj = ResourceManager.GetObject("NotesRegisterPage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -12,12 +12,14 @@ namespace project_ecoranger.Views
 {
     public partial class UcLogin : UserControl
     {
-        public UcLogin()
+        MainForm mainForm;
+        public UcLogin(MainForm mainForm)
         {
             InitializeComponent();
             cbRole.Items.Add("Admin");
             cbRole.Items.Add("Pengepul");
             cbRole.Items.Add("Penyuplai");
+            this.mainForm = mainForm;
         }
 
         private void btnLogin_Paint(object sender, PaintEventArgs e)
@@ -42,6 +44,11 @@ namespace project_ecoranger.Views
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnToRegister_Click(object sender, EventArgs e)
+        {
+           mainForm.ShowRegisterPage();
         }
     }
 }

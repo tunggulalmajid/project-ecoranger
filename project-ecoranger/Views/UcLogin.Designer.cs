@@ -34,7 +34,7 @@
             tbPassword = new TextBox();
             tbUsername = new TextBox();
             btnLogin = new Panel();
-            panel3 = new Panel();
+            btnToRegister = new Panel();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -103,21 +103,22 @@
             btnLogin.Click += btnLogin_Click;
             btnLogin.Paint += btnLogin_Paint;
             // 
-            // panel3
+            // btnToRegister
             // 
-            panel3.BackgroundImage = Properties.Resources.NotesRegistStartPage;
-            panel3.BackgroundImageLayout = ImageLayout.Zoom;
-            panel3.Location = new Point(1320, 818);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(267, 34);
-            panel3.TabIndex = 4;
+            btnToRegister.BackgroundImage = Properties.Resources.NotesRegistStartPage;
+            btnToRegister.BackgroundImageLayout = ImageLayout.Zoom;
+            btnToRegister.Location = new Point(1320, 818);
+            btnToRegister.Name = "btnToRegister";
+            btnToRegister.Size = new Size(267, 34);
+            btnToRegister.TabIndex = 4;
+            btnToRegister.Click += btnToRegister_Click;
             // 
             // UcLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
-            Controls.Add(panel3);
+            Controls.Add(btnToRegister);
             Controls.Add(btnLogin);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -134,7 +135,7 @@
         private Panel panel1;
         private Panel panel2;
         private Panel btnLogin;
-        private Panel panel3;
+        private Panel btnToRegister;
         private TextBox tbPassword;
         private TextBox tbUsername;
         private ComboBox cbRole;
