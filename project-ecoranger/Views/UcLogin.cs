@@ -16,5 +16,23 @@ namespace project_ecoranger.Views
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void UcLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username = tbUsername.Text;
+            string password = tbPassword.Text;
+
+            MessageBox.Show($"Selamat datang {username} ", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

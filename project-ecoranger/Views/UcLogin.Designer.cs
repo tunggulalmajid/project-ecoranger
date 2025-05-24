@@ -28,18 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
+            panel1 = new Panel();
+            panel2 = new Panel();
+            btnLogin = new Panel();
+            panel3 = new Panel();
+            tbUsername = new TextBox();
+            tbPassword = new TextBox();
+            panel2.SuspendLayout();
             SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.BackgroundImage = Properties.Resources.loading_ecoranger;
+            panel1.BackgroundImageLayout = ImageLayout.Zoom;
+            panel1.Location = new Point(155, 297);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(776, 336);
+            panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.BackgroundImage = Properties.Resources.formLogin;
+            panel2.BackgroundImageLayout = ImageLayout.Zoom;
+            panel2.Controls.Add(tbPassword);
+            panel2.Controls.Add(tbUsername);
+            panel2.Location = new Point(1163, 197);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(527, 452);
+            panel2.TabIndex = 2;
+            // 
+            // btnLogin
+            // 
+            btnLogin.BackColor = Color.Transparent;
+            btnLogin.BackgroundImage = Properties.Resources.btnLoginStartPage1;
+            btnLogin.BackgroundImageLayout = ImageLayout.Stretch;
+            btnLogin.Location = new Point(1256, 708);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(409, 104);
+            btnLogin.TabIndex = 3;
+            btnLogin.Click += btnLogin_Click;
+            btnLogin.Paint += btnLogin_Paint;
+            // 
+            // panel3
+            // 
+            panel3.BackgroundImage = Properties.Resources.NotesRegistStartPage;
+            panel3.BackgroundImageLayout = ImageLayout.Zoom;
+            panel3.Location = new Point(1320, 818);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(267, 34);
+            panel3.TabIndex = 4;
+            // 
+            // tbUsername
+            // 
+            tbUsername.BorderStyle = BorderStyle.None;
+            tbUsername.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbUsername.Location = new Point(93, 187);
+            tbUsername.Name = "tbUsername";
+            tbUsername.Size = new Size(409, 26);
+            tbUsername.TabIndex = 0;
+            // 
+            // tbPassword
+            // 
+            tbPassword.BorderStyle = BorderStyle.None;
+            tbPassword.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbPassword.Location = new Point(93, 295);
+            tbPassword.Name = "tbPassword";
+            tbPassword.Size = new Size(409, 26);
+            tbPassword.TabIndex = 1;
             // 
             // UcLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
+            Controls.Add(panel3);
+            Controls.Add(btnLogin);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Name = "UcLogin";
-            Size = new Size(1920, 1060);
+            Size = new Size(1920, 1074);
+            Load += UcLogin_Load;
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel panel1;
+        private Panel panel2;
+        private Panel btnLogin;
+        private Panel panel3;
+        private TextBox tbPassword;
+        private TextBox tbUsername;
     }
 }
