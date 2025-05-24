@@ -12,9 +12,12 @@ namespace project_ecoranger.Views
 {
     public partial class UcStartPage : UserControl
     {
-        public UcStartPage()
+        MainForm mainForm;
+        
+        public UcStartPage(MainForm mainForm)
         {
             InitializeComponent();
+            this.mainForm = mainForm;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -24,13 +27,13 @@ namespace project_ecoranger.Views
 
         private void panel1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Welcome to EcoRanger! Click on the buttons to navigate through the application.", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            mainForm.ShowLoginPage();
         }
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Welcome to EcoRanger! Click on the buttons to navigate through the application.", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+           
         }
     }
 }

@@ -30,10 +30,11 @@
         {
             panel1 = new Panel();
             panel2 = new Panel();
+            cbRole = new ComboBox();
+            tbPassword = new TextBox();
+            tbUsername = new TextBox();
             btnLogin = new Panel();
             panel3 = new Panel();
-            tbUsername = new TextBox();
-            tbPassword = new TextBox();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,12 +53,43 @@
             panel2.BackColor = Color.Transparent;
             panel2.BackgroundImage = Properties.Resources.formLogin;
             panel2.BackgroundImageLayout = ImageLayout.Zoom;
+            panel2.Controls.Add(cbRole);
             panel2.Controls.Add(tbPassword);
             panel2.Controls.Add(tbUsername);
             panel2.Location = new Point(1163, 197);
             panel2.Name = "panel2";
             panel2.Size = new Size(527, 452);
             panel2.TabIndex = 2;
+            // 
+            // cbRole
+            // 
+            cbRole.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbRole.FlatStyle = FlatStyle.Popup;
+            cbRole.Font = new Font("Segoe UI", 14F);
+            cbRole.FormattingEnabled = true;
+            cbRole.Location = new Point(93, 404);
+            cbRole.Name = "cbRole";
+            cbRole.Size = new Size(409, 33);
+            cbRole.TabIndex = 2;
+            cbRole.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // tbPassword
+            // 
+            tbPassword.BorderStyle = BorderStyle.None;
+            tbPassword.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbPassword.Location = new Point(93, 295);
+            tbPassword.Name = "tbPassword";
+            tbPassword.Size = new Size(409, 26);
+            tbPassword.TabIndex = 1;
+            // 
+            // tbUsername
+            // 
+            tbUsername.BorderStyle = BorderStyle.None;
+            tbUsername.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbUsername.Location = new Point(93, 187);
+            tbUsername.Name = "tbUsername";
+            tbUsername.Size = new Size(409, 26);
+            tbUsername.TabIndex = 0;
             // 
             // btnLogin
             // 
@@ -79,24 +111,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(267, 34);
             panel3.TabIndex = 4;
-            // 
-            // tbUsername
-            // 
-            tbUsername.BorderStyle = BorderStyle.None;
-            tbUsername.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbUsername.Location = new Point(93, 187);
-            tbUsername.Name = "tbUsername";
-            tbUsername.Size = new Size(409, 26);
-            tbUsername.TabIndex = 0;
-            // 
-            // tbPassword
-            // 
-            tbPassword.BorderStyle = BorderStyle.None;
-            tbPassword.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbPassword.Location = new Point(93, 295);
-            tbPassword.Name = "tbPassword";
-            tbPassword.Size = new Size(409, 26);
-            tbPassword.TabIndex = 1;
             // 
             // UcLogin
             // 
@@ -123,5 +137,6 @@
         private Panel panel3;
         private TextBox tbPassword;
         private TextBox tbUsername;
+        private ComboBox cbRole;
     }
 }

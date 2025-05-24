@@ -15,6 +15,9 @@ namespace project_ecoranger.Views
         public UcLogin()
         {
             InitializeComponent();
+            cbRole.Items.Add("Admin");
+            cbRole.Items.Add("Pengepul");
+            cbRole.Items.Add("Penyuplai");
         }
 
         private void btnLogin_Paint(object sender, PaintEventArgs e)
@@ -31,8 +34,14 @@ namespace project_ecoranger.Views
         {
             string username = tbUsername.Text;
             string password = tbPassword.Text;
+            string role = cbRole.SelectedItem.ToString();
 
-            MessageBox.Show($"Selamat datang {username} ", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Selamat datang {username} as {role}", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

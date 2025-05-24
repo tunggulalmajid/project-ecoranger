@@ -12,19 +12,19 @@ namespace project_ecoranger
         public MainForm()
         {
             InitializeComponent();
-            //loadingScreen = new UcLoadingScreen();
-            //startPage = new UcStartPage();
+            loadingScreen = new UcLoadingScreen();
+            startPage = new UcStartPage(this);
             loginPage = new UcLogin();
 
-            //this.Controls.Add(startPage);
+            this.Controls.Add(startPage);
             this.Controls.Add(loginPage);
-            //HideAllPage();
-            //this.Controls.Add(loadingScreen);
+            HideAllPage();
+            this.Controls.Add(loadingScreen);
 
-            //timer = new System.Windows.Forms.Timer();
-            //timer.Interval = 2500;
-            //timer.Tick += timer_tick;
-            //timer.Start();
+            timer = new System.Windows.Forms.Timer();
+            timer.Interval = 2500;
+            timer.Tick += timer_tick;
+            timer.Start();
 
         }
         public void HideAllPage()
@@ -44,6 +44,11 @@ namespace project_ecoranger
         {
             HideAllPage();
             startPage.Visible = true;
+        }
+        public void ShowLoginPage()
+        {
+            HideAllPage();
+            loginPage.Visible = true;
         }
 
     }
