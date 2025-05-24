@@ -73,6 +73,26 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnLoginStartPage {
+            get {
+                object obj = ResourceManager.GetObject("btnLoginStartPage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnRegisterStartPage {
+            get {
+                object obj = ResourceManager.GetObject("btnRegisterStartPage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ecoranger_loading {
             get {
                 object obj = ResourceManager.GetObject("ecoranger loading", resourceCulture);
@@ -86,6 +106,16 @@ namespace project_ecoranger.Properties {
         internal static System.Drawing.Bitmap loading_ecoranger {
             get {
                 object obj = ResourceManager.GetObject("loading ecoranger", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tittleStartPage {
+            get {
+                object obj = ResourceManager.GetObject("tittleStartPage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
