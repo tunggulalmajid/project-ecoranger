@@ -28,9 +28,6 @@
     <Compile Update="Views\UcKelolaPenyuplai.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\UcKelolaSubKategori.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Views\UcDashboardPenyuplai.cs">
       <SubType>UserControl</SubType>
     </Compile>

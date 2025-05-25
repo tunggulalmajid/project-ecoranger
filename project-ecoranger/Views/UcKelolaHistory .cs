@@ -47,5 +47,10 @@ namespace project_ecoranger.Views
         {
             mainform.ShowStartPage();
         }
+
+        private void UcKelolaHistory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

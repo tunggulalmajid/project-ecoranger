@@ -37,6 +37,9 @@
             btnSubKategori = new Panel();
             btnDashboard = new Panel();
             panel2 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -142,11 +145,44 @@
             panel2.Size = new Size(355, 100);
             panel2.TabIndex = 0;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Transparent;
+            panel3.BackgroundImage = Properties.Resources.tittleDashboard;
+            panel3.BackgroundImageLayout = ImageLayout.Zoom;
+            panel3.Location = new Point(393, 57);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(299, 71);
+            panel3.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Transparent;
+            panel4.BackgroundImage = Properties.Resources.JumlahPenyuplaiDashboardPengepul;
+            panel4.BackgroundImageLayout = ImageLayout.Zoom;
+            panel4.Location = new Point(393, 153);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(654, 224);
+            panel4.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.Transparent;
+            panel5.BackgroundImage = Properties.Resources.JumlahAsetDashBoard;
+            panel5.BackgroundImageLayout = ImageLayout.Zoom;
+            panel5.Location = new Point(1099, 153);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(654, 224);
+            panel5.TabIndex = 3;
+            // 
             // UcDashboardPengepul
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
+            Controls.Add(panel5);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
             Controls.Add(panel1);
             Name = "UcDashboardPengepul";
             Size = new Size(1920, 1060);
@@ -165,5 +201,8 @@
         private Panel btnSubKategori;
         private Panel btnLogout;
         private Panel panel9;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
     }
 }

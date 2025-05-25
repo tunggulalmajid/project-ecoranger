@@ -37,6 +37,7 @@
             btnSubKategori = new Panel();
             btnDashboard = new Panel();
             panel2 = new Panel();
+            panel3 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -142,11 +143,22 @@
             panel2.Size = new Size(355, 100);
             panel2.TabIndex = 0;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Transparent;
+            panel3.BackgroundImage = Properties.Resources.tittlePenyuplai;
+            panel3.BackgroundImageLayout = ImageLayout.Zoom;
+            panel3.Location = new Point(393, 61);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(299, 71);
+            panel3.TabIndex = 1;
+            // 
             // UcKelolaPenyuplai
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
+            Controls.Add(panel3);
             Controls.Add(panel1);
             Name = "UcKelolaPenyuplai";
             Size = new Size(1920, 1060);
@@ -165,5 +177,6 @@
         private Panel btnSubKategori;
         private Panel btnLogout;
         private Panel panel9;
+        private Panel panel3;
     }
 }

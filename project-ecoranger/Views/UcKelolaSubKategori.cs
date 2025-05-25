@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace project_ecoranger.Views
 {
-    public partial class UcKelolaSubKategori: UserControl
+    public partial class UcKelolaSubKategori : UserControl
     {
         MainForm mainform;
         public UcKelolaSubKategori(MainForm mainform)
@@ -46,6 +46,10 @@ namespace project_ecoranger.Views
         private void btnLogout_Click(object sender, EventArgs e)
         {
             mainform.ShowStartPage();
+        }
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("king", "king", MessageBoxButtons.OK);
         }
     }
 }

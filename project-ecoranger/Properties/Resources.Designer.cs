@@ -73,6 +73,26 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnKonfirmasiPenarikan {
+            get {
+                object obj = ResourceManager.GetObject("btnKonfirmasiPenarikan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnKonfirmasiTransaksi {
+            get {
+                object obj = ResourceManager.GetObject("btnKonfirmasiTransaksi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnLoginStartPage {
             get {
                 object obj = ResourceManager.GetObject("btnLoginStartPage", resourceCulture);
@@ -93,9 +113,49 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnPenarikan {
+            get {
+                object obj = ResourceManager.GetObject("btnPenarikan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnPenukaranPoin {
+            get {
+                object obj = ResourceManager.GetObject("btnPenukaranPoin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnRegisterStartPage {
             get {
                 object obj = ResourceManager.GetObject("btnRegisterStartPage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnTambah {
+            get {
+                object obj = ResourceManager.GetObject("btnTambah", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnTransaksi {
+            get {
+                object obj = ResourceManager.GetObject("btnTransaksi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,6 +253,26 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap JumlahAsetDashBoard {
+            get {
+                object obj = ResourceManager.GetObject("JumlahAsetDashBoard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap JumlahPenyuplaiDashboardPengepul {
+            get {
+                object obj = ResourceManager.GetObject("JumlahPenyuplaiDashboardPengepul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LaporanLogo {
             get {
                 object obj = ResourceManager.GetObject("LaporanLogo", resourceCulture);
@@ -253,6 +333,16 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PnlBeratKeseluruhan {
+            get {
+                object obj = ResourceManager.GetObject("PnlBeratKeseluruhan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SubKategoriLogo {
             get {
                 object obj = ResourceManager.GetObject("SubKategoriLogo", resourceCulture);
@@ -263,9 +353,59 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tittleDashboard {
+            get {
+                object obj = ResourceManager.GetObject("tittleDashboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tittleHistory {
+            get {
+                object obj = ResourceManager.GetObject("tittleHistory", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tittleLaporan {
+            get {
+                object obj = ResourceManager.GetObject("tittleLaporan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tittlePenyuplai {
+            get {
+                object obj = ResourceManager.GetObject("tittlePenyuplai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tittleStartPage {
             get {
                 object obj = ResourceManager.GetObject("tittleStartPage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tittleSubKategori {
+            get {
+                object obj = ResourceManager.GetObject("tittleSubKategori", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

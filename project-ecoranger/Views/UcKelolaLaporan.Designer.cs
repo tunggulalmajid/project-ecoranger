@@ -37,6 +37,9 @@
             btnSubKategori = new Panel();
             btnDashboard = new Panel();
             panel2 = new Panel();
+            tittle = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -142,11 +145,44 @@
             panel2.Size = new Size(355, 100);
             panel2.TabIndex = 0;
             // 
+            // tittle
+            // 
+            tittle.BackColor = Color.Transparent;
+            tittle.BackgroundImage = Properties.Resources.tittleLaporan;
+            tittle.BackgroundImageLayout = ImageLayout.Zoom;
+            tittle.Location = new Point(383, 60);
+            tittle.Name = "tittle";
+            tittle.Size = new Size(299, 71);
+            tittle.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Transparent;
+            panel3.BackgroundImage = Properties.Resources.JumlahAsetDashBoard;
+            panel3.BackgroundImageLayout = ImageLayout.Zoom;
+            panel3.Location = new Point(383, 176);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(654, 224);
+            panel3.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Transparent;
+            panel4.BackgroundImage = Properties.Resources.PnlBeratKeseluruhan;
+            panel4.BackgroundImageLayout = ImageLayout.Zoom;
+            panel4.Location = new Point(1099, 176);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(654, 224);
+            panel4.TabIndex = 3;
+            // 
             // UcKelolaLaporan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(tittle);
             Controls.Add(panel1);
             Name = "UcKelolaLaporan";
             Size = new Size(1920, 1060);
@@ -165,5 +201,8 @@
         private Panel btnSubKategori;
         private Panel btnLogout;
         private Panel panel9;
+        private Panel tittle;
+        private Panel panel3;
+        private Panel panel4;
     }
 }
