@@ -103,6 +103,56 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dashboardFill {
+            get {
+                object obj = ResourceManager.GetObject("dashboardFill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dashboardLogo {
+            get {
+                object obj = ResourceManager.GetObject("dashboardLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EcoAdmin {
+            get {
+                object obj = ResourceManager.GetObject("EcoAdmin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EcoPengepul {
+            get {
+                object obj = ResourceManager.GetObject("EcoPengepul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EcoPenyuplai {
+            get {
+                object obj = ResourceManager.GetObject("EcoPenyuplai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ecoranger_loading {
             get {
                 object obj = ResourceManager.GetObject("ecoranger loading", resourceCulture);
@@ -133,9 +183,39 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HistoryLogo {
+            get {
+                object obj = ResourceManager.GetObject("HistoryLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LaporanLogo {
+            get {
+                object obj = ResourceManager.GetObject("LaporanLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loading_ecoranger {
             get {
                 object obj = ResourceManager.GetObject("loading ecoranger", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoutLogo {
+            get {
+                object obj = ResourceManager.GetObject("LogoutLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +236,26 @@ namespace project_ecoranger.Properties {
         internal static System.Drawing.Bitmap NotesRegistStartPage {
             get {
                 object obj = ResourceManager.GetObject("NotesRegistStartPage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PenyuplaiLogo {
+            get {
+                object obj = ResourceManager.GetObject("PenyuplaiLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SubKategoriLogo {
+            get {
+                object obj = ResourceManager.GetObject("SubKategoriLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

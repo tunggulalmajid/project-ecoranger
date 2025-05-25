@@ -19,6 +19,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Views\UcKelolaHistory .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UcKelolaLaporan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UcKelolaPenyuplai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UcKelolaSubKategori.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UcDashboardPenyuplai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UcDashboardPengepul.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
