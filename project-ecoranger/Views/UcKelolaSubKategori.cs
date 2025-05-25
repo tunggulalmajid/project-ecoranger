@@ -49,7 +49,7 @@ namespace project_ecoranger.Views
         }
         private void btnTambah_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("king", "king", MessageBoxButtons.OK);
+            MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

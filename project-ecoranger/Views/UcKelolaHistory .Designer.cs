@@ -38,11 +38,11 @@
             btnDashboard = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
-            panel7 = new Panel();
-            panel8 = new Panel();
+            btnTransaksi = new Panel();
+            btnPenarikan = new Panel();
+            btnKonfirmasiTransaksi = new Panel();
+            btnKonfirmasiPenarikan = new Panel();
+            btnPenukaranPoin = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -158,65 +158,70 @@
             panel3.Size = new Size(243, 71);
             panel3.TabIndex = 1;
             // 
-            // panel4
+            // btnTransaksi
             // 
-            panel4.BackColor = Color.Transparent;
-            panel4.BackgroundImage = Properties.Resources.btnTransaksi;
-            panel4.BackgroundImageLayout = ImageLayout.Zoom;
-            panel4.Location = new Point(403, 218);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(256, 76);
-            panel4.TabIndex = 2;
+            btnTransaksi.BackColor = Color.Transparent;
+            btnTransaksi.BackgroundImage = Properties.Resources.btnTransaksi;
+            btnTransaksi.BackgroundImageLayout = ImageLayout.Zoom;
+            btnTransaksi.Location = new Point(403, 218);
+            btnTransaksi.Name = "btnTransaksi";
+            btnTransaksi.Size = new Size(256, 76);
+            btnTransaksi.TabIndex = 2;
+            btnTransaksi.Click += btnTransaksi_Click;
             // 
-            // panel5
+            // btnPenarikan
             // 
-            panel5.BackColor = Color.Transparent;
-            panel5.BackgroundImage = Properties.Resources.btnPenarikan;
-            panel5.BackgroundImageLayout = ImageLayout.Zoom;
-            panel5.Location = new Point(403, 313);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(256, 78);
-            panel5.TabIndex = 3;
+            btnPenarikan.BackColor = Color.Transparent;
+            btnPenarikan.BackgroundImage = Properties.Resources.btnPenarikan;
+            btnPenarikan.BackgroundImageLayout = ImageLayout.Zoom;
+            btnPenarikan.Location = new Point(403, 313);
+            btnPenarikan.Name = "btnPenarikan";
+            btnPenarikan.Size = new Size(256, 78);
+            btnPenarikan.TabIndex = 3;
+            btnPenarikan.Click += btnPenarikan_Click;
             // 
-            // panel6
+            // btnKonfirmasiTransaksi
             // 
-            panel6.BackColor = Color.Transparent;
-            panel6.BackgroundImage = Properties.Resources.btnKonfirmasiTransaksi;
-            panel6.BackgroundImageLayout = ImageLayout.Zoom;
-            panel6.Location = new Point(697, 218);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(394, 76);
-            panel6.TabIndex = 4;
+            btnKonfirmasiTransaksi.BackColor = Color.Transparent;
+            btnKonfirmasiTransaksi.BackgroundImage = Properties.Resources.btnKonfirmasiTransaksi;
+            btnKonfirmasiTransaksi.BackgroundImageLayout = ImageLayout.Zoom;
+            btnKonfirmasiTransaksi.Location = new Point(697, 218);
+            btnKonfirmasiTransaksi.Name = "btnKonfirmasiTransaksi";
+            btnKonfirmasiTransaksi.Size = new Size(394, 76);
+            btnKonfirmasiTransaksi.TabIndex = 4;
+            btnKonfirmasiTransaksi.Click += btnKonfirmasiTransaksi_Click;
             // 
-            // panel7
+            // btnKonfirmasiPenarikan
             // 
-            panel7.BackgroundImage = Properties.Resources.btnKonfirmasiPenarikan;
-            panel7.BackgroundImageLayout = ImageLayout.Zoom;
-            panel7.Location = new Point(697, 313);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(394, 76);
-            panel7.TabIndex = 5;
+            btnKonfirmasiPenarikan.BackgroundImage = Properties.Resources.btnKonfirmasiPenarikan;
+            btnKonfirmasiPenarikan.BackgroundImageLayout = ImageLayout.Zoom;
+            btnKonfirmasiPenarikan.Location = new Point(697, 313);
+            btnKonfirmasiPenarikan.Name = "btnKonfirmasiPenarikan";
+            btnKonfirmasiPenarikan.Size = new Size(394, 76);
+            btnKonfirmasiPenarikan.TabIndex = 5;
+            btnKonfirmasiPenarikan.Click += btnKonfirmasiPenarikan_Click;
             // 
-            // panel8
+            // btnPenukaranPoin
             // 
-            panel8.BackColor = Color.Transparent;
-            panel8.BackgroundImage = Properties.Resources.btnPenukaranPoin;
-            panel8.BackgroundImageLayout = ImageLayout.Zoom;
-            panel8.Location = new Point(403, 407);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(338, 79);
-            panel8.TabIndex = 6;
+            btnPenukaranPoin.BackColor = Color.Transparent;
+            btnPenukaranPoin.BackgroundImage = Properties.Resources.btnPenukaranPoin;
+            btnPenukaranPoin.BackgroundImageLayout = ImageLayout.Zoom;
+            btnPenukaranPoin.Location = new Point(403, 407);
+            btnPenukaranPoin.Name = "btnPenukaranPoin";
+            btnPenukaranPoin.Size = new Size(338, 79);
+            btnPenukaranPoin.TabIndex = 6;
+            btnPenukaranPoin.Click += btnPenukaranPoin_Click;
             // 
             // UcKelolaHistory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
-            Controls.Add(panel8);
-            Controls.Add(panel7);
-            Controls.Add(panel6);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
+            Controls.Add(btnPenukaranPoin);
+            Controls.Add(btnKonfirmasiPenarikan);
+            Controls.Add(btnKonfirmasiTransaksi);
+            Controls.Add(btnPenarikan);
+            Controls.Add(btnTransaksi);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Name = "UcKelolaHistory";
@@ -238,10 +243,10 @@
         private Panel btnLogout;
         private Panel panel9;
         private Panel panel3;
-        private Panel panel4;
-        private Panel panel5;
-        private Panel panel6;
-        private Panel panel7;
-        private Panel panel8;
+        private Panel btnTransaksi;
+        private Panel btnPenarikan;
+        private Panel btnKonfirmasiTransaksi;
+        private Panel btnKonfirmasiPenarikan;
+        private Panel btnPenukaranPoin;
     }
 }

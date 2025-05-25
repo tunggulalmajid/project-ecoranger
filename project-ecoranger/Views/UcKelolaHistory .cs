@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace project_ecoranger.Views
 {
@@ -51,6 +52,33 @@ namespace project_ecoranger.Views
         private void UcKelolaHistory_Load(object sender, EventArgs e)
         {
 
+        }
+
+
+
+        private void btnTransaksi_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnPenarikan_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnPenukaranPoin_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnKonfirmasiTransaksi_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnKonfirmasiPenarikan_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
