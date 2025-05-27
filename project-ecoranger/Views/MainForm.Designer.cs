@@ -37,7 +37,7 @@
             ClientSize = new Size(1904, 1021);
             IsMdiContainer = true;
             Name = "MainForm";
-            Text = "Form1";
+            Text = "Ecoranger";
             ResumeLayout(false);
         }
 

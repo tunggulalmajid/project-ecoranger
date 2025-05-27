@@ -96,6 +96,7 @@
             btnLogin.BackColor = Color.Transparent;
             btnLogin.BackgroundImage = Properties.Resources.btnLoginStartPage1;
             btnLogin.BackgroundImageLayout = ImageLayout.Stretch;
+            btnLogin.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogin.Location = new Point(1256, 708);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(409, 104);
