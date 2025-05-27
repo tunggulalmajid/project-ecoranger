@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace project_ecoranger.Views
 {
-    public partial class UcDashboardPengepul : UserControl
+    public partial class UcKelolaPenyuplai : UserControl
     {
         MainForm mainform;
-        public UcDashboardPengepul(MainForm mainform)
+        public UcKelolaPenyuplai(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
@@ -21,31 +21,31 @@ namespace project_ecoranger.Views
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            mainform.ShowDashboardPengepul();
+            mainform.ShowPage(mainform.dashboardPengepul);
         }
 
         private void btnSubKategori_Click(object sender, EventArgs e)
         {
-            mainform.ShowKelolaSubKategori();
+            mainform.ShowPage(mainform.kelolaSubKategori);
         }
         private void btnPenyuplai_Click(object sender, EventArgs e)
         {
-            mainform.ShowKelolaPenyuplai();
+            mainform.ShowPage(mainform.kelolaPenyuplai);
         }
 
         private void btnLaporan_Click(object sender, EventArgs e)
         {
-            mainform.ShowKelolaLaporan();
+            mainform.ShowPage(mainform.kelolaLaporan);
         }
 
         private void BtnHistory_Click(object sender, EventArgs e)
         {
-            mainform.ShowKelolaHistory();
+            mainform.ShowPage(mainform.kelolaHistory);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            mainform.ShowStartPage();
+            mainform.ShowPage(mainform.startPage);
         }
     }
 }

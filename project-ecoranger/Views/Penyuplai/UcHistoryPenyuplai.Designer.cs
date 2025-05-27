@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcHistoryPenyuplai));
             panel1 = new Panel();
             panel9 = new Panel();
             btnLogout = new Panel();
@@ -38,8 +39,9 @@
             btnDashboard = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
+            btnHistoryPenarikan = new Panel();
+            btnHistoryTransaksi = new Panel();
+            btnHistoryPenukaranPoin = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -155,33 +157,47 @@
             panel3.Size = new Size(299, 71);
             panel3.TabIndex = 1;
             // 
-            // panel4
+            // btnHistoryPenarikan
             // 
-            panel4.BackColor = Color.Transparent;
-            panel4.BackgroundImage = Properties.Resources.JumlahPenyuplaiDashboardPengepul;
-            panel4.BackgroundImageLayout = ImageLayout.Zoom;
-            panel4.Location = new Point(393, 153);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(654, 224);
-            panel4.TabIndex = 2;
+            btnHistoryPenarikan.BackColor = Color.Transparent;
+            btnHistoryPenarikan.BackgroundImage = (Image)resources.GetObject("btnHistoryPenarikan.BackgroundImage");
+            btnHistoryPenarikan.BackgroundImageLayout = ImageLayout.Zoom;
+            btnHistoryPenarikan.Location = new Point(393, 250);
+            btnHistoryPenarikan.Name = "btnHistoryPenarikan";
+            btnHistoryPenarikan.Size = new Size(499, 75);
+            btnHistoryPenarikan.TabIndex = 2;
+            btnHistoryPenarikan.Click += btnHistoryPenarikan_Click;
             // 
-            // panel5
+            // btnHistoryTransaksi
             // 
-            panel5.BackColor = Color.Transparent;
-            panel5.BackgroundImage = Properties.Resources.JumlahAsetDashBoard;
-            panel5.BackgroundImageLayout = ImageLayout.Zoom;
-            panel5.Location = new Point(1099, 153);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(654, 224);
-            panel5.TabIndex = 3;
+            btnHistoryTransaksi.BackColor = Color.Transparent;
+            btnHistoryTransaksi.BackgroundImage = (Image)resources.GetObject("btnHistoryTransaksi.BackgroundImage");
+            btnHistoryTransaksi.BackgroundImageLayout = ImageLayout.Zoom;
+            btnHistoryTransaksi.Location = new Point(393, 169);
+            btnHistoryTransaksi.Name = "btnHistoryTransaksi";
+            btnHistoryTransaksi.Size = new Size(499, 75);
+            btnHistoryTransaksi.TabIndex = 3;
+            btnHistoryTransaksi.Click += btnHistoryTransaksi_Click;
+            // 
+            // btnHistoryPenukaranPoin
+            // 
+            btnHistoryPenukaranPoin.BackColor = Color.Transparent;
+            btnHistoryPenukaranPoin.BackgroundImage = (Image)resources.GetObject("btnHistoryPenukaranPoin.BackgroundImage");
+            btnHistoryPenukaranPoin.BackgroundImageLayout = ImageLayout.Zoom;
+            btnHistoryPenukaranPoin.Location = new Point(393, 331);
+            btnHistoryPenukaranPoin.Name = "btnHistoryPenukaranPoin";
+            btnHistoryPenukaranPoin.Size = new Size(499, 75);
+            btnHistoryPenukaranPoin.TabIndex = 3;
+            btnHistoryPenukaranPoin.Click += btnHistoryPenukaranPoin_Click;
             // 
             // UcHistoryPenyuplai
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
-            Controls.Add(panel5);
-            Controls.Add(panel4);
+            Controls.Add(btnHistoryPenukaranPoin);
+            Controls.Add(btnHistoryTransaksi);
+            Controls.Add(btnHistoryPenarikan);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Name = "UcHistoryPenyuplai";
@@ -202,7 +218,8 @@
         private Panel btnLogout;
         private Panel panel9;
         private Panel panel3;
-        private Panel panel4;
-        private Panel panel5;
+        private Panel btnHistoryPenarikan;
+        private Panel btnHistoryTransaksi;
+        private Panel btnHistoryPenukaranPoin;
     }
 }

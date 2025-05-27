@@ -1,6 +1,7 @@
 ﻿namespace project_ecoranger.Views
 {
-    partial class UcKeuanganPenyuplai
+    partial class UcHistoryPenukaranPoin
+
     {
         /// <summary> 
         /// Required designer variable.
@@ -38,6 +39,7 @@
             btnDashboard = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
+            btnKembali = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -62,9 +64,9 @@
             // 
             panel9.BackColor = Color.Teal;
             panel9.Cursor = Cursors.No;
-            panel9.Location = new Point(3, 414);
+            panel9.Location = new Point(3, 363);
             panel9.Name = "panel9";
-            panel9.Size = new Size(10, 49);
+            panel9.Size = new Size(10, 50);
             panel9.TabIndex = 7;
             // 
             // btnLogout
@@ -146,21 +148,33 @@
             // panel3
             // 
             panel3.BackColor = Color.Transparent;
-            panel3.BackgroundImage = Properties.Resources.tittleKeuangan;
+            panel3.BackgroundImage = Properties.Resources.tittleHistoryPenukaran;
             panel3.BackgroundImageLayout = ImageLayout.Zoom;
-            panel3.Location = new Point(393, 57);
+            panel3.Location = new Point(1056, 190);
             panel3.Name = "panel3";
-            panel3.Size = new Size(299, 71);
+            panel3.Size = new Size(391, 99);
             panel3.TabIndex = 1;
             // 
-            // UcKeuanganPenyuplai
+            // btnKembali
+            // 
+            btnKembali.BackColor = Color.Transparent;
+            btnKembali.BackgroundImage = Properties.Resources.btnKembali;
+            btnKembali.BackgroundImageLayout = ImageLayout.Zoom;
+            btnKembali.Location = new Point(402, 54);
+            btnKembali.Name = "btnKembali";
+            btnKembali.Size = new Size(300, 75);
+            btnKembali.TabIndex = 3;
+            btnKembali.Click += btnKembali_Click;
+            // 
+            // UcHistoryPenukaranPoin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
+            Controls.Add(btnKembali);
             Controls.Add(panel3);
             Controls.Add(panel1);
-            Name = "UcKeuanganPenyuplai";
+            Name = "UcHistoryPenukaranPoin";
             Size = new Size(1920, 1060);
             panel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -178,5 +192,8 @@
         private Panel btnLogout;
         private Panel panel9;
         private Panel panel3;
+        private Panel btnHistoryPenarikan;
+        private Panel btnHistoryTransaksi;
+        private Panel btnKembali;
     }
 }

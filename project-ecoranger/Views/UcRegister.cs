@@ -46,7 +46,7 @@ namespace project_ecoranger.Views
             string nama = tbNama.Text;
             string nomotTelepon = tbNomorTelepon.Text;
             string email = tbEmail.Text;
-            string role = cbRole.SelectedItem?.ToString();
+            string role = cbRole.SelectedItem.ToString();
             string username = tbUsername.Text;
             string password = tbPassword.Text;
             string konfirmasiPassword = tbKonfirmasiPw.Text;
@@ -60,7 +60,7 @@ namespace project_ecoranger.Views
 
         private void btnToLogin_Click(object sender, EventArgs e)
         {
-            mainForm.ShowLoginPage();
+            mainForm.ShowPage(mainForm.loginPage);
         }
     }
 }
