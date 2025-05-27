@@ -1,6 +1,6 @@
 ﻿namespace project_ecoranger.Views
 {
-    partial class UcDashboardPenyuplai
+    partial class UcHistoryPenyuplai
     {
         /// <summary> 
         /// Required designer variable.
@@ -64,9 +64,9 @@
             // 
             panel9.BackColor = Color.Teal;
             panel9.Cursor = Cursors.No;
-            panel9.Location = new Point(3, 218);
+            panel9.Location = new Point(3, 363);
             panel9.Name = "panel9";
-            panel9.Size = new Size(10, 40);
+            panel9.Size = new Size(10, 50);
             panel9.TabIndex = 7;
             // 
             // btnLogout
@@ -148,7 +148,7 @@
             // panel3
             // 
             panel3.BackColor = Color.Transparent;
-            panel3.BackgroundImage = Properties.Resources.tittleDashboard;
+            panel3.BackgroundImage = Properties.Resources.tittleHistory;
             panel3.BackgroundImageLayout = ImageLayout.Zoom;
             panel3.Location = new Point(393, 57);
             panel3.Name = "panel3";
@@ -175,7 +175,7 @@
             panel5.Size = new Size(654, 224);
             panel5.TabIndex = 3;
             // 
-            // UcDashboardPenyuplai
+            // UcHistoryPenyuplai
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -184,7 +184,7 @@
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel1);
-            Name = "UcDashboardPenyuplai";
+            Name = "UcHistoryPenyuplai";
             Size = new Size(1920, 1060);
             panel1.ResumeLayout(false);
             ResumeLayout(false);

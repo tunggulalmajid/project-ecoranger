@@ -14,10 +14,44 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FontAwesome" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UcKeuanganPenyuplai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UcHistoryPenyuplai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UcTransaksiPenyuplai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UcDataDiriPenyuplai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UcDashboardPenyuplai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UcKelolaHistoryPenukaran.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UcKelolaHistoryPenarikan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UcKelolaKonfirmasiTransaksi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UcKelolaKonfirmasiPenarikan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\UcKelolaHistoryTransaksi.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Views\UcKelolaHistory .cs">
       <SubType>UserControl</SubType>
@@ -26,9 +60,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Views\UcKelolaPenyuplai.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Views\UcDashboardPenyuplai.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Views\UcDashboardPengepul.cs">

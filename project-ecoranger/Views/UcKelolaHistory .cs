@@ -54,31 +54,34 @@ namespace project_ecoranger.Views
 
         }
 
-
-
         private void btnTransaksi_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            mainform.ShowKelolaHistoryTransaksi();
         }
 
         private void btnPenarikan_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            mainform.ShowKelolaHistorypenarikan();
         }
 
         private void btnPenukaranPoin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            mainform.ShowKelolaHistoryPenukaran();
         }
 
         private void btnKonfirmasiTransaksi_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            mainform.ShowKelolaKonfirmasiTransaksi();
         }
 
         private void btnKonfirmasiPenarikan_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            mainform.ShowKelolaKonfirmasiPenarikan();
         }
     }
 }

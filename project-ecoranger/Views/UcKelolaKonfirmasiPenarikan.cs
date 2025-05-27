@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace project_ecoranger.Views
 {
-    public partial class UcKelolaSubKategori : UserControl
+    public partial class UcKelolaKonfirmasiPenarikan : UserControl
     {
         MainForm mainform;
-        public UcKelolaSubKategori(MainForm mainform)
+        public UcKelolaKonfirmasiPenarikan(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
@@ -47,11 +48,38 @@ namespace project_ecoranger.Views
         {
             mainform.ShowStartPage();
         }
-        private void btnTambah_Click(object sender, EventArgs e)
+
+        private void UcKelolaHistory_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void btnBack_Click(object sender, EventArgs e)
         {
             //MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            FormTambahSubKategori formTambahSubKategori = new FormTambahSubKategori();
-            formTambahSubKategori.Show();
+            mainform.ShowKelolaHistory();
+        }
+
+        private void btnPenarikan_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnPenukaranPoin_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnKonfirmasiTransaksi_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnKonfirmasiPenarikan_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

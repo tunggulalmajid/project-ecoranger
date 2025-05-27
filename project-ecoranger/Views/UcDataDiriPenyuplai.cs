@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace project_ecoranger.Views
 {
-    public partial class UcDashboardPenyuplai : UserControl
+    public partial class UcDataDiriPenyuplai : UserControl
     {
         MainForm mainform;
-        public UcDashboardPenyuplai(MainForm mainform)
+        public UcDataDiriPenyuplai(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
