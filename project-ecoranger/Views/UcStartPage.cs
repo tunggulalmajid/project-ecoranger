@@ -27,12 +27,12 @@ namespace project_ecoranger.Views
 
         private void panel1_Click(object sender, EventArgs e)
         {
-            mainForm.ShowLoginPage();
+            mainForm.ShowPage(mainForm.loginPage);
         }
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
-            mainForm.ShowRegisterPage();
+            mainForm.ShowPage(mainForm.registerpage);
 
         }
     }

@@ -5,25 +5,28 @@ namespace project_ecoranger
 {
     public partial class MainForm : Form
     {
-        UcLoadingScreen loadingScreen;
-        UcStartPage startPage;
-        UcLogin loginPage;
-        UcRegister registerpage;
-        UcDashboardPengepul dashboardPengepul;
-        UcKelolaPenyuplai kelolaPenyuplai;
-        UcKelolaSubKategori kelolaSubKategori;
-        UcKelolaLaporan kelolaLaporan;
-        UcKelolaHistory kelolaHistory;
-        UcKelolaHistoryTransaksi kelolaHistoryTransaksi;
-        UcKelolaHistoryPenukaran kelolaHistoryPenukaran;
-        UcKelolaHistoryPenarikan kelolaHistoryPenarikan;
-        UcKelolaKonfirmasiTransaksi kelolaKonfirmasiTransaksi;
-        UcKelolaKonfirmasiPenarikan kelolaKonfirmasiPenarikan;
-        UcDashboardPenyuplai dashboardPenyuplai;
-        UcDataDiriPenyuplai viewDataDiriPenyuplai;
-        UcTransaksiPenyuplai viewTransaksiPenyuplai;
-        UcHistoryPenyuplai viewHistoryPenyuplai;
-        UcKeuanganPenyuplai viewKeuanganPenyuplai;
+        public UcLoadingScreen loadingScreen;
+        public UcStartPage startPage;
+        public UcLogin loginPage;
+        public UcRegister registerpage;
+        public UcDashboardPengepul dashboardPengepul;
+        public UcKelolaPenyuplai kelolaPenyuplai;
+        public UcKelolaSubKategori kelolaSubKategori;
+        public UcKelolaLaporan kelolaLaporan;
+        public UcKelolaHistory kelolaHistory;
+        public UcKelolaHistoryTransaksi kelolaHistoryTransaksi;
+        public UcKelolaHistoryPenukaran kelolaHistoryPenukaran;
+        public UcKelolaHistoryPenarikan kelolaHistoryPenarikan;
+        public UcKelolaKonfirmasiTransaksi kelolaKonfirmasiTransaksi;
+        public UcKelolaKonfirmasiPenarikan kelolaKonfirmasiPenarikan;
+        public UcDashboardPenyuplai dashboardPenyuplai;
+        public UcDataDiriPenyuplai viewDataDiriPenyuplai;
+        public UcTransaksiPenyuplai viewTransaksiPenyuplai;
+        public UcHistoryPenyuplai viewHistoryPenyuplai;
+        public UcKeuanganPenyuplai viewKeuanganPenyuplai;
+        public UcHistoryPenarikanPenyuplai viewHistoryPenarikanPenyuplai;
+        public UcHistoryPenukaranPoin viewHistoryPenukaranPoin;
+        public UcHistoryTransaksiPenyuplai viewHistoryTransaksiPenyuplai;
 
         System.Windows.Forms.Timer timer;
         public MainForm()
@@ -48,37 +51,42 @@ namespace project_ecoranger
             viewTransaksiPenyuplai = new UcTransaksiPenyuplai(this);
             viewHistoryPenyuplai = new UcHistoryPenyuplai(this);
             viewKeuanganPenyuplai = new UcKeuanganPenyuplai(this);
+            viewHistoryPenarikanPenyuplai = new UcHistoryPenarikanPenyuplai(this);
+            viewHistoryPenukaranPoin = new UcHistoryPenukaranPoin(this);
+            viewHistoryTransaksiPenyuplai = new UcHistoryTransaksiPenyuplai(this);
 
 
-
-            //this.Controls.Add(dashboardPengepul);
-            //this.Controls.Add(kelolaPenyuplai);
-            //this.Controls.Add(kelolaSubKategori);
-            //this.Controls.Add(kelolaLaporan);
-            //this.Controls.Add(kelolaHistory);
-            //this.Controls.Add(registerpage);
-            //this.Controls.Add(startPage);
-            //this.Controls.Add(loginPage);
-            //this.Controls.Add(kelolaHistoryTransaksi);
-            //this.Controls.Add(kelolaHistoryPenarikan);
-            //this.Controls.Add(kelolaHistoryPenukaran);
-            //this.Controls.Add(kelolaKonfirmasiTransaksi);
-            //this.Controls.Add(kelolaKonfirmasiPenarikan);
-            //this.Controls.Add(dashboardPenyuplai);
+            this.Controls.Add(dashboardPengepul);
+            this.Controls.Add(kelolaPenyuplai);
+            this.Controls.Add(kelolaSubKategori);
+            this.Controls.Add(kelolaLaporan);
+            this.Controls.Add(kelolaHistory);
+            this.Controls.Add(registerpage);
+            this.Controls.Add(startPage);
+            this.Controls.Add(loginPage);
+            this.Controls.Add(kelolaHistoryTransaksi);
+            this.Controls.Add(kelolaHistoryPenarikan);
+            this.Controls.Add(kelolaHistoryPenukaran);
+            this.Controls.Add(kelolaKonfirmasiTransaksi);
+            this.Controls.Add(kelolaKonfirmasiPenarikan);
+            this.Controls.Add(dashboardPenyuplai);
             this.Controls.Add(viewDataDiriPenyuplai);
             this.Controls.Add(viewKeuanganPenyuplai);
             this.Controls.Add(viewHistoryPenyuplai);
             this.Controls.Add(viewTransaksiPenyuplai);
-            //HideAllPage();
-            //this.Controls.Add(dashboardPengepul);
+            this.Controls.Add(viewHistoryPenarikanPenyuplai);
+            this.Controls.Add(viewHistoryPenukaranPoin);
+            this.Controls.Add(viewHistoryTransaksiPenyuplai);
+            HideAllPage();
+                //this.Controls.Add(dashboardPengepul);
 
-            this.Controls.Add(dashboardPenyuplai);
-            //this.Controls.Add(loadingScreen);
+                //this.Controls.Add(dashboardPenyuplai);
+            this.Controls.Add(loadingScreen);
 
-            //timer = new System.Windows.Forms.Timer();
-            //timer.Interval = 2500;
-            //timer.Tick += timer_tick;
-            //timer.Start();
+            timer = new System.Windows.Forms.Timer();
+            timer.Interval = 2500;
+            timer.Tick += timer_tick;
+            timer.Start();
 
         }
         public void HideAllPage()
@@ -91,98 +99,13 @@ namespace project_ecoranger
         public void timer_tick(object sender, EventArgs e)
         {
             timer.Stop();
-            ShowStartPage();
+            ShowPage(startPage);
 
         }
-        public void ShowStartPage()
+        public void ShowPage(UserControl uc)
         {
             HideAllPage();
-            startPage.Visible = true;
-        }
-        public void ShowLoginPage()
-        {
-            HideAllPage();
-            loginPage.Visible = true;
-        }
-        public void ShowRegisterPage()
-        {
-            HideAllPage();
-            registerpage.Visible = true;
-        }
-        public void ShowDashboardPengepul()
-        {
-            HideAllPage();
-            dashboardPengepul.Visible = true;
-        }
-        public void ShowKelolaPenyuplai()
-        {
-            HideAllPage();
-            kelolaPenyuplai.Visible = true;
-        }
-        public void ShowKelolaSubKategori()
-        {
-            HideAllPage();
-            kelolaSubKategori.Visible = true;
-        }
-        public void ShowKelolaLaporan()
-        {
-            HideAllPage();
-            kelolaLaporan.Visible = true;
-        }
-        public void ShowKelolaHistory()
-        {
-            HideAllPage();
-            kelolaHistory.Visible = true;
-        }
-        public void ShowKelolaHistoryTransaksi()
-        {
-            HideAllPage();
-            kelolaHistoryTransaksi.Visible = true;
-        }
-        public void ShowKelolaHistorypenarikan()
-        {
-            HideAllPage();
-            kelolaHistoryPenarikan.Visible = true;
-        }
-        public void ShowKelolaHistoryPenukaran()
-        {
-            HideAllPage();
-            kelolaHistoryPenukaran.Visible = true;
-        }
-        public void ShowKelolaKonfirmasiTransaksi()
-        {
-            HideAllPage();
-            kelolaKonfirmasiTransaksi.Visible = true;
-        }
-        public void ShowKelolaKonfirmasiPenarikan()
-        {
-            HideAllPage();
-            kelolaKonfirmasiPenarikan.Visible = true;
-        }
-        public void ShowDashboardPenyuplai()
-        {
-            HideAllPage();
-            dashboardPenyuplai.Visible = true;
-        }
-        public void ShowDataDiriPenyuplai()
-        {
-            HideAllPage();
-            viewDataDiriPenyuplai.Visible = true;
-        }
-        public void ShowTransaksiPenyuplai()
-        {
-            HideAllPage();
-            viewTransaksiPenyuplai.Visible = true;
-        }
-        public void ShowHistoryPenyuplai()
-        {
-            HideAllPage();
-            viewHistoryPenyuplai.Visible = true;
-        }
-        public void ShowKeuanganPenyuplai()
-        {
-            HideAllPage();
-            viewKeuanganPenyuplai.Visible = true;
+            uc.Visible = true;
 
         }
     }

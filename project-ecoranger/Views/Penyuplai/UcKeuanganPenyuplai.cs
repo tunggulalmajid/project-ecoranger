@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace project_ecoranger.Views
 {
-    public partial class UcDashboardPenyuplai : UserControl
+    public partial class UcKeuanganPenyuplai : UserControl
     {
         MainForm mainform;
-        public UcDashboardPenyuplai(MainForm mainform)
+        public UcKeuanganPenyuplai(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
@@ -21,31 +21,43 @@ namespace project_ecoranger.Views
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            mainform.ShowDashboardPenyuplai();
+            mainform.ShowPage(mainform.dashboardPenyuplai);
         }
 
         private void btnDataDiri_Click(object sender, EventArgs e)
         {
-            mainform.ShowDataDiriPenyuplai();
+            mainform.ShowPage(mainform.viewDataDiriPenyuplai);
         }
         private void btnTransaksi_Click(object sender, EventArgs e)
         {
-            mainform.ShowTransaksiPenyuplai();
+            mainform.ShowPage(mainform.viewTransaksiPenyuplai);
         }
 
         private void btnHistoryPenyuplai_Click(object sender, EventArgs e)
         {
-            mainform.ShowHistoryPenyuplai();
+            mainform.ShowPage(mainform.viewHistoryPenyuplai);
         }
 
         private void BtnKeuangan_Click(object sender, EventArgs e)
         {
-            mainform.ShowKeuanganPenyuplai();
+            mainform.ShowPage(mainform.viewKeuanganPenyuplai);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            mainform.ShowStartPage();
+            mainform.ShowPage(mainform.startPage);
+        }
+
+        private void btnTarikSaldo_Click(object sender, EventArgs e)
+        {
+            FormTarikSaldo viewTarikSaldo = new FormTarikSaldo();
+            viewTarikSaldo.Show();
+        }
+
+        private void panel5_Click(object sender, EventArgs e)
+        {
+            FormTukarPoin formTukarPoin = new FormTukarPoin();
+            formTukarPoin.Show();
         }
     }
 }

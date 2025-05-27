@@ -203,6 +203,16 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnTarikSaldo {
+            get {
+                object obj = ResourceManager.GetObject("btnTarikSaldo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnTransaksi {
             get {
                 object obj = ResourceManager.GetObject("btnTransaksi", resourceCulture);

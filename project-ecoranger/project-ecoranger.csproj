@@ -23,46 +23,64 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Views\UcKeuanganPenyuplai.cs">
+    <Compile Update="Views\Penyuplai\FormJualSampah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Penyuplai\FormTukarPoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Penyuplai\FormTarikSaldo .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Penyuplai\UcHistoryPenukaranPoin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\UcHistoryPenyuplai.cs">
+    <Compile Update="Views\Penyuplai\UcHistoryTransaksiPenyuplai .cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\UcTransaksiPenyuplai.cs">
+    <Compile Update="Views\Penyuplai\UcHistoryPenarikanPenyuplai .cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\UcDataDiriPenyuplai.cs">
+    <Compile Update="Views\Penyuplai\UcKeuanganPenyuplai.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\UcDashboardPenyuplai.cs">
+    <Compile Update="Views\Penyuplai\UcHistoryPenyuplai.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\UcKelolaHistoryPenukaran.cs">
+    <Compile Update="Views\Penyuplai\UcTransaksiPenyuplai.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\UcKelolaHistoryPenarikan.cs">
+    <Compile Update="Views\Penyuplai\UcDataDiriPenyuplai.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\UcKelolaKonfirmasiTransaksi.cs">
+    <Compile Update="Views\Penyuplai\UcDashboardPenyuplai.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\UcKelolaKonfirmasiPenarikan.cs">
+    <Compile Update="Views\Pengepul\UcKelolaHistoryPenukaran.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\UcKelolaHistoryTransaksi.cs">
+    <Compile Update="Views\Pengepul\UcKelolaHistoryPenarikan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\UcKelolaHistory .cs">
+    <Compile Update="Views\Pengepul\UcKelolaKonfirmasiTransaksi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\UcKelolaLaporan.cs">
+    <Compile Update="Views\Pengepul\UcKelolaKonfirmasiPenarikan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\UcKelolaPenyuplai.cs">
+    <Compile Update="Views\Pengepul\UcKelolaHistoryTransaksi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\UcDashboardPengepul.cs">
+    <Compile Update="Views\Pengepul\UcKelolaHistory .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Pengepul\UcKelolaLaporan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Pengepul\UcKelolaPenyuplai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Pengepul\UcDashboardPengepul.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

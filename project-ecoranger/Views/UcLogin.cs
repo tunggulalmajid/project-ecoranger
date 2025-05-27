@@ -35,11 +35,11 @@ namespace project_ecoranger.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = tbUsername.Text;
-            string password = tbPassword.Text;
-            string role = cbRole.SelectedItem.ToString();
+            //string username = tbUsername.Text;
+            //string password = tbPassword.Text;
+            //string role = cbRole.SelectedItem.ToString();
 
-            MessageBox.Show($"Selamat datang {username} as {role}", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            mainForm.ShowPage(mainForm.dashboardPenyuplai);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace project_ecoranger.Views
 
         private void btnToRegister_Click(object sender, EventArgs e)
         {
-           mainForm.ShowRegisterPage();
+            mainForm.ShowPage(mainForm.registerpage);
         }
     }
 }
