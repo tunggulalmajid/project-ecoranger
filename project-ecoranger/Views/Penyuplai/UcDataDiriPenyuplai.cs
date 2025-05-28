@@ -13,10 +13,16 @@ namespace project_ecoranger.Views
     public partial class UcDataDiriPenyuplai : UserControl
     {
         MainForm mainform;
+        int sessionId;
         public UcDataDiriPenyuplai(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
+        }
+        public int getSessionId()
+        {
+            int sesi = mainform.Id;
+            return sesi;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

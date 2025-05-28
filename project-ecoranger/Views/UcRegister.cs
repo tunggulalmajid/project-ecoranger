@@ -4,21 +4,24 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using project_ecoranger.Models;
 
 namespace project_ecoranger.Views
 {
     public partial class UcRegister : UserControl
     {
         MainForm mainForm;
+        PenyuplaiContext penyuplai;
         public UcRegister(MainForm mainForm)
         {
             InitializeComponent();
-            cbRole.Items.Add("Pengepul");
-            cbRole.Items.Add("Penyuplai");
+           
             this.mainForm = mainForm;
+            penyuplai = new PenyuplaiContext();
         }
 
         private void UcRegister_Load(object sender, EventArgs e)
@@ -43,19 +46,50 @@ namespace project_ecoranger.Views
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            string nama = tbNama.Text;
-            string nomotTelepon = tbNomorTelepon.Text;
-            string email = tbEmail.Text;
-            string role = cbRole.SelectedItem.ToString();
-            string username = tbUsername.Text;
-            string password = tbPassword.Text;
-            string konfirmasiPassword = tbKonfirmasiPw.Text;
-            string jalan = tbJalan.Text;
-            string desa = tbDesa.Text;
-            string kecamatan = tbKecamatan.Text;
-            string kabupaten = tbKabupaten.Text;
+            try
+            {
 
-            MessageBox.Show($"berhasil register silahkan lakukan login", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                string nama = tbNama.Text;
+                BigInteger nomorTelepon = Convert.ToUInt64(tbNomorTelepon.Text);
+                string email = tbEmail.Text;
+                string username = tbUsername.Text;
+                string password = tbPassword.Text;
+                string konfirmasiPassword = tbKonfirmasiPw.Text;
+
+                if (string.IsNullOrEmpty(nama) || string.IsNullOrEmpty(tbNomorTelepon.Text) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(konfirmasiPassword))
+                {
+                    MessageBox.Show("Semua field harus diisi", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    if (password != konfirmasiPassword)
+                    {
+                        MessageBox.Show("Password dan Konfirmasi Password tidak cocok", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        penyuplai.RegisterPenyuplai(nama, nomorTelepon, email, username, password);
+                        MessageBox.Show("Registrasi Berhasil Dilakukan, silahkan login menggunakan username dan password yang telah dibuat", "register berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mainForm.ShowPage(mainForm.loginPage);
+                        clearTextBox();
+                    }
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi kesalahan saat registrasi: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void clearTextBox()
+        {
+            tbNama.Clear();
+            tbNomorTelepon.Clear();
+            tbEmail.Clear();
+            tbUsername.Clear();
+            tbPassword.Clear();
+            tbKonfirmasiPw.Clear();
         }
 
         private void btnToLogin_Click(object sender, EventArgs e)

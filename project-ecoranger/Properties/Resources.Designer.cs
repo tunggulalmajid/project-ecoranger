@@ -423,6 +423,16 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RegisterForm {
+            get {
+                object obj = ResourceManager.GetObject("RegisterForm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SubKategoriLogo {
             get {
                 object obj = ResourceManager.GetObject("SubKategoriLogo", resourceCulture);
@@ -516,6 +526,16 @@ namespace project_ecoranger.Properties {
         internal static System.Drawing.Bitmap tittlePenyuplai {
             get {
                 object obj = ResourceManager.GetObject("tittlePenyuplai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tittleRegister {
+            get {
+                object obj = ResourceManager.GetObject("tittleRegister", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

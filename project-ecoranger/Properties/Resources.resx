@@ -172,6 +172,9 @@
   <data name="btnKonfirmasiPenarikan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnKonfirmasiPenarikan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="RegisterForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RegisterForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="btnTambah" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnTambah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -198,6 +201,9 @@
   </data>
   <data name="EcoAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EcoAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTarikSaldo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnTarikSaldo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tittleTransaksi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tittleTransaksi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -262,7 +268,7 @@
   <data name="btnDashboardTransaksi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnDashboardTransaksi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnTarikSaldo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnTarikSaldo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tittleRegister" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tittleRegister.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

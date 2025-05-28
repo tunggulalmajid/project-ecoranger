@@ -65,30 +65,30 @@
             // 
             cbRole.DropDownStyle = ComboBoxStyle.DropDownList;
             cbRole.FlatStyle = FlatStyle.Popup;
-            cbRole.Font = new Font("Segoe UI", 14F);
+            cbRole.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cbRole.FormattingEnabled = true;
-            cbRole.Location = new Point(93, 404);
+            cbRole.Location = new Point(93, 399);
             cbRole.Name = "cbRole";
-            cbRole.Size = new Size(409, 33);
+            cbRole.Size = new Size(409, 38);
             cbRole.TabIndex = 2;
             cbRole.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // tbPassword
             // 
             tbPassword.BorderStyle = BorderStyle.None;
-            tbPassword.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbPassword.Location = new Point(93, 295);
+            tbPassword.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbPassword.Location = new Point(93, 292);
             tbPassword.Name = "tbPassword";
-            tbPassword.Size = new Size(409, 26);
+            tbPassword.Size = new Size(409, 28);
             tbPassword.TabIndex = 1;
             // 
             // tbUsername
             // 
             tbUsername.BorderStyle = BorderStyle.None;
-            tbUsername.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbUsername.Location = new Point(93, 187);
+            tbUsername.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbUsername.Location = new Point(90, 187);
             tbUsername.Name = "tbUsername";
-            tbUsername.Size = new Size(409, 26);
+            tbUsername.Size = new Size(409, 28);
             tbUsername.TabIndex = 0;
             // 
             // btnLogin

@@ -40,6 +40,7 @@
             panel3 = new Panel();
             panel4 = new Panel();
             panel5 = new Panel();
+            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -175,11 +176,22 @@
             panel5.Size = new Size(654, 224);
             panel5.TabIndex = 3;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Roboto Condensed Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(629, 489);
+            label1.Name = "label1";
+            label1.Size = new Size(71, 29);
+            label1.TabIndex = 4;
+            label1.Text = "label1";
+            // 
             // UcDashboardPenyuplai
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
+            Controls.Add(label1);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
@@ -188,6 +200,7 @@
             Size = new Size(1920, 1060);
             panel1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -204,5 +217,6 @@
         private Panel panel3;
         private Panel panel4;
         private Panel panel5;
+        private Label label1;
     }
 }

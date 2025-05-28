@@ -28,6 +28,8 @@ namespace project_ecoranger
         public UcHistoryPenukaranPoin viewHistoryPenukaranPoin;
         public UcHistoryTransaksiPenyuplai viewHistoryTransaksiPenyuplai;
 
+        int id;
+
         System.Windows.Forms.Timer timer;
         public MainForm()
         {
@@ -78,9 +80,9 @@ namespace project_ecoranger
             this.Controls.Add(viewHistoryPenukaranPoin);
             this.Controls.Add(viewHistoryTransaksiPenyuplai);
             HideAllPage();
-                //this.Controls.Add(dashboardPengepul);
+            //this.Controls.Add(dashboardPengepul);
 
-                //this.Controls.Add(dashboardPenyuplai);
+            //this.Controls.Add(dashboardPenyuplai);
             this.Controls.Add(loadingScreen);
 
             timer = new System.Windows.Forms.Timer();
@@ -106,7 +108,20 @@ namespace project_ecoranger
         {
             HideAllPage();
             uc.Visible = true;
-
+        }
+        public int Id
+        {
+            get { return id; }
+            set {
+                if (value > 0 )
+                {
+                    id = value;
+                }
+                else
+                {
+                    throw new ArgumentException("ID harus lebih besar dari 0");
+                }
+            }
         }
     }
 }
