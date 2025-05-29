@@ -13,14 +13,14 @@ namespace project_ecoranger.Views
     public partial class UcDashboardPenyuplai : UserControl
     {
         MainForm mainform;
-        int idPenyuplai;
+        int idPenyuplai = 17;
         public UcDashboardPenyuplai(MainForm mainform)
         {
             InitializeComponent();
             
             this.mainform = mainform;
-            
-            
+            label1.Text = $"Dashboard Penyediaan Barang {idPenyuplai}";
+
         }
         public void setSesion(int id)
         {

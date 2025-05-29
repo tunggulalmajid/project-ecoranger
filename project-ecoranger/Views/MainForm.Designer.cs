@@ -35,9 +35,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1904, 1021);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             IsMdiContainer = true;
             Name = "MainForm";
             Text = "Ecoranger";
+            Load += MainForm_Load;
             ResumeLayout(false);
         }
 

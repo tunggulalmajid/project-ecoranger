@@ -59,7 +59,12 @@ namespace project_ecoranger.Views
 
                 if (string.IsNullOrEmpty(nama) || string.IsNullOrEmpty(tbNomorTelepon.Text) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(konfirmasiPassword))
                 {
-                    MessageBox.Show("Semua field harus diisi", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Harap isi selurh form", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (!email.Contains("@") || !email.Contains("."))
+                {
+                    MessageBox.Show("Email tidak valid!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 }
                 else
                 {
@@ -70,6 +75,7 @@ namespace project_ecoranger.Views
                     else
                     {
                         penyuplai.RegisterPenyuplai(nama, nomorTelepon, email, username, password);
+                        penyuplai.CreateAlamat(username, password);
                         MessageBox.Show("Registrasi Berhasil Dilakukan, silahkan login menggunakan username dan password yang telah dibuat", "register berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         mainForm.ShowPage(mainForm.loginPage);
                         clearTextBox();

@@ -28,8 +28,6 @@ namespace project_ecoranger
         public UcHistoryPenukaranPoin viewHistoryPenukaranPoin;
         public UcHistoryTransaksiPenyuplai viewHistoryTransaksiPenyuplai;
 
-        int id;
-
         System.Windows.Forms.Timer timer;
         public MainForm()
         {
@@ -57,20 +55,21 @@ namespace project_ecoranger
             viewHistoryPenukaranPoin = new UcHistoryPenukaranPoin(this);
             viewHistoryTransaksiPenyuplai = new UcHistoryTransaksiPenyuplai(this);
 
+            this.Controls.Add(registerpage);
+            this.Controls.Add(startPage);
+            this.Controls.Add(loginPage);
 
             this.Controls.Add(dashboardPengepul);
             this.Controls.Add(kelolaPenyuplai);
             this.Controls.Add(kelolaSubKategori);
             this.Controls.Add(kelolaLaporan);
             this.Controls.Add(kelolaHistory);
-            this.Controls.Add(registerpage);
-            this.Controls.Add(startPage);
-            this.Controls.Add(loginPage);
             this.Controls.Add(kelolaHistoryTransaksi);
             this.Controls.Add(kelolaHistoryPenarikan);
             this.Controls.Add(kelolaHistoryPenukaran);
             this.Controls.Add(kelolaKonfirmasiTransaksi);
             this.Controls.Add(kelolaKonfirmasiPenarikan);
+
             this.Controls.Add(dashboardPenyuplai);
             this.Controls.Add(viewDataDiriPenyuplai);
             this.Controls.Add(viewKeuanganPenyuplai);
@@ -109,19 +108,10 @@ namespace project_ecoranger
             HideAllPage();
             uc.Visible = true;
         }
-        public int Id
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            get { return id; }
-            set {
-                if (value > 0 )
-                {
-                    id = value;
-                }
-                else
-                {
-                    throw new ArgumentException("ID harus lebih besar dari 0");
-                }
-            }
+
         }
     }
 }
