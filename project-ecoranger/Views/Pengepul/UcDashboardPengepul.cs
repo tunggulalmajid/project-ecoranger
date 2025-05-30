@@ -13,10 +13,16 @@ namespace project_ecoranger.Views
     public partial class UcDashboardPengepul : UserControl
     {
         MainForm mainform;
+        int idPengepul;
         public UcDashboardPengepul(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
+        }
+        public void SetSesion(int idPengepul)
+        {
+            this.idPengepul = idPengepul;
+      
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

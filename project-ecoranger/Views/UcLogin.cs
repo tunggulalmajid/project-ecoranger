@@ -17,7 +17,8 @@ namespace project_ecoranger.Views
     {
         MainForm mainForm;
         PenyuplaiContext penyuplai;
-        private int idPenyuplai;
+        PengepulContext pengepul;
+        private int id;
         public UcLogin(MainForm mainForm)
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace project_ecoranger.Views
             cbRole.Items.Add("Penyuplai");
             this.mainForm = mainForm;
             penyuplai = new PenyuplaiContext();
+            pengepul = new PengepulContext();
             clearTextBox();
         }
         private void btnLogin_Paint(object sender, PaintEventArgs e)
@@ -53,10 +55,10 @@ namespace project_ecoranger.Views
                 {
                     if (role == "Penyuplai")
                     {
-                        
-                        if (penyuplai.LoginPenyuplai(username, password, out idPenyuplai))
+
+                        if (penyuplai.LoginPenyuplai(username, password, out id))
                         {
-                            mainForm.dashboardPenyuplai.setSesion(idPenyuplai);
+                            mainForm.dashboardPenyuplai.setSesion(id);
                             mainForm.ShowPage(mainForm.dashboardPenyuplai);
                             clearTextBox();
                         }
@@ -67,10 +69,16 @@ namespace project_ecoranger.Views
                     }
                     else if (role == "Pengepul")
                     {
-
-                        MessageBox.Show("Login Pengepul belum diimplementasikan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        mainForm.ShowPage(mainForm.dashboardPenyuplai);
-                        clearTextBox();
+                        if (pengepul.LoginPengepul(username, password, out id))
+                        {
+                            mainForm.dashboardPengepul.SetSesion(id);
+                            mainForm.ShowPage(mainForm.dashboardPengepul);
+                            clearTextBox();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Username atau Password Salah", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
