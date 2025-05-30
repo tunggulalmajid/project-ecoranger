@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace project_ecoranger.Views
     public partial class UcDataDiriPenyuplai : UserControl
     {
         MainForm mainform;
-        int idPenyuplai = 18;
+        int idPenyuplai;
         List<Penyuplai> DataDiriPenyuplai;
         PenyuplaiContext penyuplai;
         public UcDataDiriPenyuplai(MainForm mainform)
@@ -22,13 +23,18 @@ namespace project_ecoranger.Views
             penyuplai = new PenyuplaiContext();
             InitializeComponent();
             this.mainform = mainform;
-            LoadValue();
         }
-        public void LoadValue()
+        public void setSesion(int id)
+        {
+
+            this.idPenyuplai = id;
+            LoadValue(id);
+        }
+        public void LoadValue(int id)
         {
             try
             {
-                DataDiriPenyuplai = penyuplai.GetDataDiriPenyuplai(idPenyuplai);
+                DataDiriPenyuplai = penyuplai.GetDataDiriPenyuplai(id);
                 nama.Text = $" NAMA : {DataDiriPenyuplai[0].nama}";
                 nomorHp.Text = $" NOMOR TELEPON : {DataDiriPenyuplai[0].noTelp}";
                 email.Text = $" EMAIL : {DataDiriPenyuplai[0].email}";
@@ -80,7 +86,7 @@ namespace project_ecoranger.Views
             FormUpdateDataDiri formUpdateDataDiri = new FormUpdateDataDiri(idPenyuplai);
             if(formUpdateDataDiri.ShowDialog() == DialogResult.OK)
             {
-                LoadValue();
+                LoadValue(idPenyuplai);
             }
         }
 
@@ -89,7 +95,7 @@ namespace project_ecoranger.Views
             FormUpdateAlamat formUpdateAlamat = new FormUpdateAlamat(idPenyuplai);
             if (formUpdateAlamat.ShowDialog() == DialogResult.OK)
             {
-                LoadValue();
+                LoadValue(idPenyuplai);
             }
         }
     }

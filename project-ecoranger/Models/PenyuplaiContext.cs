@@ -14,7 +14,7 @@ namespace project_ecoranger.Models
         public readonly string connStr;
         public PenyuplaiContext()
         {
-            connStr = "Host=localhost;Username=postgres;Password=Gunungsari;Database=ecorangerv2";
+            connStr = Connection.Connection.GetConnectionString();
         }
         public bool LoginPenyuplai(string username, string password, out int idPenyuplai)
         {
@@ -39,10 +39,11 @@ namespace project_ecoranger.Models
                             }
                         }
                     }
+                    
                 }
                 catch (Exception ex)
                 {
-                    
+                    throw new Exception();
                 }
             }
 

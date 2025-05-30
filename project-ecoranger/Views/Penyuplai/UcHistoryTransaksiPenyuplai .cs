@@ -7,16 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using project_ecoranger.Models;
 
 namespace project_ecoranger.Views
 {
     public partial class UcHistoryTransaksiPenyuplai : UserControl
     {
         MainForm mainform;
+        int idPenyuplai;
         public UcHistoryTransaksiPenyuplai(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
+        }
+        public void setSesion(int id)
+        {
+
+            idPenyuplai = id;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

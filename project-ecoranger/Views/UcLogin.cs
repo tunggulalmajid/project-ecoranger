@@ -27,12 +27,6 @@ namespace project_ecoranger.Views
             penyuplai = new PenyuplaiContext();
             clearTextBox();
         }
-        public int IdPenyuplai
-        {
-            get { return idPenyuplai; }
-            set { idPenyuplai = value; }
-        }
-
         private void btnLogin_Paint(object sender, PaintEventArgs e)
         {
 
