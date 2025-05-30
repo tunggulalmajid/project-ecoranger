@@ -17,9 +17,8 @@ namespace project_ecoranger.Views
         public UcDashboardPenyuplai(MainForm mainform)
         {
             InitializeComponent();
-            
             this.mainform = mainform;
-
+            setSesion(1);
         }
         public void setSesion(int id)
         {

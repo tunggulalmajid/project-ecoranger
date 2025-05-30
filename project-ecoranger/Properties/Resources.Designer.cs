@@ -133,6 +133,16 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BtnJualTransaksi {
+            get {
+                object obj = ResourceManager.GetObject("BtnJualTransaksi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnKembali {
             get {
                 object obj = ResourceManager.GetObject("btnKembali", resourceCulture);
@@ -293,6 +303,16 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EcoJualSampah {
+            get {
+                object obj = ResourceManager.GetObject("EcoJualSampah", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap EcoPengepul {
             get {
                 object obj = ResourceManager.GetObject("EcoPengepul", resourceCulture);
@@ -376,6 +396,16 @@ namespace project_ecoranger.Properties {
         internal static System.Drawing.Bitmap formRegisterPage {
             get {
                 object obj = ResourceManager.GetObject("formRegisterPage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formUniversal {
+            get {
+                object obj = ResourceManager.GetObject("formUniversal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -26,8 +26,6 @@ namespace project_ecoranger.Views
             listSampah = sampahContext.GetListSampah();
             //cobaSampah(listSampah);
             getCard(listSampah);
-
-
         }
         public void getCard(List<Sampah> sampah)
         {
@@ -72,7 +70,7 @@ namespace project_ecoranger.Views
                 btnJual2.TabIndex = 3;
                 btnJual2.Click += (s, e) =>
                 {
-                    nowId(id, namaSampah);
+                    JualSampah(id, namaSampah, namaKategori, harga, idPenyuplai);
                 };
 
                 judul.AutoSize = true;
@@ -127,14 +125,14 @@ namespace project_ecoranger.Views
             }
 
         }
-        private void nowId(int i, string namaSampah)
+        private void JualSampah(int idSampah, string namaSampah ,string namaKategori, decimal hargaSampah, int idPenyuplai)
         {
-            MessageBox.Show($" id sekarang : {i}\n nama Sampah : {namaSampah}");
+            FormJualSampah formJualSampah = new FormJualSampah(idSampah, namaSampah, namaKategori, hargaSampah, idPenyuplai);
+            formJualSampah.ShowDialog();
         }
         public void setSesion(int id)
         {
-
-            idPenyuplai = id;
+            this.idPenyuplai = id;
 
         }
 

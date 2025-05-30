@@ -26,7 +26,6 @@ namespace project_ecoranger.Views
         }
         public void setSesion(int id)
         {
-
             this.idPenyuplai = id;
             LoadValue(id);
         }

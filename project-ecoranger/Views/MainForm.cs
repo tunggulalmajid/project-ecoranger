@@ -41,7 +41,7 @@ namespace project_ecoranger
             kelolaSubKategori = new UcKelolaSubKategori(this);
             kelolaLaporan = new UcKelolaLaporan(this);
             kelolaHistory = new UcKelolaHistory(this);
-            dashboardPenyuplai = new UcDashboardPenyuplai(this);
+            
             kelolaHistoryTransaksi = new UcKelolaHistoryTransaksi(this);
             kelolaHistoryPenarikan = new UcKelolaHistoryPenarikan(this);
             kelolaHistoryPenukaran = new UcKelolaHistoryPenukaran(this);
@@ -54,6 +54,7 @@ namespace project_ecoranger
             viewHistoryPenarikanPenyuplai = new UcHistoryPenarikanPenyuplai(this);
             viewHistoryPenukaranPoin = new UcHistoryPenukaranPoin(this);
             viewHistoryTransaksiPenyuplai = new UcHistoryTransaksiPenyuplai(this);
+            dashboardPenyuplai = new UcDashboardPenyuplai(this);
 
             this.Controls.Add(registerpage);
             this.Controls.Add(startPage);
@@ -80,14 +81,14 @@ namespace project_ecoranger
             this.Controls.Add(viewHistoryTransaksiPenyuplai);
             HideAllPage();
             //this.Controls.Add(dashboardPengepul);
-
+            dashboardPenyuplai.Visible = true;
             //this.Controls.Add(dashboardPenyuplai);
-            this.Controls.Add(loadingScreen);
+            //this.Controls.Add(loadingScreen);
 
-            timer = new System.Windows.Forms.Timer();
-            timer.Interval = 2500;
-            timer.Tick += timer_tick;
-            timer.Start();
+            //timer = new System.Windows.Forms.Timer();
+            //timer.Interval = 2500;
+            //timer.Tick += timer_tick;
+            //timer.Start();
 
         }
         public void HideAllPage()

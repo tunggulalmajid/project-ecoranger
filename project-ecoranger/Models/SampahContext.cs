@@ -55,6 +55,35 @@ namespace project_ecoranger.Models
                 }
             }
         }
+        public void JualSampah(int idSampah, decimal beratSampah, decimal hargaSampah, int idPenyuplai)
+        {
+            int idStatusTransaksi = 1;
+            using (NpgsqlConnection  conn = new NpgsqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = """
+                    INSERT INTO transaksi (tanggal_transaksi,sub_kategori_sampah_id_sub_kategori_sampah, berat_sampah, harga, penyuplai_id_penyuplai, status_transaksi_id_status_transaksi)
+                    VALUES (@tanggal_transaksi,@idSampah, @beratSampah, @hargaSampah, @idPenyuplai, @idStatusTransaksi)
+                    """;
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("tanggal_transaksi", DateTime.Now);
+                        cmd.Parameters.AddWithValue("idSampah", idSampah);
+                        cmd.Parameters.AddWithValue("beratSampah", beratSampah);
+                        cmd.Parameters.AddWithValue("hargaSampah", hargaSampah);
+                        cmd.Parameters.AddWithValue("idPenyuplai", idPenyuplai);
+                        cmd.Parameters.AddWithValue("idStatusTransaksi", idStatusTransaksi);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error inserting sampah transaction: " + ex.Message);
+                }
+            }
+        }
     } 
 }
 
