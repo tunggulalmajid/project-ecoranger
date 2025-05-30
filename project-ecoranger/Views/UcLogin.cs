@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
+using project_ecoranger.Models;
 
 
 namespace project_ecoranger.Views
@@ -14,15 +16,17 @@ namespace project_ecoranger.Views
     public partial class UcLogin : UserControl
     {
         MainForm mainForm;
+        PenyuplaiContext penyuplai;
+        private int idPenyuplai;
         public UcLogin(MainForm mainForm)
         {
             InitializeComponent();
-            cbRole.Items.Add("Admin");
             cbRole.Items.Add("Pengepul");
             cbRole.Items.Add("Penyuplai");
             this.mainForm = mainForm;
+            penyuplai = new PenyuplaiContext();
+            clearTextBox();
         }
-
         private void btnLogin_Paint(object sender, PaintEventArgs e)
         {
 
@@ -35,11 +39,51 @@ namespace project_ecoranger.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //string username = tbUsername.Text;
-            //string password = tbPassword.Text;
-            //string role = cbRole.SelectedItem.ToString();
+            try
+            {
+                string username = tbUsername.Text;
+                string password = tbPassword.Text;
+                string role = cbRole.SelectedItem?.ToString();
 
-            mainForm.ShowPage(mainForm.dashboardPenyuplai);
+                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(role))
+                {
+                    MessageBox.Show("Username dan Password Tidak Boleh Kosong", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    if (role == "Penyuplai")
+                    {
+                        
+                        if (penyuplai.LoginPenyuplai(username, password, out idPenyuplai))
+                        {
+                            mainForm.dashboardPenyuplai.setSesion(idPenyuplai);
+                            mainForm.ShowPage(mainForm.dashboardPenyuplai);
+                            clearTextBox();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Username atau Password Salah", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else if (role == "Pengepul")
+                    {
+
+                        MessageBox.Show("Login Pengepul belum diimplementasikan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mainForm.ShowPage(mainForm.dashboardPenyuplai);
+                        clearTextBox();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void clearTextBox()
+        {
+            tbUsername.Clear();
+            tbPassword.Clear();
+            cbRole.SelectedIndex = -1;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,6 +93,7 @@ namespace project_ecoranger.Views
 
         private void btnToRegister_Click(object sender, EventArgs e)
         {
+
             mainForm.ShowPage(mainForm.registerpage);
         }
     }

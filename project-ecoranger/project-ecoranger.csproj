@@ -10,11 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FontAwesome" Version="4.7.0" />
+    <PackageReference Include="Npgsql" Version="9.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +19,12 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Penyuplai\FormUpdateAlamat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Penyuplai\FormUpdateDataDiri.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Penyuplai\FormJualSampah.cs">
       <SubType>Form</SubType>

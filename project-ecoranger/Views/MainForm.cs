@@ -41,7 +41,7 @@ namespace project_ecoranger
             kelolaSubKategori = new UcKelolaSubKategori(this);
             kelolaLaporan = new UcKelolaLaporan(this);
             kelolaHistory = new UcKelolaHistory(this);
-            dashboardPenyuplai = new UcDashboardPenyuplai(this);
+            
             kelolaHistoryTransaksi = new UcKelolaHistoryTransaksi(this);
             kelolaHistoryPenarikan = new UcKelolaHistoryPenarikan(this);
             kelolaHistoryPenukaran = new UcKelolaHistoryPenukaran(this);
@@ -54,21 +54,23 @@ namespace project_ecoranger
             viewHistoryPenarikanPenyuplai = new UcHistoryPenarikanPenyuplai(this);
             viewHistoryPenukaranPoin = new UcHistoryPenukaranPoin(this);
             viewHistoryTransaksiPenyuplai = new UcHistoryTransaksiPenyuplai(this);
+            dashboardPenyuplai = new UcDashboardPenyuplai(this);
 
+            this.Controls.Add(registerpage);
+            this.Controls.Add(startPage);
+            this.Controls.Add(loginPage);
 
             this.Controls.Add(dashboardPengepul);
             this.Controls.Add(kelolaPenyuplai);
             this.Controls.Add(kelolaSubKategori);
             this.Controls.Add(kelolaLaporan);
             this.Controls.Add(kelolaHistory);
-            this.Controls.Add(registerpage);
-            this.Controls.Add(startPage);
-            this.Controls.Add(loginPage);
             this.Controls.Add(kelolaHistoryTransaksi);
             this.Controls.Add(kelolaHistoryPenarikan);
             this.Controls.Add(kelolaHistoryPenukaran);
             this.Controls.Add(kelolaKonfirmasiTransaksi);
             this.Controls.Add(kelolaKonfirmasiPenarikan);
+
             this.Controls.Add(dashboardPenyuplai);
             this.Controls.Add(viewDataDiriPenyuplai);
             this.Controls.Add(viewKeuanganPenyuplai);
@@ -78,15 +80,15 @@ namespace project_ecoranger
             this.Controls.Add(viewHistoryPenukaranPoin);
             this.Controls.Add(viewHistoryTransaksiPenyuplai);
             HideAllPage();
-                //this.Controls.Add(dashboardPengepul);
+            //this.Controls.Add(dashboardPengepul);
+            dashboardPenyuplai.Visible = true;
+            //this.Controls.Add(dashboardPenyuplai);
+            //this.Controls.Add(loadingScreen);
 
-                //this.Controls.Add(dashboardPenyuplai);
-            this.Controls.Add(loadingScreen);
-
-            timer = new System.Windows.Forms.Timer();
-            timer.Interval = 2500;
-            timer.Tick += timer_tick;
-            timer.Start();
+            //timer = new System.Windows.Forms.Timer();
+            //timer.Interval = 2500;
+            //timer.Tick += timer_tick;
+            //timer.Start();
 
         }
         public void HideAllPage()
@@ -106,6 +108,10 @@ namespace project_ecoranger
         {
             HideAllPage();
             uc.Visible = true;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

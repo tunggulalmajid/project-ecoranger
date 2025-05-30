@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using project_ecoranger.Models;
 
 namespace project_ecoranger.Views
 {
     public partial class UcKeuanganPenyuplai : UserControl
     {
         MainForm mainform;
+        int idPenyuplai;
         public UcKeuanganPenyuplai(MainForm mainform)
         {
             InitializeComponent();
@@ -23,7 +25,11 @@ namespace project_ecoranger.Views
         {
             mainform.ShowPage(mainform.dashboardPenyuplai);
         }
+        public void setSesion(int id)
+        {
 
+            idPenyuplai = id;
+        }
         private void btnDataDiri_Click(object sender, EventArgs e)
         {
             mainform.ShowPage(mainform.viewDataDiriPenyuplai);
