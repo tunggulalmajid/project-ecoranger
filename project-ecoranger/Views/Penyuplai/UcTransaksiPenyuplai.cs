@@ -24,7 +24,6 @@ namespace project_ecoranger.Views
             this.mainform = mainform;
             sampahContext = new SampahContext();
             listSampah = sampahContext.GetListSampah();
-            //cobaSampah(listSampah);
             getCard(listSampah);
         }
         public void getCard(List<Sampah> sampah)

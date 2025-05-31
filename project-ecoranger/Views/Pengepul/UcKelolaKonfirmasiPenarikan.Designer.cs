@@ -147,25 +147,25 @@
             // panel3
             // 
             panel3.BackColor = Color.Transparent;
-            panel3.BackgroundImage = Properties.Resources.tittleHistoryTransaksi;
+            panel3.BackgroundImage = Properties.Resources.tittleKonfirmasiPenarikan;
             panel3.BackgroundImageLayout = ImageLayout.Zoom;
             panel3.Location = new Point(917, 171);
             panel3.Name = "panel3";
             panel3.Size = new Size(437, 158);
             panel3.TabIndex = 1;
             // 
-            // btnTransaksi
+            // btnBack
             // 
             btnBack.BackColor = Color.Transparent;
             btnBack.BackgroundImage = Properties.Resources.btnKembali;
             btnBack.BackgroundImageLayout = ImageLayout.Zoom;
             btnBack.Location = new Point(389, 61);
-            btnBack.Name = "btnTransaksi";
+            btnBack.Name = "btnBack";
             btnBack.Size = new Size(256, 76);
             btnBack.TabIndex = 2;
             btnBack.Click += btnBack_Click;
             // 
-            // UcKelolaHistoryTransaksi
+            // UcKelolaKonfirmasiPenarikan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -173,7 +173,7 @@
             Controls.Add(btnBack);
             Controls.Add(panel3);
             Controls.Add(panel1);
-            Name = "UcKelolaHistoryTransaksi";
+            Name = "UcKelolaKonfirmasiPenarikan";
             Size = new Size(1920, 1060);
             Load += UcKelolaHistory_Load;
             panel1.ResumeLayout(false);

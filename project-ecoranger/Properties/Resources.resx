@@ -145,9 +145,6 @@
   <data name="fillCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fillCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnTerima" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnTerima.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="dashboardLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboardLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,6 +168,9 @@
   </data>
   <data name="NotesRegisterPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NotesRegisterPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tittleUpdateDataDiri" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tittleUpdateDataDiri.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnSimpan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnSimpan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +196,8 @@
   <data name="tittleDashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tittleDashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnLoginStartPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnLoginStartPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tittleKonfirmasiTransaksi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tittleKonfirmasiTransaksi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnKonfirmasiPenarikan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnKonfirmasiPenarikan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,8 +220,8 @@
   <data name="RegisterForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RegisterForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnBatal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnBatal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnTerima" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnTerima.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LaporanLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LaporanLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -234,6 +234,9 @@
   </data>
   <data name="tittleHistoryPenukaran" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tittleHistoryPenukaran.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JumlahPenyuplaiDashboardPengepul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JumlahPenyuplaiDashboardPengepul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="JumlahAsetDashBoard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\JumlahAsetDashBoard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -262,6 +265,9 @@
   <data name="SubKategoriLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SubKategoriLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnHapus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnHapus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tittleTransaksi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tittleTransaksi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -283,6 +289,9 @@
   <data name="tittleKeuangan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tittleKeuangan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="tittleKonfirmasiPenarikan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tittleKonfirmasiPenarikan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="btnLoginStartPage1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnLoginStartPage1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -292,17 +301,17 @@
   <data name="HistoryLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HistoryLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tittleUpdateDataDiri1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tittleUpdateDataDiri1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="NotesRegistStartPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NotesRegistStartPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tittleDataDiri" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tittleDataDiri.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="JumlahPenyuplaiDashboardPengepul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\JumlahPenyuplaiDashboardPengepul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnLoginStartPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnLoginStartPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tittleUpdateDataDiri1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tittleUpdateDataDiri1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnCardJual" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnCardJual.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -313,8 +322,11 @@
   <data name="tittleRegister" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tittleRegister.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tittleUpdateDataDiri" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tittleUpdateDataDiri.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BtnTolak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnTolak.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnBatal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnBatal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PnlBeratKeseluruhan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PnlBeratKeseluruhan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -325,7 +337,7 @@
   <data name="btnKonfirmasiTransaksi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnKonfirmasiTransaksi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnTolak" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnTolak.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnEdit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

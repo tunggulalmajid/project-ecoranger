@@ -16,18 +16,27 @@ namespace project_ecoranger.Views
         MainForm mainform;
         int idPengepul;
         TransaksiContext transaksiContext;
+        PenyuplaiContext penyuplaiContext;
         List<Transaksi> listTransaksi;
+        int jumlahPenyuplai;
         public UcDashboardPengepul(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
-            SetSesion(1);
+
+            penyuplaiContext = new PenyuplaiContext();
+            jumlahPenyuplai = penyuplaiContext.GetJumlahPenyuplai();
+            lblJumlahPenyuplai.Text = $"{jumlahPenyuplai}";
+            
+            SetSesion();
         }
-        public void SetSesion(int idPengepul)
+        public void SetSesion()
         {
-            this.idPengepul = idPengepul;
             transaksiContext = new TransaksiContext();
             listTransaksi = transaksiContext.getAllTransaksiForPengepulDashboard(1);
+            mainform.kelolaPenyuplai.SetSesion(); 
+            mainform.kelolaKonfirmasiTransaksi.SetSesion();
+            mainform.kelolaSubKategori.SetSesion();
 
             int jarak = 400;
             foreach (var value in listTransaksi)

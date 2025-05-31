@@ -25,7 +25,7 @@ namespace project_ecoranger.Models
 
 
                     conn.Open();
-                    string query = "SELECT * FROM penyuplai WHERE username = @username AND password = @password";
+                    string query = "SELECT * FROM penyuplai WHERE username = @username AND password = @password AND is_aktif = true";
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("username", username);
@@ -135,7 +135,7 @@ namespace project_ecoranger.Models
                 try
                 {
                     conn.Open();
-                    string query = "select p.nama, p.nomor_telepon, p.email, a.jalan || ', ' || a.desa || ', ' || a.kecamatan || ', ' || a.kabupaten as alamat , p.username, p.password from penyuplai p join alamat a on (penyuplai_id_penyuplai = @idPenyuplai) where id_penyuplai = @idPenyuplai";
+                    string query = "select p.nama, p.nomor_telepon, p.email, a.jalan || ', ' || a.desa || ', ' || a.kecamatan || ', ' || a.kabupaten as alamat , p.username, p.password from penyuplai p join alamat a on (penyuplai_id_penyuplai = id_Penyuplai) where id_penyuplai = @idPenyuplai";
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("idPenyuplai", idPenyuplai);
@@ -209,6 +209,64 @@ namespace project_ecoranger.Models
                 {
                     throw new Exception("Gagal memperbarui alamat penyuplai: " + ex.Message);
                 }
+            }
+        }
+        public int GetJumlahPenyuplai()
+        {
+            int jumlahPenyuplai;
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(id_penyuplai) FROM penyuplai where is_aktif = true";
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    {
+                        jumlahPenyuplai = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Gagal mendapatkan jumlah penyuplai: " + ex.Message);
+                }
+            }
+            return jumlahPenyuplai;
+        }
+        public List<Penyuplai> GetAllPenyuplai()
+        {
+            List<Penyuplai> listAllPenyuplai = new List<Penyuplai>();
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "select p.id_penyuplai, p.nama, p.nomor_telepon, p.email, a.jalan || ', ' || a.desa || ', ' || a.kecamatan || ', ' || a.kabupaten as alamat, p.username, p.password from penyuplai p join alamat a on (penyuplai_id_penyuplai = id_penyuplai) where is_aktif = true order by id_penyuplai ";
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    {
+                        using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Penyuplai penyuplai = new Penyuplai
+                                {
+                                    idPenyuplai = reader.GetInt32(reader.GetOrdinal("id_penyuplai")),
+                                    nama = reader.GetString(reader.GetOrdinal("nama")),
+                                    noTelp = reader.GetInt64(reader.GetOrdinal("nomor_telepon")),
+                                    alamat = reader.IsDBNull(reader.GetOrdinal("alamat")) ? null : reader.GetString(reader.GetOrdinal("alamat")),
+                                    email = reader.GetString(reader.GetOrdinal("email")),
+                                    username = reader.GetString(reader.GetOrdinal("username")),
+                                    password = reader.GetString(reader.GetOrdinal("password"))
+                                };
+                                listAllPenyuplai.Add(penyuplai);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Gagal mengambil data diri penyuplai: " + ex.Message);
+                }
+                return listAllPenyuplai;
             }
         }
     }

@@ -7,16 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using project_ecoranger.Models;
 
 namespace project_ecoranger.Views
 {
     public partial class UcKelolaPenyuplai : UserControl
     {
         MainForm mainform;
+        PenyuplaiContext penyuplaiContext;
+        List<Penyuplai> listAllPenyuplai;
         public UcKelolaPenyuplai(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
+        }
+        public void SetSesion()
+        {
+            penyuplaiContext = new PenyuplaiContext();
+            listAllPenyuplai = penyuplaiContext.GetAllPenyuplai();
+            dgvPenyuplai.DataSource = listAllPenyuplai;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

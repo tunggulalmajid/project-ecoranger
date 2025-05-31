@@ -36,12 +36,13 @@ namespace project_ecoranger
             startPage = new UcStartPage(this);
             loginPage = new UcLogin(this);
             registerpage = new UcRegister(this);
-            dashboardPengepul = new UcDashboardPengepul(this);
+            
             kelolaPenyuplai = new UcKelolaPenyuplai(this);
             kelolaSubKategori = new UcKelolaSubKategori(this);
             kelolaLaporan = new UcKelolaLaporan(this);
             kelolaHistory = new UcKelolaHistory(this);
             
+
             kelolaHistoryTransaksi = new UcKelolaHistoryTransaksi(this);
             kelolaHistoryPenarikan = new UcKelolaHistoryPenarikan(this);
             kelolaHistoryPenukaran = new UcKelolaHistoryPenukaran(this);
@@ -55,12 +56,13 @@ namespace project_ecoranger
             viewHistoryPenukaranPoin = new UcHistoryPenukaranPoin(this);
             viewHistoryTransaksiPenyuplai = new UcHistoryTransaksiPenyuplai(this);
             dashboardPenyuplai = new UcDashboardPenyuplai(this);
+            dashboardPengepul = new UcDashboardPengepul(this);
 
             this.Controls.Add(registerpage);
             this.Controls.Add(startPage);
             this.Controls.Add(loginPage);
 
-            this.Controls.Add(dashboardPengepul);
+            
             this.Controls.Add(kelolaPenyuplai);
             this.Controls.Add(kelolaSubKategori);
             this.Controls.Add(kelolaLaporan);
@@ -70,6 +72,7 @@ namespace project_ecoranger
             this.Controls.Add(kelolaHistoryPenukaran);
             this.Controls.Add(kelolaKonfirmasiTransaksi);
             this.Controls.Add(kelolaKonfirmasiPenarikan);
+            this.Controls.Add(dashboardPengepul);
 
             this.Controls.Add(dashboardPenyuplai);
             this.Controls.Add(viewDataDiriPenyuplai);

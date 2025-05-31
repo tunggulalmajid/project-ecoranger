@@ -27,6 +27,7 @@ namespace project_ecoranger.Models
                     select sk.id_sub_kategori_sampah, sk.sub_kategori_sampah, sk.harga, k.id_kategori_sampah, k.kategori_sampah
                     from sub_kategori_sampah sk
                     join kategori_sampah k on (kategori_sampah_id_kategori_sampah = k.id_kategori_sampah)
+                    where is_ditawarkan = true
                     """;
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {

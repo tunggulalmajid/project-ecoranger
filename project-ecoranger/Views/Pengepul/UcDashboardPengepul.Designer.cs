@@ -41,7 +41,11 @@
             panel4 = new Panel();
             panel5 = new Panel();
             panel6 = new Panel();
+            lblJumlahPenyuplai = new Label();
+            lblJumlahAset = new Label();
             panel1.SuspendLayout();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -161,6 +165,7 @@
             panel4.BackColor = Color.Transparent;
             panel4.BackgroundImage = Properties.Resources.JumlahPenyuplaiDashboardPengepul;
             panel4.BackgroundImageLayout = ImageLayout.Zoom;
+            panel4.Controls.Add(lblJumlahPenyuplai);
             panel4.Location = new Point(393, 210);
             panel4.Name = "panel4";
             panel4.Size = new Size(654, 225);
@@ -171,6 +176,7 @@
             panel5.BackColor = Color.Transparent;
             panel5.BackgroundImage = Properties.Resources.JumlahAsetDashBoard;
             panel5.BackgroundImageLayout = ImageLayout.Zoom;
+            panel5.Controls.Add(lblJumlahAset);
             panel5.Location = new Point(1099, 210);
             panel5.Name = "panel5";
             panel5.Size = new Size(654, 225);
@@ -185,6 +191,28 @@
             panel6.Size = new Size(1360, 100);
             panel6.TabIndex = 4;
             // 
+            // lblJumlahPenyuplai
+            // 
+            lblJumlahPenyuplai.AutoSize = true;
+            lblJumlahPenyuplai.Font = new Font("Roboto Black", 45F, FontStyle.Bold);
+            lblJumlahPenyuplai.ForeColor = SystemColors.Control;
+            lblJumlahPenyuplai.Location = new Point(290, 95);
+            lblJumlahPenyuplai.Name = "lblJumlahPenyuplai";
+            lblJumlahPenyuplai.Size = new Size(65, 72);
+            lblJumlahPenyuplai.TabIndex = 5;
+            lblJumlahPenyuplai.Text = "0";
+            // 
+            // lblJumlahAset
+            // 
+            lblJumlahAset.AutoSize = true;
+            lblJumlahAset.Font = new Font("Roboto Black", 45F, FontStyle.Bold);
+            lblJumlahAset.ForeColor = SystemColors.Control;
+            lblJumlahAset.Location = new Point(335, 95);
+            lblJumlahAset.Name = "lblJumlahAset";
+            lblJumlahAset.Size = new Size(65, 72);
+            lblJumlahAset.TabIndex = 6;
+            lblJumlahAset.Text = "0";
+            // 
             // UcDashboardPengepul
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -198,6 +226,10 @@
             Name = "UcDashboardPengepul";
             Size = new Size(1920, 1060);
             panel1.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -216,5 +248,7 @@
         private Panel panel4;
         private Panel panel5;
         private Panel panel6;
+        private Label lblJumlahPenyuplai;
+        private Label lblJumlahAset;
     }
 }

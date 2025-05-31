@@ -15,6 +15,7 @@ namespace project_ecoranger.Models
         public decimal beratSampah { get; set; }
         public decimal hargaSampah { get; set; }
         public string  StatusTransaksi { get; set; }
+        public int totalTransaksi { get; set; }
 
     }
 }

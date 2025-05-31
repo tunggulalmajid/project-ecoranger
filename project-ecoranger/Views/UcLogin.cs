@@ -69,9 +69,9 @@ namespace project_ecoranger.Views
                     }
                     else if (role == "Pengepul")
                     {
-                        if (pengepul.LoginPengepul(username, password, out id))
+                        if (pengepul.LoginPengepul(username, password))
                         {
-                            mainForm.dashboardPengepul.SetSesion(id);
+                            mainForm.dashboardPengepul.SetSesion();
                             mainForm.ShowPage(mainForm.dashboardPengepul);
                             clearTextBox();
                         }

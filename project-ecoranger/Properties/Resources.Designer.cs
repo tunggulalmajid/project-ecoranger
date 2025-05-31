@@ -113,9 +113,29 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnEdit {
+            get {
+                object obj = ResourceManager.GetObject("btnEdit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnEditDataDiri {
             get {
                 object obj = ResourceManager.GetObject("btnEditDataDiri", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnHapus {
+            get {
+                object obj = ResourceManager.GetObject("btnHapus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -666,6 +686,26 @@ namespace project_ecoranger.Properties {
         internal static System.Drawing.Bitmap tittleKeuangan {
             get {
                 object obj = ResourceManager.GetObject("tittleKeuangan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tittleKonfirmasiPenarikan {
+            get {
+                object obj = ResourceManager.GetObject("tittleKonfirmasiPenarikan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tittleKonfirmasiTransaksi {
+            get {
+                object obj = ResourceManager.GetObject("tittleKonfirmasiTransaksi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

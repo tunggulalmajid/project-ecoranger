@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel9 = new Panel();
             btnLogout = new Panel();
@@ -39,7 +40,9 @@
             panel2 = new Panel();
             panel3 = new Panel();
             btnBack = new Panel();
+            dgvHistory = new DataGridView();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvHistory).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -154,22 +157,41 @@
             panel3.Size = new Size(437, 158);
             panel3.TabIndex = 1;
             // 
-            // btnTransaksi
+            // btnBack
             // 
             btnBack.BackColor = Color.Transparent;
             btnBack.BackgroundImage = Properties.Resources.btnKembali;
             btnBack.BackgroundImageLayout = ImageLayout.Zoom;
             btnBack.Location = new Point(389, 61);
-            btnBack.Name = "btnTransaksi";
+            btnBack.Name = "btnBack";
             btnBack.Size = new Size(256, 76);
             btnBack.TabIndex = 2;
             btnBack.Click += btnBack_Click;
+            // 
+            // dgvHistory
+            // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(0, 0, 64);
+            dgvHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvHistory.BackgroundColor = SystemColors.Control;
+            dgvHistory.BorderStyle = BorderStyle.None;
+            dgvHistory.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
+            dgvHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvHistory.Location = new Point(411, 327);
+            dgvHistory.MultiSelect = false;
+            dgvHistory.Name = "dgvHistory";
+            dgvHistory.ReadOnly = true;
+            dgvHistory.Size = new Size(1443, 677);
+            dgvHistory.StandardTab = true;
+            dgvHistory.TabIndex = 3;
             // 
             // UcKelolaHistoryTransaksi
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
+            Controls.Add(dgvHistory);
             Controls.Add(btnBack);
             Controls.Add(panel3);
             Controls.Add(panel1);
@@ -177,6 +199,7 @@
             Size = new Size(1920, 1060);
             Load += UcKelolaHistory_Load;
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvHistory).EndInit();
             ResumeLayout(false);
         }
 
@@ -193,5 +216,6 @@
         private Panel panel9;
         private Panel panel3;
         private Panel btnBack;
+        private DataGridView dgvHistory;
     }
 }
