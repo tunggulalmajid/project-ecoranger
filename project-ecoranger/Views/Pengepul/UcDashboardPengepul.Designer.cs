@@ -40,6 +40,7 @@
             panel3 = new Panel();
             panel4 = new Panel();
             panel5 = new Panel();
+            panel6 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -158,28 +159,38 @@
             // panel4
             // 
             panel4.BackColor = Color.Transparent;
-            panel4.BackgroundImage = Properties.Resources.fillSaldoPenyuplai;
+            panel4.BackgroundImage = Properties.Resources.JumlahPenyuplaiDashboardPengepul;
             panel4.BackgroundImageLayout = ImageLayout.Zoom;
-            panel4.Location = new Point(393, 153);
+            panel4.Location = new Point(393, 210);
             panel4.Name = "panel4";
-            panel4.Size = new Size(654, 224);
+            panel4.Size = new Size(654, 225);
             panel4.TabIndex = 2;
             // 
             // panel5
             // 
             panel5.BackColor = Color.Transparent;
-            panel5.BackgroundImage = Properties.Resources.fillPoinPenyuplai;
+            panel5.BackgroundImage = Properties.Resources.JumlahAsetDashBoard;
             panel5.BackgroundImageLayout = ImageLayout.Zoom;
-            panel5.Location = new Point(1099, 153);
+            panel5.Location = new Point(1099, 210);
             panel5.Name = "panel5";
-            panel5.Size = new Size(654, 224);
+            panel5.Size = new Size(654, 225);
             panel5.TabIndex = 3;
+            // 
+            // panel6
+            // 
+            panel6.BackgroundImage = Properties.Resources.filltransaksiMasukDashboard;
+            panel6.BackgroundImageLayout = ImageLayout.Stretch;
+            panel6.Location = new Point(393, 448);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(1360, 100);
+            panel6.TabIndex = 4;
             // 
             // UcDashboardPengepul
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
+            Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
@@ -204,5 +215,6 @@
         private Panel panel3;
         private Panel panel4;
         private Panel panel5;
+        private Panel panel6;
     }
 }

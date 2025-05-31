@@ -35,9 +35,6 @@ namespace project_ecoranger.Views
             mainform.viewHistoryPenarikanPenyuplai.setSesion(id);
             mainform.viewHistoryPenukaranPoin.setSesion(id);
             label1.Text = $"Dashboard Penyediaan Barang{id} \n : ";
-
-
-            
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
