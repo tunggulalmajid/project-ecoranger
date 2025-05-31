@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using project_ecoranger.Models;
 
 namespace project_ecoranger.Views
 {
@@ -14,10 +15,13 @@ namespace project_ecoranger.Views
     {
         MainForm mainform;
         int idPenyuplai;
+        TransaksiContext transaksiContext;
+        List<Transaksi> listTransaksi;
         public UcDashboardPenyuplai(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
+            transaksiContext = new TransaksiContext();
             setSesion(1);
         }
         public void setSesion(int id)
@@ -30,7 +34,10 @@ namespace project_ecoranger.Views
             mainform.viewHistoryTransaksiPenyuplai.setSesion(id);
             mainform.viewHistoryPenarikanPenyuplai.setSesion(id);
             mainform.viewHistoryPenukaranPoin.setSesion(id);
-            label1.Text = $"Dashboard Penyediaan Barang{id}";
+            label1.Text = $"Dashboard Penyediaan Barang{id} \n : ";
+
+
+            
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
