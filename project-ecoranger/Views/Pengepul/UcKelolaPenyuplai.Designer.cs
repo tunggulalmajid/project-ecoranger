@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel9 = new Panel();
             btnLogout = new Panel();
@@ -38,7 +43,9 @@
             btnDashboard = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
+            dgvPenyuplai = new DataGridView();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvPenyuplai).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -153,16 +160,69 @@
             panel3.Size = new Size(299, 71);
             panel3.TabIndex = 1;
             // 
+            // dgvPenyuplai
+            // 
+            dgvPenyuplai.AllowUserToAddRows = false;
+            dgvPenyuplai.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(0, 0, 64);
+            dgvPenyuplai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvPenyuplai.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvPenyuplai.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvPenyuplai.BackgroundColor = SystemColors.Control;
+            dgvPenyuplai.BorderStyle = BorderStyle.None;
+            dgvPenyuplai.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvPenyuplai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvPenyuplai.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvPenyuplai.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvPenyuplai.Location = new Point(393, 198);
+            dgvPenyuplai.MultiSelect = false;
+            dgvPenyuplai.Name = "dgvPenyuplai";
+            dgvPenyuplai.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvPenyuplai.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dgvPenyuplai.RowHeadersWidth = 100;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvPenyuplai.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dgvPenyuplai.Size = new Size(1443, 677);
+            dgvPenyuplai.StandardTab = true;
+            dgvPenyuplai.TabIndex = 4;
+            // 
             // UcKelolaPenyuplai
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
+            Controls.Add(dgvPenyuplai);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Name = "UcKelolaPenyuplai";
             Size = new Size(1920, 1060);
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvPenyuplai).EndInit();
             ResumeLayout(false);
         }
 
@@ -178,5 +238,6 @@
         private Panel btnLogout;
         private Panel panel9;
         private Panel panel3;
+        private DataGridView dgvPenyuplai;
     }
 }

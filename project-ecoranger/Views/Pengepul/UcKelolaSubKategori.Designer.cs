@@ -38,7 +38,9 @@
             btnDashboard = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
-            btnTambah = new Panel();
+            btnTambahKategoriSampah = new Panel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            btnTambahSubKategori = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -154,23 +156,45 @@
             panel3.Size = new Size(299, 71);
             panel3.TabIndex = 1;
             // 
-            // btnTambah
+            // btnTambahKategoriSampah
             // 
-            btnTambah.BackColor = Color.Transparent;
-            btnTambah.BackgroundImage = Properties.Resources.btnTambah;
-            btnTambah.BackgroundImageLayout = ImageLayout.Zoom;
-            btnTambah.Location = new Point(1600, 77);
-            btnTambah.Name = "btnTambah";
-            btnTambah.Size = new Size(244, 49);
-            btnTambah.TabIndex = 2;
-            btnTambah.Click += btnTambah_Click;
+            btnTambahKategoriSampah.BackColor = Color.Transparent;
+            btnTambahKategoriSampah.BackgroundImage = Properties.Resources.btnTambahKategori;
+            btnTambahKategoriSampah.BackgroundImageLayout = ImageLayout.Zoom;
+            btnTambahKategoriSampah.Location = new Point(1487, 77);
+            btnTambahKategoriSampah.Name = "btnTambahKategoriSampah";
+            btnTambahKategoriSampah.Size = new Size(357, 49);
+            btnTambahKategoriSampah.TabIndex = 2;
+            btnTambahKategoriSampah.Click += btnTambah_Click;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.BackColor = Color.Transparent;
+            flowLayoutPanel1.Location = new Point(384, 177);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1460, 813);
+            flowLayoutPanel1.TabIndex = 3;
+            // 
+            // btnTambahSubKategori
+            // 
+            btnTambahSubKategori.BackColor = Color.Transparent;
+            btnTambahSubKategori.BackgroundImage = Properties.Resources.btnTambahSubKategori;
+            btnTambahSubKategori.BackgroundImageLayout = ImageLayout.Zoom;
+            btnTambahSubKategori.Location = new Point(1063, 77);
+            btnTambahSubKategori.Name = "btnTambahSubKategori";
+            btnTambahSubKategori.Size = new Size(418, 49);
+            btnTambahSubKategori.TabIndex = 3;
+            btnTambahSubKategori.Click += btnTambahSubKategori_Click;
             // 
             // UcKelolaSubKategori
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
-            Controls.Add(btnTambah);
+            Controls.Add(btnTambahSubKategori);
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(btnTambahKategoriSampah);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Name = "UcKelolaSubKategori";
@@ -191,6 +215,8 @@
         private Panel btnLogout;
         private Panel panel9;
         private Panel panel3;
-        private Panel btnTambah;
+        private Panel btnTambahKategoriSampah;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Panel btnTambahSubKategori;
     }
 }

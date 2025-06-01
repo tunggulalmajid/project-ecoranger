@@ -20,6 +20,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Views\Pengepul\FormTambahKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Pengepul\FormTambahSubKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Pengepul\FormEditSubKategori .cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Penyuplai\FormUpdateAlamat.cs">
       <SubType>Form</SubType>
     </Compile>

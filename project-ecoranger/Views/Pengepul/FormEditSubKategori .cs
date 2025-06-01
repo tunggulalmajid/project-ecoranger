@@ -11,22 +11,29 @@ using project_ecoranger.Models;
 
 namespace project_ecoranger.Views
 {
-    public partial class FormTambahSubKategori : Form
+    public partial class FormEditSubKategori : Form
     {
         SampahContext sampahContext;
         List<Sampah> listKategori;
-        public FormTambahSubKategori()
+        int idSampah;
+        public FormEditSubKategori(int id, string namaSampah, decimal harga, int idKategoriSampah, string namaKategori)
         {
             InitializeComponent();
-            
+            this.idSampah = id;
             sampahContext = new SampahContext();
             List<Sampah> listKategori = sampahContext.GetAllKategoriSampah();
+            String pilihKategoriAwal = "";
             foreach (var kategori in listKategori)
             {
-                
+                if (kategori.idKategoriSampah == idKategoriSampah)
+                {
+                    pilihKategoriAwal += kategori.namaKategoriSampah;
+                }
                 cbListKategori.Items.Add(kategori.namaKategoriSampah);
             }
-           
+            cbListKategori.SelectedItem = pilihKategoriAwal;
+            tbHarga.Text = harga.ToString();
+            tbSubKategori.Text = namaSampah;
         }
 
         private void btnSimpan_Paint(object sender, PaintEventArgs e)
@@ -55,10 +62,10 @@ namespace project_ecoranger.Views
                 return;
             }
             
-            if (MessageBox.Show("Apakah Anda yakin ingin Menambahkan sub kategori sampah ini ?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Apakah Anda yakin ingin memperbarui sub kategori sampah ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                sampahContext.TambahSubKategori(namaSampah, harga, idKategori);
-                MessageBox.Show("Sub kategori sampah baru berhasil ditambahkan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                sampahContext.UpdateSubKategori(idSampah, namaSampah, harga, idKategori);
+                MessageBox.Show("Sub kategori sampah berhasil diperbarui", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             DialogResult = DialogResult.OK;

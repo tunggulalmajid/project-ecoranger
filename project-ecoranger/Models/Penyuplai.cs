@@ -9,7 +9,7 @@ namespace project_ecoranger.Models
 {
     internal class Penyuplai
     {
-        public string idPenyuplai { get; set; }
+        public int idPenyuplai { get; set; }
         public string nama { get; set; }
         public BigInteger noTelp { get; set; }
         public string alamat { get; set; }

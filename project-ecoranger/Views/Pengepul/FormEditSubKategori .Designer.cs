@@ -1,6 +1,6 @@
 ﻿namespace project_ecoranger.Views
 {
-    partial class FormTambahSubKategori
+    partial class FormEditSubKategori
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@
             panel2 = new Panel();
             tbHarga = new TextBox();
             tbSubKategori = new TextBox();
-            btnTambah = new Panel();
+            btnSimpan = new Panel();
             btnBatal = new Panel();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -41,7 +41,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
-            panel1.BackgroundImage = Properties.Resources.EcoSubKategori1;
+            panel1.BackgroundImage = Properties.Resources.EcoEditSubKategori;
             panel1.BackgroundImageLayout = ImageLayout.None;
             panel1.Location = new Point(19, 19);
             panel1.Name = "panel1";
@@ -90,17 +90,17 @@
             tbSubKategori.Size = new Size(839, 23);
             tbSubKategori.TabIndex = 1;
             // 
-            // btnTambah
+            // btnSimpan
             // 
-            btnTambah.BackColor = Color.Transparent;
-            btnTambah.BackgroundImage = Properties.Resources.btnTambah1;
-            btnTambah.BackgroundImageLayout = ImageLayout.Zoom;
-            btnTambah.Location = new Point(660, 827);
-            btnTambah.Name = "btnTambah";
-            btnTambah.Size = new Size(269, 66);
-            btnTambah.TabIndex = 6;
-            btnTambah.Click += btnSimpan_Click;
-            btnTambah.Paint += btnSimpan_Paint;
+            btnSimpan.BackColor = Color.Transparent;
+            btnSimpan.BackgroundImage = Properties.Resources.btnSimpan;
+            btnSimpan.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSimpan.Location = new Point(660, 827);
+            btnSimpan.Name = "btnSimpan";
+            btnSimpan.Size = new Size(269, 66);
+            btnSimpan.TabIndex = 6;
+            btnSimpan.Click += btnSimpan_Click;
+            btnSimpan.Paint += btnSimpan_Paint;
             // 
             // btnBatal
             // 
@@ -113,18 +113,18 @@
             btnBatal.TabIndex = 5;
             btnBatal.Click += btnBatal_Click;
             // 
-            // FormTambahSubKategori
+            // FormEditSubKategori
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.dashboardFill;
             ClientSize = new Size(981, 914);
-            Controls.Add(btnTambah);
+            Controls.Add(btnSimpan);
             Controls.Add(panel2);
             Controls.Add(btnBatal);
             Controls.Add(panel1);
-            Name = "FormTambahSubKategori";
-            Text = "FormEditKategori";
+            Name = "FormEditSubKategori";
+            Text = "FormTambahSubKategori";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -137,7 +137,7 @@
         private Panel panel2;
         private TextBox tbHarga;
         private TextBox tbSubKategori;
-        private Panel btnTambah;
+        private Panel btnSimpan;
         private Panel btnBatal;
     }
 }

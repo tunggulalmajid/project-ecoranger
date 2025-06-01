@@ -1,6 +1,6 @@
 ﻿namespace project_ecoranger.Views
 {
-    partial class FormTambahSubKategori
+    partial class FormTambahKategori
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            cbListKategori = new ComboBox();
             panel2 = new Panel();
-            tbHarga = new TextBox();
-            tbSubKategori = new TextBox();
+            tbKategori = new TextBox();
             btnTambah = new Panel();
             btnBatal = new Panel();
             panel2.SuspendLayout();
@@ -41,61 +39,39 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
-            panel1.BackgroundImage = Properties.Resources.EcoSubKategori1;
+            panel1.BackgroundImage = Properties.Resources.EcoTambahKategori;
             panel1.BackgroundImageLayout = ImageLayout.None;
             panel1.Location = new Point(19, 19);
             panel1.Name = "panel1";
             panel1.Size = new Size(406, 120);
             panel1.TabIndex = 0;
             // 
-            // cbListKategori
-            // 
-            cbListKategori.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbListKategori.FlatStyle = FlatStyle.Popup;
-            cbListKategori.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cbListKategori.FormattingEnabled = true;
-            cbListKategori.Location = new Point(34, 67);
-            cbListKategori.Name = "cbListKategori";
-            cbListKategori.Size = new Size(839, 31);
-            cbListKategori.TabIndex = 0;
-            // 
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
             panel2.BackgroundImage = Properties.Resources.formSubKategori;
-            panel2.BackgroundImageLayout = ImageLayout.Stretch;
-            panel2.Controls.Add(tbHarga);
-            panel2.Controls.Add(tbSubKategori);
-            panel2.Controls.Add(cbListKategori);
+            panel2.BackgroundImageLayout = ImageLayout.None;
+            panel2.Controls.Add(tbKategori);
             panel2.Location = new Point(19, 184);
             panel2.Name = "panel2";
-            panel2.Size = new Size(909, 432);
+            panel2.Size = new Size(909, 135);
             panel2.TabIndex = 1;
             // 
-            // tbHarga
+            // tbKategori
             // 
-            tbHarga.BorderStyle = BorderStyle.None;
-            tbHarga.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tbHarga.Location = new Point(34, 385);
-            tbHarga.Name = "tbHarga";
-            tbHarga.Size = new Size(839, 23);
-            tbHarga.TabIndex = 2;
-            // 
-            // tbSubKategori
-            // 
-            tbSubKategori.BorderStyle = BorderStyle.None;
-            tbSubKategori.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tbSubKategori.Location = new Point(34, 227);
-            tbSubKategori.Name = "tbSubKategori";
-            tbSubKategori.Size = new Size(839, 23);
-            tbSubKategori.TabIndex = 1;
+            tbKategori.BorderStyle = BorderStyle.None;
+            tbKategori.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbKategori.Location = new Point(28, 69);
+            tbKategori.Name = "tbKategori";
+            tbKategori.Size = new Size(839, 23);
+            tbKategori.TabIndex = 1;
             // 
             // btnTambah
             // 
             btnTambah.BackColor = Color.Transparent;
             btnTambah.BackgroundImage = Properties.Resources.btnTambah1;
             btnTambah.BackgroundImageLayout = ImageLayout.Zoom;
-            btnTambah.Location = new Point(660, 827);
+            btnTambah.Location = new Point(659, 409);
             btnTambah.Name = "btnTambah";
             btnTambah.Size = new Size(269, 66);
             btnTambah.TabIndex = 6;
@@ -107,24 +83,24 @@
             btnBatal.BackColor = Color.Transparent;
             btnBatal.BackgroundImage = Properties.Resources.btnBatal;
             btnBatal.BackgroundImageLayout = ImageLayout.Zoom;
-            btnBatal.Location = new Point(379, 827);
+            btnBatal.Location = new Point(378, 409);
             btnBatal.Name = "btnBatal";
             btnBatal.Size = new Size(269, 66);
             btnBatal.TabIndex = 5;
             btnBatal.Click += btnBatal_Click;
             // 
-            // FormTambahSubKategori
+            // FormTambahKategori
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.dashboardFill;
-            ClientSize = new Size(981, 914);
+            ClientSize = new Size(981, 530);
             Controls.Add(btnTambah);
             Controls.Add(panel2);
             Controls.Add(btnBatal);
             Controls.Add(panel1);
-            Name = "FormTambahSubKategori";
-            Text = "FormEditKategori";
+            Name = "FormTambahKategori";
+            Text = "FormTambahSubKategori";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -133,10 +109,8 @@
         #endregion
 
         private Panel panel1;
-        private ComboBox cbListKategori;
         private Panel panel2;
-        private TextBox tbHarga;
-        private TextBox tbSubKategori;
+        private TextBox tbKategori;
         private Panel btnTambah;
         private Panel btnBatal;
     }
