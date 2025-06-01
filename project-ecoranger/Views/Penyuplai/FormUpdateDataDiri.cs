@@ -47,7 +47,11 @@ namespace project_ecoranger.Views
             }
             else 
             {
-                Int64 NomorTelepon = Convert.ToInt64(NoTelp);
+                Int64 NomorTelepon;
+                if(!Int64.TryParse(NoTelp, out NomorTelepon)){
+                    MessageBox.Show("Nomor telepon harus berupa angka!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                };
+
                 if (MessageBox.Show("Apakah Anda yakin ingin memperbarui data diri?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     penyuplai.UpdateDatadiri(idPenyuplai, nama, NomorTelepon, email);

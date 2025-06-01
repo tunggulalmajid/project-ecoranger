@@ -143,6 +143,17 @@ namespace project_ecoranger.Views
                 btnTolak.Name = "btnTolak";
                 btnTolak.Size = new Size(133, 47);
                 btnTolak.TabIndex = 7;
+                btnTolak.Click += (s, e) =>
+                {
+                    if (MessageBox.Show("Apakah Anda Yakin Menolak Transaksi ini ? ", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        transaksiContext.konfirmasiTransaksi(value.idTransaksi, 3);
+                        MessageBox.Show("Transaksi Berhasil Ditolak", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        flowLayoutPanel1.Controls.Clear();
+                        SetSesion();
+                    }
+
+                };
                 // 
                 // btnTerima
                 // 
@@ -153,6 +164,16 @@ namespace project_ecoranger.Views
                 btnTerima.Name = "btnTerima";
                 btnTerima.Size = new Size(133, 47);
                 btnTerima.TabIndex = 6;
+                btnTerima.Click += (s, e) =>
+                {
+                    if (MessageBox.Show("Apakah Anda Yakin Akan Memproses Transaksi ini ? ", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        transaksiContext.konfirmasiTransaksi(value.idTransaksi, 2);
+                        MessageBox.Show("Transaksi Sudah Diperoses", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        flowLayoutPanel1.Controls.Clear();
+                        SetSesion();
+                    }
+                };
 
                 this.Controls.Add(fillCard);
                 jarak += fillCard.Height + 30;

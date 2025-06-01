@@ -7,7 +7,7 @@ using Npgsql;
 
 namespace project_ecoranger.Models
 {
-    
+
     internal class SampahContext
     {
         private readonly string connStr;
@@ -28,6 +28,7 @@ namespace project_ecoranger.Models
                     from sub_kategori_sampah sk
                     join kategori_sampah k on (kategori_sampah_id_kategori_sampah = k.id_kategori_sampah)
                     where is_ditawarkan = true
+                    order by sk.id_sub_kategori_sampah
                     """;
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
@@ -51,7 +52,7 @@ namespace project_ecoranger.Models
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error retrieving sampah list: " + ex.Message);
+                    throw new Exception("Error Database: " + ex.Message);
 
                 }
             }
@@ -59,7 +60,7 @@ namespace project_ecoranger.Models
         public void JualSampah(int idSampah, decimal beratSampah, decimal hargaSampah, int idPenyuplai)
         {
             int idStatusTransaksi = 1;
-            using (NpgsqlConnection  conn = new NpgsqlConnection(connStr))
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
             {
                 try
                 {
@@ -85,6 +86,138 @@ namespace project_ecoranger.Models
                 }
             }
         }
-    } 
+        public void HapusSampahForPengepul(int idSampah)
+        {
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = """
+                    Update sub_kategori_sampah SET is_ditawarkan = false WHERE id_sub_kategori_sampah = @idSampah
+                    """;
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("idSampah", idSampah);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Error : {ex.Message}");
+                }
+            }
+        }
+        public List<Sampah> GetAllKategoriSampah()
+        {
+            List<Sampah> listSampah = new List<Sampah>();
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = """
+                    select * from kategori_sampah;
+                    """;
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    {
+                        using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Sampah sampah = new Sampah
+                                {
+                                    idKategoriSampah = reader.GetInt32(reader.GetOrdinal("id_kategori_sampah")),
+                                    namaKategoriSampah = reader.GetString(reader.GetOrdinal("kategori_sampah"))
+                                };
+                                listSampah.Add(sampah);
+                            }
+                        }
+                    }
+                    return listSampah;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error retrieving sampah list: " + ex.Message);
+
+                }
+            }
+        }
+        public void UpdateSubKategori(int idSampah, string namaSampah, decimal hargaSampah, int idKategoriSampah)
+        {
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = """
+                    Update sub_kategori_sampah SET sub_kategori_sampah = @namaSampah, harga = @hargaSampah, kategori_sampah_id_kategori_sampah = @idKategoriSampah WHERE id_sub_kategori_sampah = @idSampah;
+                    """;
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("namaSampah", namaSampah);
+                        cmd.Parameters.AddWithValue("hargaSampah", hargaSampah);
+                        cmd.Parameters.AddWithValue("idKategoriSampah", idKategoriSampah);
+                        cmd.Parameters.AddWithValue("idSampah", idSampah);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Error : {ex.Message}");
+                }
+            }
+        }
+        public void TambahSubKategori(string namaSampah, decimal hargaSampah, int idKategoriSampah)
+        {
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = """
+                    INSERT INTO sub_kategori_sampah (sub_kategori_sampah, harga, kategori_sampah_id_kategori_sampah)
+                    VALUES (@namaSampah, @hargaSampah, @idKategoriSampah);
+                    """;
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("namaSampah", namaSampah);
+                        cmd.Parameters.AddWithValue("hargaSampah", hargaSampah);
+                        cmd.Parameters.AddWithValue("idKategoriSampah", idKategoriSampah);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Error : {ex.Message}");
+                }
+            }
+        }
+        public void TambahKategoriSampah(string namaKategoriSampah)
+        {
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = """
+                    INSERT INTO kategori_sampah (kategori_sampah)
+                    VALUES (@namaKategoriSampah);
+                    """;
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("namaKategoriSampah", namaKategoriSampah);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Error : {ex.Message}");
+                }
+            }
+
+
+        }
+    }
 }
 

@@ -66,6 +66,16 @@ namespace project_ecoranger.Views
                 btnHapus.Name = "btnJual2";
                 btnHapus.Size = new Size(122, 45);
                 btnHapus.TabIndex = 3;
+                btnHapus.Click += (s, e) =>
+                {
+                    if (MessageBox.Show("Apakah Anda yakin ingin menghapus sampah ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        sampahContext.HapusSampahForPengepul(id);
+                        MessageBox.Show("Sampah berhasil dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        flowLayoutPanel1.Controls.Clear();
+                        SetSesion();
+                    }
+                };
 
                 btnEdit.BackColor = Color.Transparent;
                 btnEdit.BackgroundImage = Properties.Resources.btnEdit;
@@ -74,6 +84,15 @@ namespace project_ecoranger.Views
                 btnEdit.Name = "btnJual2";
                 btnEdit.Size = new Size(122, 45);
                 btnEdit.TabIndex = 3;
+                btnEdit.Click += (s, e) =>
+                {
+                    FormEditSubKategori formEditSubKategori = new FormEditSubKategori(id, namaSampah, harga, idKategoriSampah, namaKategori);
+                    if(formEditSubKategori.ShowDialog() == DialogResult.OK)
+                    {
+                        flowLayoutPanel1.Controls.Clear();
+                        SetSesion();
+                    }
+                };
 
                 judul.AutoSize = true;
                 judul.Font = new Font("Roboto Black", 20F, FontStyle.Bold);
@@ -159,9 +178,19 @@ namespace project_ecoranger.Views
         }
         private void btnTambah_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show($"Button berhasil di klik", "sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            FormTambahKategori formTambahKategori = new FormTambahKategori();
+            formTambahKategori.ShowDialog();
+
+        }
+
+        private void btnTambahSubKategori_Click(object sender, EventArgs e)
+        {
             FormTambahSubKategori formTambahSubKategori = new FormTambahSubKategori();
-            formTambahSubKategori.ShowDialog();
+            if (formTambahSubKategori.ShowDialog() == DialogResult.OK)
+            {
+                flowLayoutPanel1.Controls.Clear();
+                SetSesion();
+            }
         }
     }
 }

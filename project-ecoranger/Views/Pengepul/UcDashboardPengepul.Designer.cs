@@ -39,10 +39,11 @@
             panel2 = new Panel();
             panel3 = new Panel();
             panel4 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
             lblJumlahPenyuplai = new Label();
+            panel5 = new Panel();
             lblJumlahAset = new Label();
+            panel6 = new Panel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
@@ -171,26 +172,6 @@
             panel4.Size = new Size(654, 225);
             panel4.TabIndex = 2;
             // 
-            // panel5
-            // 
-            panel5.BackColor = Color.Transparent;
-            panel5.BackgroundImage = Properties.Resources.JumlahAsetDashBoard;
-            panel5.BackgroundImageLayout = ImageLayout.Zoom;
-            panel5.Controls.Add(lblJumlahAset);
-            panel5.Location = new Point(1099, 210);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(654, 225);
-            panel5.TabIndex = 3;
-            // 
-            // panel6
-            // 
-            panel6.BackgroundImage = Properties.Resources.filltransaksiMasukDashboard;
-            panel6.BackgroundImageLayout = ImageLayout.Stretch;
-            panel6.Location = new Point(393, 448);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(1360, 100);
-            panel6.TabIndex = 4;
-            // 
             // lblJumlahPenyuplai
             // 
             lblJumlahPenyuplai.AutoSize = true;
@@ -201,6 +182,17 @@
             lblJumlahPenyuplai.Size = new Size(65, 72);
             lblJumlahPenyuplai.TabIndex = 5;
             lblJumlahPenyuplai.Text = "0";
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.Transparent;
+            panel5.BackgroundImage = Properties.Resources.JumlahAsetDashBoard;
+            panel5.BackgroundImageLayout = ImageLayout.Zoom;
+            panel5.Controls.Add(lblJumlahAset);
+            panel5.Location = new Point(1099, 210);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(654, 225);
+            panel5.TabIndex = 3;
             // 
             // lblJumlahAset
             // 
@@ -213,11 +205,29 @@
             lblJumlahAset.TabIndex = 6;
             lblJumlahAset.Text = "0";
             // 
+            // panel6
+            // 
+            panel6.BackgroundImage = Properties.Resources.filltransaksiMasukDashboard;
+            panel6.BackgroundImageLayout = ImageLayout.Stretch;
+            panel6.Location = new Point(393, 448);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(1360, 100);
+            panel6.TabIndex = 4;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.Transparent;
+            flowLayoutPanel1.Location = new Point(407, 582);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1346, 456);
+            flowLayoutPanel1.TabIndex = 5;
+            // 
             // UcDashboardPengepul
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel4);
@@ -250,5 +260,6 @@
         private Panel panel6;
         private Label lblJumlahPenyuplai;
         private Label lblJumlahAset;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
