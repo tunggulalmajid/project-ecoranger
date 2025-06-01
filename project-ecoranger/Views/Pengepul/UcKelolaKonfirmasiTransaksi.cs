@@ -26,8 +26,8 @@ namespace project_ecoranger.Views
         {
             transaksiContext = new TransaksiContext();
             listKonfirmasiTransaksi =transaksiContext.getAllTransaksiForConfirmation();
-
             int jarak = 400;
+            flowLayoutPanel1.Controls.Clear();
             foreach (var value in listKonfirmasiTransaksi)
             {
                 int idTransaksi = value.idTransaksi;
@@ -150,7 +150,7 @@ namespace project_ecoranger.Views
                         transaksiContext.konfirmasiTransaksi(value.idTransaksi, 3);
                         MessageBox.Show("Transaksi Berhasil Ditolak", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         flowLayoutPanel1.Controls.Clear();
-                        SetSesion();
+                        mainform.dashboardPengepul.SetSesion();
                     }
 
                 };
@@ -170,8 +170,7 @@ namespace project_ecoranger.Views
                     {
                         transaksiContext.konfirmasiTransaksi(value.idTransaksi, 2);
                         MessageBox.Show("Transaksi Sudah Diperoses", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        flowLayoutPanel1.Controls.Clear();
-                        SetSesion();
+                        mainform.dashboardPengepul.SetSesion();
                     }
                 };
 

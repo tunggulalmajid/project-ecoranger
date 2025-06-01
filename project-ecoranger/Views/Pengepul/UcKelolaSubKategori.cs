@@ -26,6 +26,7 @@ namespace project_ecoranger.Views
             sampahContext = new SampahContext();
             listAllSampah = sampahContext.GetListSampah();
             int jarak = 375;
+            flowLayoutPanel1.Controls.Clear();
             foreach (var value in listAllSampah)
             {
                 int id = value.idSampah;
@@ -72,7 +73,6 @@ namespace project_ecoranger.Views
                     {
                         sampahContext.HapusSampahForPengepul(id);
                         MessageBox.Show("Sampah berhasil dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        flowLayoutPanel1.Controls.Clear();
                         SetSesion();
                     }
                 };
@@ -89,7 +89,7 @@ namespace project_ecoranger.Views
                     FormEditSubKategori formEditSubKategori = new FormEditSubKategori(id, namaSampah, harga, idKategoriSampah, namaKategori);
                     if(formEditSubKategori.ShowDialog() == DialogResult.OK)
                     {
-                        flowLayoutPanel1.Controls.Clear();
+                        
                         SetSesion();
                     }
                 };
