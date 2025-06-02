@@ -23,11 +23,12 @@ namespace project_ecoranger.Models
                 {
                     conn.Open();
                     string query = """
-                    select  sk.sub_kategori_sampah, k.kategori_sampah, sk.harga * sum(tr.berat_sampah) as aset,sum(tr.berat_sampah) as berat from transaksi tr
+                    select  sk.sub_kategori_sampah, k.kategori_sampah,  sum(tr.berat_sampah * tr.harga) as aset,sum(tr.berat_sampah) as berat from transaksi tr
                     join sub_kategori_sampah sk on (sub_kategori_sampah_id_sub_kategori_sampah = id_sub_kategori_sampah)
                     join kategori_sampah k on (kategori_sampah_id_kategori_sampah = id_kategori_sampah)
                     where tr.status_transaksi_id_status_transaksi = 2
-                    group by sk.sub_kategori_sampah, k.kategori_sampah, sk.harga
+                    group by sk.sub_kategori_sampah, k.kategori_sampah, sk.id_sub_kategori_sampah
+                    order by sk.id_sub_kategori_sampah
                     """;
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {

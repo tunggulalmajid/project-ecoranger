@@ -123,7 +123,7 @@ namespace project_ecoranger.Views
             }
 
         }
-        private void JualSampah(int idSampah, string namaSampah ,string namaKategori, decimal hargaSampah, int idPenyuplai)
+        public void JualSampah(int idSampah, string namaSampah ,string namaKategori, decimal hargaSampah, int idPenyuplai)
         {
             FormJualSampah formJualSampah = new FormJualSampah(idSampah, namaSampah, namaKategori, hargaSampah, idPenyuplai);
             formJualSampah.ShowDialog();

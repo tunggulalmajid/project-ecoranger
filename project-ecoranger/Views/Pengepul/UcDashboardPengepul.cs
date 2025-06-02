@@ -34,12 +34,12 @@ namespace project_ecoranger.Views
         }
         public void SetSesion()
         {
+            flowLayoutPanel1.Controls.Clear();
             jumlahPenyuplai = penyuplaiContext.GetJumlahPenyuplai();
             lblJumlahPenyuplai.Text = $"{jumlahPenyuplai}";
 
             totalAset = laporanContext.GetTotalAsetForPengepul();
             lblJumlahAset.Text = $"Rp.{totalAset}";
-
 
             listTransaksi = transaksiContext.getAllTransaksiForPengepulDashboard(1);
             mainform.kelolaPenyuplai.SetSesion(); 

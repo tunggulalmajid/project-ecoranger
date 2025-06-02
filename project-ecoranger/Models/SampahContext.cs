@@ -218,6 +218,52 @@ namespace project_ecoranger.Models
 
 
         }
+        public List<Sampah> GetListSampahForDashboard(int idPenyuplai)
+        {
+            List<Sampah> listSampah = new List<Sampah>();
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = """
+                    select sk.id_sub_kategori_sampah, sk.sub_kategori_sampah, sk.harga, k.id_kategori_sampah, k.kategori_sampah
+                    from sub_kategori_sampah sk
+                    join kategori_sampah k on (kategori_sampah_id_kategori_sampah = k.id_kategori_sampah)
+                    join transaksi tr on (sub_kategori_sampah_id_sub_kategori_sampah = id_sub_kategori_sampah)
+                    where is_ditawarkan = true and penyuplai_id_penyuplai = @idPenyuplai
+                    group by sk.id_sub_kategori_sampah, sk.sub_kategori_sampah, sk.harga, k.id_kategori_sampah, k.kategori_sampah
+                    order by count(tr.id_transaksi) desc
+                    limit 3
+                    """;
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("idpenyuplai", idPenyuplai);
+                        using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Sampah sampah = new Sampah
+                                {
+                                    idSampah = reader.GetInt32(reader.GetOrdinal("id_sub_kategori_sampah")),
+                                    namaSampah = reader.GetString(reader.GetOrdinal("sub_kategori_sampah")),
+                                    hargaSampah = reader.GetDecimal(reader.GetOrdinal("harga")),
+                                    idKategoriSampah = reader.GetInt32(reader.GetOrdinal("id_kategori_sampah")),
+                                    namaKategoriSampah = reader.GetString(reader.GetOrdinal("kategori_sampah"))
+                                };
+                                listSampah.Add(sampah);
+                            }
+                        }
+                    }
+                    return listSampah;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error Database: " + ex.Message);
+
+                }
+            }
+        }
     }
 }
 
