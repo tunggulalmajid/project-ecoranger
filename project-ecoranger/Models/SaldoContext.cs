@@ -42,5 +42,37 @@ namespace project_ecoranger.Models
                 return listSaldo;
             }
         }
+        public void TambahSaldo(int idPenyuplai, decimal nominal)
+        {
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
+            {
+                conn.Open();
+                string query = """
+                    UPDATE saldo set saldo = saldo + MONEY(@nominal) WHERE penyuplai_id_penyuplai = @idPenyuplai;
+                    """;
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("idPenyuplai", idPenyuplai);
+                    cmd.Parameters.AddWithValue("nominal", nominal);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        public void KurangiSaldo(int idPenyuplai, decimal nominal)
+        {
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
+            {
+                conn.Open();
+                string query = """
+                    UPDATE saldo set saldo = saldo - MONEY(@nominal) WHERE penyuplai_id_penyuplai = @idPenyuplai;
+                    """;
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("idPenyuplai", idPenyuplai);
+                    cmd.Parameters.AddWithValue("nominal", nominal);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

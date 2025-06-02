@@ -38,9 +38,12 @@ namespace project_ecoranger.Views
         {
             this.idPenyuplai = id;
 
+            poinContext.KurangiPoin(id, 100);
+            saldoContext.KurangiSaldo(id, 10000);
             SetSaldo(id);
             SetPoin(id);
             setListSampah(id);
+            
 
             mainform.viewDataDiriPenyuplai.setSesion(id);
             mainform.viewTransaksiPenyuplai.setSesion(id);
