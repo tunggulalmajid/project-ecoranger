@@ -15,15 +15,24 @@ namespace project_ecoranger.Views
     {
         MainForm mainform;
         int idPenyuplai;
+        TransaksiContext transaksiContext;
+        List<Transaksi> listHistoryTransaksi;
         public UcHistoryTransaksiPenyuplai(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
+            transaksiContext = new TransaksiContext();
         }
         public void setSesion(int id)
         {
-
             idPenyuplai = id;
+            LoadData(idPenyuplai);
+        }
+        public void LoadData(int idPenyuplai)
+        {
+            listHistoryTransaksi = transaksiContext.GetHistoryTransaksiForPenyuplai(idPenyuplai);
+            dgvHistoryTransaksi.DataSource = listHistoryTransaksi;
+
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

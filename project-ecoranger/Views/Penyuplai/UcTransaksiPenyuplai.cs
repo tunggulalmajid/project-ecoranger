@@ -28,7 +28,7 @@ namespace project_ecoranger.Views
         }
         public void getCard(List<Sampah> sampah)
         {
-            int jarak = 375;
+            flowLayoutPanel1.Controls.Clear();
             foreach (var value in sampah)
             {
                 int id = value.idSampah;
@@ -55,7 +55,6 @@ namespace project_ecoranger.Views
                 fillCard2.Controls.Add(hargaSampahLabel);
                 fillCard2.Controls.Add(kategoriLabel);
                 fillCard2.Controls.Add(judul);
-                fillCard2.Location = new Point(jarak, 200);
                 fillCard2.Name = "fillCard2";
                 fillCard2.Size = new Size(289, 344);
                 fillCard2.TabIndex = 2;
@@ -117,9 +116,9 @@ namespace project_ecoranger.Views
                 hargaSampahValue.TabIndex = 7;
                 hargaSampahValue.Text = $"Rp.{harga}";
 
-                this.Controls.Add(fillCard2);
+                flowLayoutPanel1.Controls.Add(fillCard2);
 
-                jarak += fillCard2.Height + 5;
+                
 
             }
 

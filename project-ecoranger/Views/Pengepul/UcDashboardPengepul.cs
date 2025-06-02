@@ -19,25 +19,34 @@ namespace project_ecoranger.Views
         PenyuplaiContext penyuplaiContext;
         List<Transaksi> listTransaksi;
         int jumlahPenyuplai;
+        decimal totalAset;
+        LaporanContext laporanContext;
         public UcDashboardPengepul(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
 
             penyuplaiContext = new PenyuplaiContext();
-            jumlahPenyuplai = penyuplaiContext.GetJumlahPenyuplai();
-            lblJumlahPenyuplai.Text = $"{jumlahPenyuplai}";
             
+            laporanContext = new LaporanContext();
+            transaksiContext = new TransaksiContext();
             SetSesion();
         }
         public void SetSesion()
         {
-            transaksiContext = new TransaksiContext();
+            jumlahPenyuplai = penyuplaiContext.GetJumlahPenyuplai();
+            lblJumlahPenyuplai.Text = $"{jumlahPenyuplai}";
+
+            totalAset = laporanContext.GetTotalAsetForPengepul();
+            lblJumlahAset.Text = $"Rp.{totalAset}";
+
+
             listTransaksi = transaksiContext.getAllTransaksiForPengepulDashboard(1);
             mainform.kelolaPenyuplai.SetSesion(); 
             mainform.kelolaKonfirmasiTransaksi.SetSesion();
             mainform.kelolaSubKategori.SetSesion();
             mainform.kelolaHistoryTransaksi.SetSesion();
+            mainform.kelolaLaporan.SetSesion();
 
             int jarak = 400;
             foreach (var value in listTransaksi)

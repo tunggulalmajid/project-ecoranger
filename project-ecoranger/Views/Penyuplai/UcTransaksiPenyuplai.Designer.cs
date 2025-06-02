@@ -38,6 +38,7 @@
             btnDashboard = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -153,11 +154,20 @@
             panel3.Size = new Size(299, 71);
             panel3.TabIndex = 1;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.Transparent;
+            flowLayoutPanel1.Location = new Point(393, 170);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1423, 820);
+            flowLayoutPanel1.TabIndex = 2;
+            // 
             // UcTransaksiPenyuplai
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Name = "UcTransaksiPenyuplai";
@@ -178,5 +188,6 @@
         private Panel btnLogout;
         private Panel panel9;
         private Panel panel3;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
