@@ -29,43 +29,43 @@
     <Compile Update="Views\Pengepul\FormEditSubKategori .cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Penyuplai\FormUpdateAlamat.cs">
+    <Compile Update="Views\VIewPenyuplai\FormUpdateAlamat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Penyuplai\FormUpdateDataDiri.cs">
+    <Compile Update="Views\VIewPenyuplai\FormUpdateDataDiri.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Penyuplai\FormJualSampah.cs">
+    <Compile Update="Views\VIewPenyuplai\FormJualSampah.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Penyuplai\FormTukarPoin.cs">
+    <Compile Update="Views\VIewPenyuplai\FormTukarPoin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Penyuplai\FormTarikSaldo .cs">
+    <Compile Update="Views\VIewPenyuplai\FormTarikSaldo .cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Penyuplai\UcHistoryPenukaranPoin.cs">
+    <Compile Update="Views\VIewPenyuplai\UcHistoryPenukaranPoin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\Penyuplai\UcHistoryTransaksiPenyuplai .cs">
+    <Compile Update="Views\VIewPenyuplai\UcHistoryTransaksiPenyuplai .cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\Penyuplai\UcHistoryPenarikanPenyuplai .cs">
+    <Compile Update="Views\VIewPenyuplai\UcHistoryPenarikanPenyuplai .cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\Penyuplai\UcKeuanganPenyuplai.cs">
+    <Compile Update="Views\VIewPenyuplai\UcKeuanganPenyuplai.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\Penyuplai\UcHistoryPenyuplai.cs">
+    <Compile Update="Views\VIewPenyuplai\UcHistoryPenyuplai.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\Penyuplai\UcTransaksiPenyuplai.cs">
+    <Compile Update="Views\VIewPenyuplai\UcTransaksiPenyuplai.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\Penyuplai\UcDataDiriPenyuplai.cs">
+    <Compile Update="Views\VIewPenyuplai\UcDataDiriPenyuplai.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\Penyuplai\UcDashboardPenyuplai.cs">
+    <Compile Update="Views\VIewPenyuplai\UcDashboardPenyuplai.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Views\Pengepul\UcKelolaHistoryPenukaran.cs">

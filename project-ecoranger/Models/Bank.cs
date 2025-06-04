@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_ecoranger.Views.Penyuplai
+namespace project_ecoranger.Models
 {
     internal class Bank
     {

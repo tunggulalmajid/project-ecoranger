@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
-using project_ecoranger.Views.Penyuplai;
 
 namespace project_ecoranger.Models
 {
@@ -22,11 +21,21 @@ namespace project_ecoranger.Models
             {
                 conn.Open();
                 string query = """
-
+                    select * from bank 
                     """;
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
-
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader()) 
+                    {
+                        while (reader.Read()) { 
+                            Bank bank = new Bank
+                            {
+                                idBank = reader.GetInt32(0),
+                                namaBank = reader.GetString(1)
+                            };
+                            listBank.Add(bank);
+                        }
+                    }
                 }
                 return listBank;
             }

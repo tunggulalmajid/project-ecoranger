@@ -32,9 +32,11 @@
             panel2 = new Panel();
             panel3 = new Panel();
             panel4 = new Panel();
+            cbNominal = new ComboBox();
+            cbBank = new ComboBox();
             tbRekening = new TextBox();
-            textBox2 = new TextBox();
-            comboBox1 = new ComboBox();
+            label1 = new Label();
+            saldoValue = new Label();
             panel4.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,17 +55,18 @@
             panel2.BackColor = Color.Transparent;
             panel2.BackgroundImage = Properties.Resources.btnBatal;
             panel2.BackgroundImageLayout = ImageLayout.Zoom;
-            panel2.Location = new Point(371, 768);
+            panel2.Location = new Point(376, 850);
             panel2.Name = "panel2";
             panel2.Size = new Size(269, 64);
             panel2.TabIndex = 2;
+            panel2.Click += panel2_Click;
             // 
             // panel3
             // 
             panel3.BackColor = Color.Transparent;
             panel3.BackgroundImage = Properties.Resources.btnTarik;
             panel3.BackgroundImageLayout = ImageLayout.Zoom;
-            panel3.Location = new Point(649, 768);
+            panel3.Location = new Point(654, 849);
             panel3.Name = "panel3";
             panel3.Size = new Size(269, 64);
             panel3.TabIndex = 3;
@@ -73,13 +76,33 @@
             panel4.BackColor = Color.Transparent;
             panel4.BackgroundImage = Properties.Resources.formTarikSaldo;
             panel4.BackgroundImageLayout = ImageLayout.Zoom;
-            panel4.Controls.Add(comboBox1);
-            panel4.Controls.Add(textBox2);
+            panel4.Controls.Add(cbNominal);
+            panel4.Controls.Add(cbBank);
             panel4.Controls.Add(tbRekening);
-            panel4.Location = new Point(21, 146);
+            panel4.Location = new Point(21, 321);
             panel4.Name = "panel4";
             panel4.Size = new Size(910, 423);
             panel4.TabIndex = 4;
+            // 
+            // cbNominal
+            // 
+            cbNominal.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbNominal.Font = new Font("Roboto Medium", 15.75F, FontStyle.Bold);
+            cbNominal.FormattingEnabled = true;
+            cbNominal.Location = new Point(71, 369);
+            cbNominal.Name = "cbNominal";
+            cbNominal.Size = new Size(802, 33);
+            cbNominal.TabIndex = 3;
+            // 
+            // cbBank
+            // 
+            cbBank.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbBank.Font = new Font("Roboto Medium", 15.75F, FontStyle.Bold);
+            cbBank.FormattingEnabled = true;
+            cbBank.Location = new Point(71, 64);
+            cbBank.Name = "cbBank";
+            cbBank.Size = new Size(802, 33);
+            cbBank.TabIndex = 2;
             // 
             // tbRekening
             // 
@@ -89,38 +112,47 @@
             tbRekening.Size = new Size(802, 33);
             tbRekening.TabIndex = 0;
             // 
-            // textBox2
+            // label1
             // 
-            textBox2.Font = new Font("Roboto Medium", 15.75F, FontStyle.Bold);
-            textBox2.Location = new Point(71, 368);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(802, 33);
-            textBox2.TabIndex = 1;
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Roboto Black", 18F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(21, 159);
+            label1.Name = "label1";
+            label1.Size = new Size(94, 29);
+            label1.TabIndex = 5;
+            label1.Text = "Saldo : ";
             // 
-            // comboBox1
+            // saldoValue
             // 
-            comboBox1.Font = new Font("Roboto Medium", 15.75F, FontStyle.Bold);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(71, 64);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(802, 33);
-            comboBox1.TabIndex = 2;
+            saldoValue.AutoSize = true;
+            saldoValue.BackColor = Color.Transparent;
+            saldoValue.Font = new Font("Roboto Black", 40F, FontStyle.Bold);
+            saldoValue.ForeColor = SystemColors.Control;
+            saldoValue.Location = new Point(21, 200);
+            saldoValue.Name = "saldoValue";
+            saldoValue.Size = new Size(166, 65);
+            saldoValue.TabIndex = 6;
+            saldoValue.Text = "Saldo";
             // 
             // FormTarikSaldo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.dashboardFill;
-            ClientSize = new Size(943, 844);
+            ClientSize = new Size(943, 926);
+            Controls.Add(saldoValue);
+            Controls.Add(label1);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "FormTarikSaldo";
-            Text = "FormTambahSubKategori";
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -129,8 +161,10 @@
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
-        private ComboBox comboBox1;
-        private TextBox textBox2;
+        private ComboBox cbBank;
         private TextBox tbRekening;
+        private ComboBox cbNominal;
+        private Label label1;
+        private Label saldoValue;
     }
 }

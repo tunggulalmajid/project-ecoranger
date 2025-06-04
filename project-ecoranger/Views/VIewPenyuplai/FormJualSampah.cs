@@ -13,7 +13,7 @@ namespace project_ecoranger.Views
 {
     public partial class FormJualSampah : Form
     {
-        List<Penyuplai> listdataPenyuplai;
+        List<Models.Penyuplai> listdataPenyuplai;
         PenyuplaiContext penyuplaiContext;
         int idSampah, idPenyuplai;
         string namaPenyuplai, namaSampah, namaKategori;
