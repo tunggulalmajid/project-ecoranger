@@ -7,13 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using project_ecoranger.Models;
 
 namespace project_ecoranger.Views
 {
     public partial class FormTarikSaldo : Form
     {
-        public FormTarikSaldo()
+        int idsaldo;
+        SaldoContext saldoContext;
+        public FormTarikSaldo(int idPenyuplai)
         {
+            saldoContext = new SaldoContext();
+            this.idsaldo = saldoContext.GetIdSaldo(idPenyuplai);
             InitializeComponent();
         }
     }

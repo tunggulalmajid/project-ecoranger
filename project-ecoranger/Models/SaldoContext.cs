@@ -74,5 +74,28 @@ namespace project_ecoranger.Models
                 }
             }
         }
+        public int GetIdSaldo(int idPenyuplai)
+        {
+            int idSaldo = 0;
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
+            {
+                conn.Open();
+                string query = """
+                    select id_saldo from saldo where penyuplai_id_penyuplai = @idPenyuplai;
+                    """;
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("idPenyuplai", idPenyuplai);
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            idSaldo = reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
+            return idSaldo;
+        }
     }
 }

@@ -56,7 +56,7 @@ namespace project_ecoranger.Views
 
         private void btnTarikSaldo_Click(object sender, EventArgs e)
         {
-            FormTarikSaldo viewTarikSaldo = new FormTarikSaldo();
+            FormTarikSaldo viewTarikSaldo = new FormTarikSaldo(idPenyuplai);
             viewTarikSaldo.Show();
         }
 

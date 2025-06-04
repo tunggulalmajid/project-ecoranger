@@ -33,11 +33,11 @@ namespace project_ecoranger.Views
             saldoContext = new SaldoContext();
             poinContext = new PoinContext();
             setSesion(1);
+
         }
         public void setSesion(int id)
         {
             this.idPenyuplai = id;
-
             poinContext.KurangiPoin(id, 100);
             saldoContext.KurangiSaldo(id, 10000);
             SetSaldo(id);
