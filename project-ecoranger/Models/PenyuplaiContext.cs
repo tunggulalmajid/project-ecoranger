@@ -269,5 +269,21 @@ namespace project_ecoranger.Models
                 return listAllPenyuplai;
             }
         }
+        public int GetIdPenyuplaiUseTransaksi(int idTransaksi)
+        {
+            int idPenyuplai;
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
+            {
+                conn.Open();
+                string query = "SELECT penyuplai_id_penyuplai FROM transaksi WHERE id_transaksi = @idTransaksi";
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("idTransaksi", idTransaksi);
+                    idPenyuplai = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            return idPenyuplai;
+
+        }
     }
 }

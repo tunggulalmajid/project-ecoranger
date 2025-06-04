@@ -17,14 +17,16 @@ namespace project_ecoranger.Views
         MainForm mainform;
         List<Transaksi> listKonfirmasiTransaksi;
         TransaksiContext transaksiContext;  
+        SaldoContext saldoContext;
         public UcKelolaKonfirmasiTransaksi(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
+            transaksiContext = new TransaksiContext();
+            saldoContext = new SaldoContext();
         }
         public void SetSesion()
         {
-            transaksiContext = new TransaksiContext();
             listKonfirmasiTransaksi =transaksiContext.getAllTransaksiForConfirmation();
             int jarak = 400;
             flowLayoutPanel1.Controls.Clear();
@@ -169,6 +171,7 @@ namespace project_ecoranger.Views
                     if (MessageBox.Show("Apakah Anda Yakin Akan Memproses Transaksi ini ? ", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         transaksiContext.konfirmasiTransaksi(value.idTransaksi, 2);
+                        saldoContext.TambahSaldoForTransaksi(value.idTransaksi, value.beratSampah * value.hargaSampah);
                         MessageBox.Show("Transaksi Sudah Diperoses", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         mainform.dashboardPengepul.SetSesion();
                     }

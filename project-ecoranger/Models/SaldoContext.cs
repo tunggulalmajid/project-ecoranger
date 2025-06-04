@@ -42,8 +42,10 @@ namespace project_ecoranger.Models
                 return listSaldo;
             }
         }
-        public void TambahSaldo(int idPenyuplai, decimal nominal)
+        public void TambahSaldoForTransaksi(int idTransaksi, decimal nominal)
         {
+            PenyuplaiContext penyuplaiContext = new PenyuplaiContext();
+            int idPenyuplai = penyuplaiContext.GetIdPenyuplaiUseTransaksi(idTransaksi);
             using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
             {
                 conn.Open();

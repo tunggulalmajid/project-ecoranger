@@ -21,13 +21,15 @@ namespace project_ecoranger.Views
         int jumlahPenyuplai;
         decimal totalAset;
         LaporanContext laporanContext;
+        SaldoContext saldoContext;
         public UcDashboardPengepul(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
 
             penyuplaiContext = new PenyuplaiContext();
-            
+            saldoContext = new SaldoContext();
+
             laporanContext = new LaporanContext();
             transaksiContext = new TransaksiContext();
             SetSesion();
@@ -190,6 +192,7 @@ namespace project_ecoranger.Views
                     if (MessageBox.Show("Apakah Anda Yakin Akan Memproses Transaksi ini ? ", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         transaksiContext.konfirmasiTransaksi(value.idTransaksi, 2);
+                        saldoContext.TambahSaldoForTransaksi(value.idTransaksi, value.beratSampah * value.hargaSampah);
                         MessageBox.Show("Transaksi Sudah Diperoses", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         flowLayoutPanel1.Controls.Clear();
                         SetSesion();
