@@ -234,7 +234,7 @@ namespace project_ecoranger.Models
                     where is_ditawarkan = true and penyuplai_id_penyuplai = @idPenyuplai
                     group by sk.id_sub_kategori_sampah, sk.sub_kategori_sampah, sk.harga, k.id_kategori_sampah, k.kategori_sampah
                     order by count(tr.id_transaksi) desc
-                    limit 3
+                    limit 5
                     """;
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {

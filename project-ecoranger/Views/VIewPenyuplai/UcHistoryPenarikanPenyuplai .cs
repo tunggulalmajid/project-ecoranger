@@ -15,16 +15,27 @@ namespace project_ecoranger.Views
     {
         MainForm mainform;
         int idPenyuplai;
+        PenarikanContext penarikanContext;
+        List <PenarikanSaldo> listHistoryPenarikan;
         public UcHistoryPenarikanPenyuplai(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
+            penarikanContext = new PenarikanContext();
+
         }
         public void setSesion(int id)
         {
+            this.idPenyuplai = id;
+            listHistoryPenarikan =  penarikanContext.GetHistoryPenarikanSaldoForPenyuplai(idPenyuplai);
+            SetDgvHistoryPenarikan();
 
-            idPenyuplai = id;
         }
+        public void SetDgvHistoryPenarikan()
+        {
+            dgvHistoryPenarikan.DataSource = listHistoryPenarikan;
+        }
+        
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {

@@ -58,17 +58,17 @@ namespace project_ecoranger.Models
                 }
             }
         }
-        public void KurangiPoin(int idPenyuplai, decimal nominal)
+        public void KurangiPoin(int idPoin, decimal nominal)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
             {
                 conn.Open();
                 string query = """
-                    UPDATE poin set poin = poin - MONEY(@nominal) WHERE penyuplai_id_penyuplai = @idPenyuplai;
+                    UPDATE poin set poin = poin - MONEY(@nominal) WHERE id_poin = @idPoin;
                     """;
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("idPenyuplai", idPenyuplai);
+                    cmd.Parameters.AddWithValue("idPoin", idPoin);
                     cmd.Parameters.AddWithValue("nominal", nominal);
                     cmd.ExecuteNonQuery();
                 }

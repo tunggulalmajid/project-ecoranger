@@ -56,13 +56,13 @@ namespace project_ecoranger.Views
 
         private void btnTarikSaldo_Click(object sender, EventArgs e)
         {
-            FormTarikSaldo viewTarikSaldo = new FormTarikSaldo(idPenyuplai);
+            FormTarikSaldo viewTarikSaldo = new FormTarikSaldo(mainform ,idPenyuplai);
             viewTarikSaldo.ShowDialog();
         }
 
         private void panel5_Click(object sender, EventArgs e)
         {
-            FormTukarPoin formTukarPoin = new FormTukarPoin(idPenyuplai);
+            FormTukarPoin formTukarPoin = new FormTukarPoin(mainform,idPenyuplai);
             formTukarPoin.ShowDialog();
         }
     }

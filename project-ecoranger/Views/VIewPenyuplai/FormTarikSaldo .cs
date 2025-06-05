@@ -16,19 +16,24 @@ namespace project_ecoranger.Views
 
         int idsaldo;
         decimal saldo;
+        int idPenyuplai;
         SaldoContext saldoContext;
         BankcContext bankContext;
         List<Bank> listbank;
         List<Saldo> listSaldo;
         PenarikanContext penarikanContext;
+        MainForm mainform;
 
-        public FormTarikSaldo(int idPenyuplai)
+        public FormTarikSaldo(MainForm mainform, int idPenyuplai)
         {
             InitializeComponent();
             saldoContext = new SaldoContext();
             penarikanContext = new PenarikanContext(); 
             listSaldo = saldoContext.getSaldo(idPenyuplai);
             bankContext = new BankcContext();
+            this.mainform = mainform;
+            this.idPenyuplai = idPenyuplai;
+
             listbank = bankContext.GetDataBank();
             this.idsaldo = listSaldo[0].idSaldo;
             this.saldo = listSaldo[0].saldo;
@@ -40,10 +45,9 @@ namespace project_ecoranger.Views
         }
         public void SetValueNominal()
         {
-            List<decimal> nominal = [50000, 100000, 150000, 200000, 250000, 300000, 350000, 400000];
-            foreach (decimal value in nominal)
+            for (int i = 50000; i <= 500000; i += 50000)
             {
-                cbNominal.Items.Add(value);
+                cbNominal.Items.Add(i);
             }
         }
         public void SetValueBank()
@@ -76,8 +80,9 @@ namespace project_ecoranger.Views
             decimal nominal = cbNominal.SelectedItem != null ? Convert.ToDecimal(cbNominal.SelectedItem) : 0;
             string nomorRekening = tbRekening.Text;
             string namaBank = cbBank.SelectedItem != null ? cbBank.SelectedItem.ToString() : string.Empty;
+            int idStatusPenarikan = 1;
 
-            if (nominal <= 0 || string.IsNullOrEmpty(nomorRekening) || string.IsNullOrEmpty(namaBank))
+            if (nominal == 0 || string.IsNullOrEmpty(nomorRekening) || string.IsNullOrEmpty(namaBank))
             {
                 MessageBox.Show("Mohon lengkapi semua field yang diperlukan.");
                 return;
@@ -85,7 +90,6 @@ namespace project_ecoranger.Views
             try
             {
                 Int64 fixedNomorRekening = Convert.ToInt64(tbRekening.Text);
-
             }
             catch (FormatException)
             {
@@ -93,14 +97,18 @@ namespace project_ecoranger.Views
                 return;
             }
 
+            int idBank = GetIdBank(namaBank);
+
             if (nominal > saldo)
             {
                 MessageBox.Show("Saldo tidak mencukupi untuk penarikan ini.");
             }
-
             else
             {
-                MessageBox.Show($"Anda akan menarik saldo sebesar Rp.{nominal} ke rekening {nomorRekening} di bank {namaBank}.");
+                penarikanContext.InsertPenarikanSaldo(nominal, idsaldo, idStatusPenarikan, nomorRekening, idBank);
+                MessageBox.Show($"Permintaan penarikan Saldo sebesar Rp.{nominal} ke rekening {nomorRekening} dalam bank {namaBank} Berhasil Dikirim ke admin, silahkan tunggu konfirmasi.", "informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mainform.dashboardPenyuplai.setSesion(idPenyuplai);
+                this.Close();
             }
         }
     }

@@ -88,6 +88,7 @@
             // cbNominal
             // 
             cbNominal.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbNominal.FlatStyle = FlatStyle.Popup;
             cbNominal.Font = new Font("Roboto Medium", 15.75F, FontStyle.Bold);
             cbNominal.FormattingEnabled = true;
             cbNominal.Location = new Point(71, 369);
@@ -98,6 +99,7 @@
             // cbBank
             // 
             cbBank.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbBank.FlatStyle = FlatStyle.Popup;
             cbBank.Font = new Font("Roboto Medium", 15.75F, FontStyle.Bold);
             cbBank.FormattingEnabled = true;
             cbBank.Location = new Point(71, 64);
@@ -107,10 +109,11 @@
             // 
             // tbRekening
             // 
+            tbRekening.BorderStyle = BorderStyle.None;
             tbRekening.Font = new Font("Roboto Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbRekening.Location = new Point(71, 217);
             tbRekening.Name = "tbRekening";
-            tbRekening.Size = new Size(802, 33);
+            tbRekening.Size = new Size(802, 26);
             tbRekening.TabIndex = 0;
             // 
             // label1

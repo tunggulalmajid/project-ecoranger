@@ -15,15 +15,24 @@ namespace project_ecoranger.Views
     {
         MainForm mainform;
         int idPenyuplai;
+        PenukaranPoinContext penukaranPoinContext;
+        List<PenukaranPoin> listHistoryPenukaranPoin;
         public UcHistoryPenukaranPoin(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
+            penukaranPoinContext = new PenukaranPoinContext();
+            
         }
          public void setSesion(int id)
         {
-
             idPenyuplai = id;
+            listHistoryPenukaranPoin = penukaranPoinContext.GetHistoryPenukaranForPenyuplai(idPenyuplai);
+            SetDgvHistoryPenukaran();
+        }
+        public void SetDgvHistoryPenukaran()
+        {
+            dgvHistoryPenarikan.DataSource = listHistoryPenukaranPoin;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

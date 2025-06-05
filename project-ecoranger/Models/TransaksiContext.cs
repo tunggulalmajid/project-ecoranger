@@ -28,7 +28,7 @@ namespace project_ecoranger.Models
                         join status_transaksi st on (status_transaksi_id_status_transaksi = id_status_transaksi) 
                         join penyuplai p on (penyuplai_id_penyuplai = id_penyuplai) 
                         where status_transaksi_id_status_transaksi = @idStatus
-                        order by tr.tanggal_transaksi 
+                        order by tr.tanggal_transaksi
                         limit 3;
                         """;
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
@@ -76,7 +76,7 @@ namespace project_ecoranger.Models
                         join status_transaksi st on (status_transaksi_id_status_transaksi = id_status_transaksi) 
                         join penyuplai p on (penyuplai_id_penyuplai = id_penyuplai) 
                         where status_transaksi_id_status_transaksi = 1
-                        order by tr.tanggal_transaksi 
+                        order by tr.tanggal_transaksi
                         """;
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
@@ -143,7 +143,7 @@ namespace project_ecoranger.Models
                     join status_transaksi st on (status_transaksi_id_status_transaksi = id_status_transaksi) 
                     join penyuplai p on (penyuplai_id_penyuplai = id_penyuplai) 
                     where status_transaksi_id_status_transaksi <> 1
-                    order by tr.tanggal_transaksi 
+                    order by tr.tanggal_transaksi desc
                     """;
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
@@ -189,7 +189,7 @@ namespace project_ecoranger.Models
                     join status_transaksi st on (status_transaksi_id_status_transaksi = id_status_transaksi) 
                     join penyuplai p on (penyuplai_id_penyuplai = id_penyuplai) 
                     where p.id_penyuplai = @idPenyuplai
-                    order by tr.tanggal_transaksi 
+                    order by tr.tanggal_transaksi desc
                     """;
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
