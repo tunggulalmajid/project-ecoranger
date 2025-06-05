@@ -84,8 +84,8 @@ namespace project_ecoranger
             this.Controls.Add(viewHistoryTransaksiPenyuplai);
             HideAllPage();
             //this.Controls.Add(dashboardPengepul);
-            //dashboardPenyuplai.Visible = true;
-            dashboardPengepul.Visible = true;
+            dashboardPenyuplai.Visible = true;
+            //dashboardPengepul.Visible = true;
             //this.Controls.Add(dashboardPenyuplai);
             //this.Controls.Add(loadingScreen);
 

@@ -11,26 +11,25 @@ using project_ecoranger.Models;
 
 namespace project_ecoranger.Views
 {
-    public partial class UcHistoryPenukaranPoin : UserControl
+    public partial class UcKeuanganPenyuplai : UserControl
     {
         MainForm mainform;
         int idPenyuplai;
-        public UcHistoryPenukaranPoin(MainForm mainform)
+        public UcKeuanganPenyuplai(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
-        }
-         public void setSesion(int id)
-        {
-
-            idPenyuplai = id;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             mainform.ShowPage(mainform.dashboardPenyuplai);
         }
+        public void setSesion(int id)
+        {
 
+            idPenyuplai = id;
+        }
         private void btnDataDiri_Click(object sender, EventArgs e)
         {
             mainform.ShowPage(mainform.viewDataDiriPenyuplai);
@@ -54,9 +53,17 @@ namespace project_ecoranger.Views
         {
             mainform.ShowPage(mainform.startPage);
         }
-        private void btnKembali_Click(object sender, EventArgs e)
+
+        private void btnTarikSaldo_Click(object sender, EventArgs e)
         {
-            mainform.ShowPage(mainform.viewHistoryPenyuplai);
+            FormTarikSaldo viewTarikSaldo = new FormTarikSaldo(mainform ,idPenyuplai);
+            viewTarikSaldo.ShowDialog();
+        }
+
+        private void panel5_Click(object sender, EventArgs e)
+        {
+            FormTukarPoin formTukarPoin = new FormTukarPoin(mainform,idPenyuplai);
+            formTukarPoin.ShowDialog();
         }
     }
 }

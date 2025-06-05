@@ -19,25 +19,36 @@ namespace project_ecoranger.Views
         PenyuplaiContext penyuplaiContext;
         List<Transaksi> listTransaksi;
         int jumlahPenyuplai;
+        decimal totalAset;
+        LaporanContext laporanContext;
+        SaldoContext saldoContext;
         public UcDashboardPengepul(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
 
             penyuplaiContext = new PenyuplaiContext();
-            jumlahPenyuplai = penyuplaiContext.GetJumlahPenyuplai();
-            lblJumlahPenyuplai.Text = $"{jumlahPenyuplai}";
-            
+            saldoContext = new SaldoContext();
+
+            laporanContext = new LaporanContext();
+            transaksiContext = new TransaksiContext();
             SetSesion();
         }
         public void SetSesion()
         {
-            transaksiContext = new TransaksiContext();
+            flowLayoutPanel1.Controls.Clear();
+            jumlahPenyuplai = penyuplaiContext.GetJumlahPenyuplai();
+            lblJumlahPenyuplai.Text = $"{jumlahPenyuplai}";
+
+            totalAset = laporanContext.GetTotalAsetForPengepul();
+            lblJumlahAset.Text = $"Rp.{totalAset}";
+
             listTransaksi = transaksiContext.getAllTransaksiForPengepulDashboard(1);
             mainform.kelolaPenyuplai.SetSesion(); 
             mainform.kelolaKonfirmasiTransaksi.SetSesion();
             mainform.kelolaSubKategori.SetSesion();
             mainform.kelolaHistoryTransaksi.SetSesion();
+            mainform.kelolaLaporan.SetSesion();
 
             int jarak = 400;
             foreach (var value in listTransaksi)
@@ -181,6 +192,7 @@ namespace project_ecoranger.Views
                     if (MessageBox.Show("Apakah Anda Yakin Akan Memproses Transaksi ini ? ", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         transaksiContext.konfirmasiTransaksi(value.idTransaksi, 2);
+                        saldoContext.TambahSaldoForTransaksi(value.idTransaksi, value.beratSampah * value.hargaSampah);
                         MessageBox.Show("Transaksi Sudah Diperoses", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         flowLayoutPanel1.Controls.Clear();
                         SetSesion();

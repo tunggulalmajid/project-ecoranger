@@ -39,8 +39,13 @@
             panel2 = new Panel();
             tittle = new Panel();
             panel3 = new Panel();
+            lblJumlahAset = new Label();
             panel4 = new Panel();
+            lblTotalBerat = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             panel1.SuspendLayout();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -160,26 +165,60 @@
             panel3.BackColor = Color.Transparent;
             panel3.BackgroundImage = Properties.Resources.JumlahAsetDashBoard;
             panel3.BackgroundImageLayout = ImageLayout.Zoom;
+            panel3.Controls.Add(lblJumlahAset);
             panel3.Location = new Point(383, 176);
             panel3.Name = "panel3";
             panel3.Size = new Size(654, 224);
             panel3.TabIndex = 2;
+            // 
+            // lblJumlahAset
+            // 
+            lblJumlahAset.AutoSize = true;
+            lblJumlahAset.Font = new Font("Roboto Black", 30F, FontStyle.Bold);
+            lblJumlahAset.ForeColor = SystemColors.Control;
+            lblJumlahAset.Location = new Point(155, 95);
+            lblJumlahAset.Name = "lblJumlahAset";
+            lblJumlahAset.Size = new Size(43, 48);
+            lblJumlahAset.TabIndex = 7;
+            lblJumlahAset.Text = "0";
             // 
             // panel4
             // 
             panel4.BackColor = Color.Transparent;
             panel4.BackgroundImage = Properties.Resources.PnlBeratKeseluruhan;
             panel4.BackgroundImageLayout = ImageLayout.Zoom;
+            panel4.Controls.Add(lblTotalBerat);
             panel4.Location = new Point(1099, 176);
             panel4.Name = "panel4";
             panel4.Size = new Size(654, 224);
             panel4.TabIndex = 3;
+            // 
+            // lblTotalBerat
+            // 
+            lblTotalBerat.AutoSize = true;
+            lblTotalBerat.Font = new Font("Roboto Black", 30F, FontStyle.Bold);
+            lblTotalBerat.ForeColor = SystemColors.Control;
+            lblTotalBerat.Location = new Point(243, 95);
+            lblTotalBerat.Name = "lblTotalBerat";
+            lblTotalBerat.Size = new Size(43, 48);
+            lblTotalBerat.TabIndex = 6;
+            lblTotalBerat.Text = "0";
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.BackColor = Color.Transparent;
+            flowLayoutPanel1.Location = new Point(394, 423);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1359, 596);
+            flowLayoutPanel1.TabIndex = 4;
             // 
             // UcKelolaLaporan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(tittle);
@@ -187,6 +226,10 @@
             Name = "UcKelolaLaporan";
             Size = new Size(1920, 1060);
             panel1.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -204,5 +247,8 @@
         private Panel tittle;
         private Panel panel3;
         private Panel panel4;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label lblJumlahAset;
+        private Label lblTotalBerat;
     }
 }

@@ -15,7 +15,7 @@ namespace project_ecoranger.Views
     {
         MainForm mainform;
         PenyuplaiContext penyuplaiContext;
-        List<Penyuplai> listAllPenyuplai;
+        List<Models.Penyuplai> listAllPenyuplai;
         public UcKelolaPenyuplai(MainForm mainform)
         {
             InitializeComponent();

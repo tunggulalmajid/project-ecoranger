@@ -1,6 +1,6 @@
 ﻿namespace project_ecoranger.Views
 {
-    partial class UcTransaksiPenyuplai
+    partial class UcHistoryTransaksiPenyuplai
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel9 = new Panel();
             btnLogout = new Panel();
@@ -38,7 +43,10 @@
             btnDashboard = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
+            btnKembali = new Panel();
+            dgvHistoryTransaksi = new DataGridView();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvHistoryTransaksi).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -62,7 +70,7 @@
             // 
             panel9.BackColor = Color.Teal;
             panel9.Cursor = Cursors.No;
-            panel9.Location = new Point(3, 312);
+            panel9.Location = new Point(3, 363);
             panel9.Name = "panel9";
             panel9.Size = new Size(10, 50);
             panel9.TabIndex = 7;
@@ -146,23 +154,89 @@
             // panel3
             // 
             panel3.BackColor = Color.Transparent;
-            panel3.BackgroundImage = Properties.Resources.tittleTransaksi;
+            panel3.BackgroundImage = Properties.Resources.tittleHistoryTransaksi;
             panel3.BackgroundImageLayout = ImageLayout.Zoom;
-            panel3.Location = new Point(393, 57);
+            panel3.Location = new Point(899, 186);
             panel3.Name = "panel3";
-            panel3.Size = new Size(299, 71);
+            panel3.Size = new Size(391, 99);
             panel3.TabIndex = 1;
             // 
-            // UcTransaksiPenyuplai
+            // btnKembali
+            // 
+            btnKembali.BackColor = Color.Transparent;
+            btnKembali.BackgroundImage = Properties.Resources.btnKembali;
+            btnKembali.BackgroundImageLayout = ImageLayout.Zoom;
+            btnKembali.Location = new Point(402, 54);
+            btnKembali.Name = "btnKembali";
+            btnKembali.Size = new Size(300, 75);
+            btnKembali.TabIndex = 3;
+            btnKembali.Click += btnKembali_Click;
+            // 
+            // dgvHistoryTransaksi
+            // 
+            dgvHistoryTransaksi.AllowUserToAddRows = false;
+            dgvHistoryTransaksi.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(0, 0, 64);
+            dgvHistoryTransaksi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvHistoryTransaksi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvHistoryTransaksi.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvHistoryTransaksi.BackgroundColor = SystemColors.Control;
+            dgvHistoryTransaksi.BorderStyle = BorderStyle.None;
+            dgvHistoryTransaksi.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvHistoryTransaksi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvHistoryTransaksi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvHistoryTransaksi.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvHistoryTransaksi.GridColor = SystemColors.Control;
+            dgvHistoryTransaksi.Location = new Point(383, 312);
+            dgvHistoryTransaksi.MultiSelect = false;
+            dgvHistoryTransaksi.Name = "dgvHistoryTransaksi";
+            dgvHistoryTransaksi.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvHistoryTransaksi.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dgvHistoryTransaksi.RowHeadersWidth = 100;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvHistoryTransaksi.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dgvHistoryTransaksi.Size = new Size(1476, 677);
+            dgvHistoryTransaksi.StandardTab = true;
+            dgvHistoryTransaksi.TabIndex = 6;
+            // 
+            // UcHistoryTransaksiPenyuplai
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
+            Controls.Add(dgvHistoryTransaksi);
+            Controls.Add(btnKembali);
             Controls.Add(panel3);
             Controls.Add(panel1);
-            Name = "UcTransaksiPenyuplai";
+            Name = "UcHistoryTransaksiPenyuplai";
             Size = new Size(1920, 1060);
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvHistoryTransaksi).EndInit();
             ResumeLayout(false);
         }
 
@@ -178,5 +252,9 @@
         private Panel btnLogout;
         private Panel panel9;
         private Panel panel3;
+        private Panel btnHistoryPenarikan;
+        private Panel btnHistoryTransaksi;
+        private Panel btnKembali;
+        private DataGridView dgvHistoryTransaksi;
     }
 }

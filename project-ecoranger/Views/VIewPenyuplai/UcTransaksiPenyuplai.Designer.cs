@@ -1,6 +1,6 @@
 ﻿namespace project_ecoranger.Views
 {
-    partial class UcDashboardPenyuplai
+    partial class UcTransaksiPenyuplai
     {
         /// <summary> 
         /// Required designer variable.
@@ -38,9 +38,7 @@
             btnDashboard = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            label1 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -65,9 +63,9 @@
             // 
             panel9.BackColor = Color.Teal;
             panel9.Cursor = Cursors.No;
-            panel9.Location = new Point(3, 218);
+            panel9.Location = new Point(3, 312);
             panel9.Name = "panel9";
-            panel9.Size = new Size(10, 40);
+            panel9.Size = new Size(10, 50);
             panel9.TabIndex = 7;
             // 
             // btnLogout
@@ -149,58 +147,33 @@
             // panel3
             // 
             panel3.BackColor = Color.Transparent;
-            panel3.BackgroundImage = Properties.Resources.tittleDashboard;
+            panel3.BackgroundImage = Properties.Resources.tittleTransaksi;
             panel3.BackgroundImageLayout = ImageLayout.Zoom;
             panel3.Location = new Point(393, 57);
             panel3.Name = "panel3";
             panel3.Size = new Size(299, 71);
             panel3.TabIndex = 1;
             // 
-            // panel4
+            // flowLayoutPanel1
             // 
-            panel4.BackColor = Color.Transparent;
-            panel4.BackgroundImage = Properties.Resources.JumlahPenyuplaiDashboardPengepul;
-            panel4.BackgroundImageLayout = ImageLayout.Zoom;
-            panel4.Location = new Point(393, 153);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(654, 224);
-            panel4.TabIndex = 2;
+            flowLayoutPanel1.BackColor = Color.Transparent;
+            flowLayoutPanel1.Location = new Point(393, 170);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1423, 820);
+            flowLayoutPanel1.TabIndex = 2;
             // 
-            // panel5
-            // 
-            panel5.BackColor = Color.Transparent;
-            panel5.BackgroundImage = Properties.Resources.JumlahAsetDashBoard;
-            panel5.BackgroundImageLayout = ImageLayout.Zoom;
-            panel5.Location = new Point(1099, 153);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(654, 224);
-            panel5.TabIndex = 3;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Roboto Condensed Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(629, 489);
-            label1.Name = "label1";
-            label1.Size = new Size(71, 29);
-            label1.TabIndex = 4;
-            label1.Text = "label1";
-            // 
-            // UcDashboardPenyuplai
+            // UcTransaksiPenyuplai
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
-            Controls.Add(label1);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(panel3);
             Controls.Add(panel1);
-            Name = "UcDashboardPenyuplai";
+            Name = "UcTransaksiPenyuplai";
             Size = new Size(1920, 1060);
             panel1.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -215,8 +188,6 @@
         private Panel btnLogout;
         private Panel panel9;
         private Panel panel3;
-        private Panel panel4;
-        private Panel panel5;
-        private Label label1;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

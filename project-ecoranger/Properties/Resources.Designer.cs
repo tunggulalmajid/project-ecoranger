@@ -303,6 +303,16 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnTarik {
+            get {
+                object obj = ResourceManager.GetObject("btnTarik", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnTarikSaldo {
             get {
                 object obj = ResourceManager.GetObject("btnTarikSaldo", resourceCulture);
@@ -336,6 +346,16 @@ namespace project_ecoranger.Properties {
         internal static System.Drawing.Bitmap btnTransaksi {
             get {
                 object obj = ResourceManager.GetObject("btnTransaksi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnTukar {
+            get {
+                object obj = ResourceManager.GetObject("btnTukar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -453,6 +473,26 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EcoTarikSaldo {
+            get {
+                object obj = ResourceManager.GetObject("EcoTarikSaldo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EcoTukarPoin {
+            get {
+                object obj = ResourceManager.GetObject("EcoTukarPoin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fillCard {
             get {
                 object obj = ResourceManager.GetObject("fillCard", resourceCulture);
@@ -503,6 +543,16 @@ namespace project_ecoranger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fillTukarSampah {
+            get {
+                object obj = ResourceManager.GetObject("fillTukarSampah", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap formLogin {
             get {
                 object obj = ResourceManager.GetObject("formLogin", resourceCulture);
@@ -526,6 +576,26 @@ namespace project_ecoranger.Properties {
         internal static System.Drawing.Bitmap formSubKategori {
             get {
                 object obj = ResourceManager.GetObject("formSubKategori", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formTarikSaldo {
+            get {
+                object obj = ResourceManager.GetObject("formTarikSaldo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formTukarPoin {
+            get {
+                object obj = ResourceManager.GetObject("formTukarPoin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -746,6 +816,16 @@ namespace project_ecoranger.Properties {
         internal static System.Drawing.Bitmap tittleHistoryPenukaran {
             get {
                 object obj = ResourceManager.GetObject("tittleHistoryPenukaran", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tittleHistoryPenukaranPoin {
+            get {
+                object obj = ResourceManager.GetObject("tittleHistoryPenukaranPoin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

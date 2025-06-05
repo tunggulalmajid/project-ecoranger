@@ -11,30 +11,28 @@ using project_ecoranger.Models;
 
 namespace project_ecoranger.Views
 {
-    public partial class UcDashboardPenyuplai : UserControl
+    public partial class UcHistoryPenukaranPoin : UserControl
     {
         MainForm mainform;
         int idPenyuplai;
-        TransaksiContext transaksiContext;
-        List<Transaksi> listTransaksi;
-        public UcDashboardPenyuplai(MainForm mainform)
+        PenukaranPoinContext penukaranPoinContext;
+        List<PenukaranPoin> listHistoryPenukaranPoin;
+        public UcHistoryPenukaranPoin(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
-            transaksiContext = new TransaksiContext();
-            setSesion(1);
+            penukaranPoinContext = new PenukaranPoinContext();
+            
         }
-        public void setSesion(int id)
+         public void setSesion(int id)
         {
-            this.idPenyuplai = id;
-            mainform.viewDataDiriPenyuplai.setSesion(id);
-            mainform.viewTransaksiPenyuplai.setSesion(id);
-            mainform.viewHistoryPenyuplai.setSesion(id);
-            mainform.viewKeuanganPenyuplai.setSesion(id);
-            mainform.viewHistoryTransaksiPenyuplai.setSesion(id);
-            mainform.viewHistoryPenarikanPenyuplai.setSesion(id);
-            mainform.viewHistoryPenukaranPoin.setSesion(id);
-            label1.Text = $"Dashboard Penyediaan Barang{id} \n : ";
+            idPenyuplai = id;
+            listHistoryPenukaranPoin = penukaranPoinContext.GetHistoryPenukaranForPenyuplai(idPenyuplai);
+            SetDgvHistoryPenukaran();
+        }
+        public void SetDgvHistoryPenukaran()
+        {
+            dgvHistoryPenarikan.DataSource = listHistoryPenukaranPoin;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -64,6 +62,10 @@ namespace project_ecoranger.Views
         private void btnLogout_Click(object sender, EventArgs e)
         {
             mainform.ShowPage(mainform.startPage);
+        }
+        private void btnKembali_Click(object sender, EventArgs e)
+        {
+            mainform.ShowPage(mainform.viewHistoryPenyuplai);
         }
     }
 }

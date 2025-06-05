@@ -28,7 +28,7 @@ namespace project_ecoranger.Models
                         join status_transaksi st on (status_transaksi_id_status_transaksi = id_status_transaksi) 
                         join penyuplai p on (penyuplai_id_penyuplai = id_penyuplai) 
                         where status_transaksi_id_status_transaksi = @idStatus
-                        order by tr.tanggal_transaksi 
+                        order by tr.tanggal_transaksi
                         limit 3;
                         """;
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
@@ -76,7 +76,7 @@ namespace project_ecoranger.Models
                         join status_transaksi st on (status_transaksi_id_status_transaksi = id_status_transaksi) 
                         join penyuplai p on (penyuplai_id_penyuplai = id_penyuplai) 
                         where status_transaksi_id_status_transaksi = 1
-                        order by tr.tanggal_transaksi 
+                        order by tr.tanggal_transaksi
                         """;
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
@@ -143,7 +143,7 @@ namespace project_ecoranger.Models
                     join status_transaksi st on (status_transaksi_id_status_transaksi = id_status_transaksi) 
                     join penyuplai p on (penyuplai_id_penyuplai = id_penyuplai) 
                     where status_transaksi_id_status_transaksi <> 1
-                    order by tr.tanggal_transaksi 
+                    order by tr.tanggal_transaksi desc
                     """;
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
@@ -172,6 +172,52 @@ namespace project_ecoranger.Models
                     throw new Exception($"Terjadi Kesalahan Dalam Database : {ex.Message}");
                 }
                 
+                return listHistoryTransaksi;
+            }
+        }
+        public List<Transaksi> GetHistoryTransaksiForPenyuplai(int idPenyuplai)
+        {
+            List<Transaksi> listHistoryTransaksi = new List<Transaksi>();
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = """
+                    select tr.id_transaksi, tr.tanggal_transaksi,p.nama, sk.sub_kategori_sampah, tr.berat_sampah, tr.harga , tr.berat_sampah * tr.harga as Total_Harga, st.status_transaksi  
+                    from transaksi tr join sub_kategori_sampah sk on (sub_kategori_sampah_id_sub_kategori_sampah = id_sub_kategori_sampah) 
+                    join status_transaksi st on (status_transaksi_id_status_transaksi = id_status_transaksi) 
+                    join penyuplai p on (penyuplai_id_penyuplai = id_penyuplai) 
+                    where p.id_penyuplai = @idPenyuplai
+                    order by tr.tanggal_transaksi desc
+                    """;
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("idPenyuplai", idPenyuplai);
+                        using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Transaksi transaksi = new Transaksi
+                                {
+                                    idTransaksi = reader.GetInt32(reader.GetOrdinal("id_transaksi")),
+                                    tanggalTransaksi = reader.GetDateTime(reader.GetOrdinal("tanggal_transaksi")),
+                                    namaPenyuplai = reader.GetString(reader.GetOrdinal("nama")),
+                                    namaSampah = reader.GetString(reader.GetOrdinal("sub_kategori_sampah")),
+                                    beratSampah = reader.GetDecimal(reader.GetOrdinal("berat_sampah")),
+                                    hargaSampah = reader.GetDecimal(reader.GetOrdinal("harga")),
+                                    totalTransaksi = reader.GetDecimal(reader.GetOrdinal("Total_Harga")),
+                                    StatusTransaksi = reader.GetString(reader.GetOrdinal("status_transaksi"))
+                                };
+                                listHistoryTransaksi.Add(transaksi);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Terjadi Kesalahan Dalam Database : {ex.Message}");
+                }
                 return listHistoryTransaksi;
             }
         }

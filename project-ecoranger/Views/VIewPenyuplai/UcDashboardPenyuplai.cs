@@ -11,25 +11,63 @@ using project_ecoranger.Models;
 
 namespace project_ecoranger.Views
 {
-    public partial class UcTransaksiPenyuplai : UserControl
+    public partial class UcDashboardPenyuplai : UserControl
     {
         MainForm mainform;
         int idPenyuplai;
+        TransaksiContext transaksiContext;
+        SaldoContext saldoContext;
+        PoinContext poinContext;
         SampahContext sampahContext;
+        List<Transaksi> listTransaksi;
+        List<Poin> listPoin;
+        List<Saldo> listSaldo;
         List<Sampah> listSampah;
 
-        public UcTransaksiPenyuplai(MainForm mainform)
+        public UcDashboardPenyuplai(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
+            transaksiContext = new TransaksiContext();
             sampahContext = new SampahContext();
-            listSampah = sampahContext.GetListSampah();
-            getCard(listSampah);
+            saldoContext = new SaldoContext();
+            poinContext = new PoinContext();
+            setSesion(1);
+
         }
-        public void getCard(List<Sampah> sampah)
+        public void setSesion(int id)
         {
-            int jarak = 375;
-            foreach (var value in sampah)
+            this.idPenyuplai = id;
+            SetSaldo(id);
+            SetPoin(id);
+            setListSampah(id);
+            
+
+            mainform.viewDataDiriPenyuplai.setSesion(id);
+            mainform.viewTransaksiPenyuplai.setSesion(id);
+            mainform.viewHistoryPenyuplai.setSesion(id);
+            mainform.viewKeuanganPenyuplai.setSesion(id);
+            mainform.viewHistoryTransaksiPenyuplai.setSesion(id);
+            mainform.viewHistoryPenarikanPenyuplai.setSesion(id);
+            mainform.viewHistoryPenukaranPoin.setSesion(id);
+            label1.Text = $"Dashboard Penyediaan Barang{id} \n : ";
+        }
+        public void SetSaldo(int idPenyuplai)
+        {
+            listSaldo = saldoContext.getSaldo(idPenyuplai);
+            lblSaldo.Text = $"Rp.{listSaldo[0].saldo}";
+
+        }
+        public void SetPoin(int idPenyuplai)
+        {
+            listPoin = poinContext.GetPoin(idPenyuplai);
+            lblPoin.Text = $"Rp.{listPoin[0].poin}";
+        }
+        public void setListSampah(int idPenyuplai)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            listSampah = sampahContext.GetListSampahForDashboard(idPenyuplai);
+            foreach (var value in listSampah)
             {
                 int id = value.idSampah;
                 string namaSampah = value.namaSampah;
@@ -55,7 +93,6 @@ namespace project_ecoranger.Views
                 fillCard2.Controls.Add(hargaSampahLabel);
                 fillCard2.Controls.Add(kategoriLabel);
                 fillCard2.Controls.Add(judul);
-                fillCard2.Location = new Point(jarak, 200);
                 fillCard2.Name = "fillCard2";
                 fillCard2.Size = new Size(289, 344);
                 fillCard2.TabIndex = 2;
@@ -69,7 +106,7 @@ namespace project_ecoranger.Views
                 btnJual2.TabIndex = 3;
                 btnJual2.Click += (s, e) =>
                 {
-                    JualSampah(id, namaSampah, namaKategori, harga, idPenyuplai);
+                    mainform.viewTransaksiPenyuplai.JualSampah(id, namaSampah, namaKategori, harga, idPenyuplai);
                 };
 
                 judul.AutoSize = true;
@@ -117,23 +154,12 @@ namespace project_ecoranger.Views
                 hargaSampahValue.TabIndex = 7;
                 hargaSampahValue.Text = $"Rp.{harga}";
 
-                this.Controls.Add(fillCard2);
-
-                jarak += fillCard2.Height + 5;
-
+                flowLayoutPanel1.Controls.Add(fillCard2);
             }
 
         }
-        private void JualSampah(int idSampah, string namaSampah ,string namaKategori, decimal hargaSampah, int idPenyuplai)
-        {
-            FormJualSampah formJualSampah = new FormJualSampah(idSampah, namaSampah, namaKategori, hargaSampah, idPenyuplai);
-            formJualSampah.ShowDialog();
-        }
-        public void setSesion(int id)
-        {
-            this.idPenyuplai = id;
 
-        }
+
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
@@ -164,7 +190,12 @@ namespace project_ecoranger.Views
             mainform.ShowPage(mainform.startPage);
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void UcDashboardPenyuplai_Load(object sender, EventArgs e)
         {
 
         }

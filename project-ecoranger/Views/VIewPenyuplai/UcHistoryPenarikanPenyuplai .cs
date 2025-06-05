@@ -11,25 +11,37 @@ using project_ecoranger.Models;
 
 namespace project_ecoranger.Views
 {
-    public partial class UcKeuanganPenyuplai : UserControl
+    public partial class UcHistoryPenarikanPenyuplai : UserControl
     {
         MainForm mainform;
         int idPenyuplai;
-        public UcKeuanganPenyuplai(MainForm mainform)
+        PenarikanContext penarikanContext;
+        List <PenarikanSaldo> listHistoryPenarikan;
+        public UcHistoryPenarikanPenyuplai(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
+            penarikanContext = new PenarikanContext();
+
         }
+        public void setSesion(int id)
+        {
+            this.idPenyuplai = id;
+            listHistoryPenarikan =  penarikanContext.GetHistoryPenarikanSaldoForPenyuplai(idPenyuplai);
+            SetDgvHistoryPenarikan();
+
+        }
+        public void SetDgvHistoryPenarikan()
+        {
+            dgvHistoryPenarikan.DataSource = listHistoryPenarikan;
+        }
+        
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             mainform.ShowPage(mainform.dashboardPenyuplai);
         }
-        public void setSesion(int id)
-        {
 
-            idPenyuplai = id;
-        }
         private void btnDataDiri_Click(object sender, EventArgs e)
         {
             mainform.ShowPage(mainform.viewDataDiriPenyuplai);
@@ -53,17 +65,9 @@ namespace project_ecoranger.Views
         {
             mainform.ShowPage(mainform.startPage);
         }
-
-        private void btnTarikSaldo_Click(object sender, EventArgs e)
+        private void btnKembali_Click(object sender, EventArgs e)
         {
-            FormTarikSaldo viewTarikSaldo = new FormTarikSaldo();
-            viewTarikSaldo.Show();
-        }
-
-        private void panel5_Click(object sender, EventArgs e)
-        {
-            FormTukarPoin formTukarPoin = new FormTukarPoin();
-            formTukarPoin.Show();
+            mainform.ShowPage(mainform.viewHistoryPenyuplai);
         }
     }
 }

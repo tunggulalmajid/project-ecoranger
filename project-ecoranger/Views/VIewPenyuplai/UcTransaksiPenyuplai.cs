@@ -11,23 +11,25 @@ using project_ecoranger.Models;
 
 namespace project_ecoranger.Views
 {
-    public partial class UcKelolaSubKategori : UserControl
+    public partial class UcTransaksiPenyuplai : UserControl
     {
         MainForm mainform;
+        int idPenyuplai;
         SampahContext sampahContext;
-        List<Sampah> listAllSampah;
-        public UcKelolaSubKategori(MainForm mainform)
+        List<Sampah> listSampah;
+
+        public UcTransaksiPenyuplai(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
-        }
-        public void SetSesion()
-        {
             sampahContext = new SampahContext();
-            listAllSampah = sampahContext.GetListSampah();
-            int jarak = 375;
+            listSampah = sampahContext.GetListSampah();
+            getCard(listSampah);
+        }
+        public void getCard(List<Sampah> sampah)
+        {
             flowLayoutPanel1.Controls.Clear();
-            foreach (var value in listAllSampah)
+            foreach (var value in sampah)
             {
                 int id = value.idSampah;
                 string namaSampah = value.namaSampah;
@@ -36,62 +38,37 @@ namespace project_ecoranger.Views
                 string namaKategori = value.namaKategoriSampah;
 
                 Panel fillCard2 = new Panel();
-                Panel btnHapus = new Panel();
+                Panel btnJual2 = new Panel();
                 Label judul = new Label();
                 Label kategoriLabel = new Label();
                 Label hargaSampahLabel = new Label();
                 Label kategoriValue = new Label();
                 Label hargaSampahValue = new Label();
-                Panel btnEdit = new Panel();
 
 
                 fillCard2.BackColor = Color.Transparent;
                 fillCard2.BackgroundImage = Properties.Resources.fillCard;
                 fillCard2.BackgroundImageLayout = ImageLayout.Zoom;
-                fillCard2.Controls.Add(btnEdit);
-                fillCard2.Controls.Add(btnHapus);
+                fillCard2.Controls.Add(btnJual2);
                 fillCard2.Controls.Add(hargaSampahValue);
                 fillCard2.Controls.Add(kategoriValue);
                 fillCard2.Controls.Add(hargaSampahLabel);
                 fillCard2.Controls.Add(kategoriLabel);
                 fillCard2.Controls.Add(judul);
-                fillCard2.Location = new Point(jarak, 200);
                 fillCard2.Name = "fillCard2";
                 fillCard2.Size = new Size(289, 344);
                 fillCard2.TabIndex = 2;
 
-                btnHapus.BackColor = Color.Transparent;
-                btnHapus.BackgroundImage = Properties.Resources.btnHapus;
-                btnHapus.BackgroundImageLayout = ImageLayout.Zoom;
-                btnHapus.Location = new Point(23, 283);
-                btnHapus.Name = "btnJual2";
-                btnHapus.Size = new Size(122, 45);
-                btnHapus.TabIndex = 3;
-                btnHapus.Click += (s, e) =>
+                btnJual2.BackColor = Color.Transparent;
+                btnJual2.BackgroundImage = Properties.Resources.btnCardJual;
+                btnJual2.BackgroundImageLayout = ImageLayout.Zoom;
+                btnJual2.Location = new Point(23, 283);
+                btnJual2.Name = "btnJual2";
+                btnJual2.Size = new Size(245, 44);
+                btnJual2.TabIndex = 3;
+                btnJual2.Click += (s, e) =>
                 {
-                    if (MessageBox.Show("Apakah Anda yakin ingin menghapus sampah ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        sampahContext.HapusSampahForPengepul(id);
-                        MessageBox.Show("Sampah berhasil dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        SetSesion();
-                    }
-                };
-
-                btnEdit.BackColor = Color.Transparent;
-                btnEdit.BackgroundImage = Properties.Resources.btnEdit;
-                btnEdit.BackgroundImageLayout = ImageLayout.Zoom;
-                btnEdit.Location = new Point(150, 283);
-                btnEdit.Name = "btnJual2";
-                btnEdit.Size = new Size(122, 45);
-                btnEdit.TabIndex = 3;
-                btnEdit.Click += (s, e) =>
-                {
-                    FormEditSubKategori formEditSubKategori = new FormEditSubKategori(id, namaSampah, harga, idKategoriSampah, namaKategori);
-                    if(formEditSubKategori.ShowDialog() == DialogResult.OK)
-                    {
-                        
-                        SetSesion();
-                    }
+                    JualSampah(id, namaSampah, namaKategori, harga, idPenyuplai);
                 };
 
                 judul.AutoSize = true;
@@ -139,58 +116,56 @@ namespace project_ecoranger.Views
                 hargaSampahValue.TabIndex = 7;
                 hargaSampahValue.Text = $"Rp.{harga}";
 
-                this.Controls.Add(fillCard2);
-
-                jarak += fillCard2.Height + 5;
                 flowLayoutPanel1.Controls.Add(fillCard2);
 
+                
+
             }
+
+        }
+        public void JualSampah(int idSampah, string namaSampah ,string namaKategori, decimal hargaSampah, int idPenyuplai)
+        {
+            FormJualSampah formJualSampah = new FormJualSampah(idSampah, namaSampah, namaKategori, hargaSampah, idPenyuplai);
+            formJualSampah.ShowDialog();
+        }
+        public void setSesion(int id)
+        {
+            this.idPenyuplai = id;
 
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            mainform.ShowPage(mainform.dashboardPengepul);
+            mainform.ShowPage(mainform.dashboardPenyuplai);
         }
 
-        private void btnSubKategori_Click(object sender, EventArgs e)
+        private void btnDataDiri_Click(object sender, EventArgs e)
         {
-            mainform.ShowPage(mainform.kelolaSubKategori);
+            mainform.ShowPage(mainform.viewDataDiriPenyuplai);
         }
-        private void btnPenyuplai_Click(object sender, EventArgs e)
+        private void btnTransaksi_Click(object sender, EventArgs e)
         {
-            mainform.ShowPage(mainform.kelolaPenyuplai);
-        }
-
-        private void btnLaporan_Click(object sender, EventArgs e)
-        {
-            mainform.ShowPage(mainform.kelolaLaporan);
+            mainform.ShowPage(mainform.viewTransaksiPenyuplai);
         }
 
-        private void BtnHistory_Click(object sender, EventArgs e)
+        private void btnHistoryPenyuplai_Click(object sender, EventArgs e)
         {
-            mainform.ShowPage(mainform.kelolaHistory);
+            mainform.ShowPage(mainform.viewHistoryPenyuplai);
+        }
+
+        private void BtnKeuangan_Click(object sender, EventArgs e)
+        {
+            mainform.ShowPage(mainform.viewKeuanganPenyuplai);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             mainform.ShowPage(mainform.startPage);
         }
-        private void btnTambah_Click(object sender, EventArgs e)
-        {
-            FormTambahKategori formTambahKategori = new FormTambahKategori();
-            formTambahKategori.ShowDialog();
 
-        }
-
-        private void btnTambahSubKategori_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
-            FormTambahSubKategori formTambahSubKategori = new FormTambahSubKategori();
-            if (formTambahSubKategori.ShowDialog() == DialogResult.OK)
-            {
-                flowLayoutPanel1.Controls.Clear();
-                SetSesion();
-            }
+
         }
     }
 }

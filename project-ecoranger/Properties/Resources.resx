@@ -145,6 +145,9 @@
   <data name="formUniversal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\formUniversal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="EcoTukarPoin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EcoTukarPoin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fillCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fillCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -168,6 +171,9 @@
   </data>
   <data name="btnKembali" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnKembali.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EcoTarikSaldo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EcoTarikSaldo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NotesRegisterPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NotesRegisterPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -201,6 +207,9 @@
   </data>
   <data name="tittleKonfirmasiTransaksi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tittleKonfirmasiTransaksi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EcoTambahKategori" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EcoTambahKategori.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fillDataDiri" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fillDataDiri.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -289,6 +298,9 @@
   <data name="EcoEditSubKategori" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EcoEditSubKategori.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnTarik" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnTarik.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LogoutLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoutLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -310,8 +322,14 @@
   <data name="btnLoginStartPage1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnLoginStartPage1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="formTarikSaldo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\formTarikSaldo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="formSubKategori" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\formSubKategori.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTukar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnTukar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnTransaksi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnTransaksi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -325,11 +343,14 @@
   <data name="tittleDataDiri" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tittleDataDiri.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="formTukarPoin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\formTukarPoin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="btnLoginStartPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnLoginStartPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NotesRegistStartPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NotesRegistStartPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fillTukarSampah" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fillTukarSampah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tittleUpdateDataDiri1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tittleUpdateDataDiri1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -342,6 +363,9 @@
   </data>
   <data name="tittleRegister" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tittleRegister.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NotesRegistStartPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NotesRegistStartPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnTolak" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnTolak.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -361,7 +385,7 @@
   <data name="btnKonfirmasiTransaksi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnKonfirmasiTransaksi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EcoTambahKategori" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EcoTambahKategori.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tittleHistoryPenukaranPoin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tittleHistoryPenukaranPoin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

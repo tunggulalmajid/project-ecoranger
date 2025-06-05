@@ -175,11 +175,11 @@
             // lblJumlahPenyuplai
             // 
             lblJumlahPenyuplai.AutoSize = true;
-            lblJumlahPenyuplai.Font = new Font("Roboto Black", 45F, FontStyle.Bold);
+            lblJumlahPenyuplai.Font = new Font("Roboto Black", 30F, FontStyle.Bold);
             lblJumlahPenyuplai.ForeColor = SystemColors.Control;
-            lblJumlahPenyuplai.Location = new Point(290, 95);
+            lblJumlahPenyuplai.Location = new Point(278, 95);
             lblJumlahPenyuplai.Name = "lblJumlahPenyuplai";
-            lblJumlahPenyuplai.Size = new Size(65, 72);
+            lblJumlahPenyuplai.Size = new Size(43, 48);
             lblJumlahPenyuplai.TabIndex = 5;
             lblJumlahPenyuplai.Text = "0";
             // 
@@ -197,11 +197,11 @@
             // lblJumlahAset
             // 
             lblJumlahAset.AutoSize = true;
-            lblJumlahAset.Font = new Font("Roboto Black", 45F, FontStyle.Bold);
+            lblJumlahAset.Font = new Font("Roboto Black", 30F, FontStyle.Bold);
             lblJumlahAset.ForeColor = SystemColors.Control;
-            lblJumlahAset.Location = new Point(335, 95);
+            lblJumlahAset.Location = new Point(160, 95);
             lblJumlahAset.Name = "lblJumlahAset";
-            lblJumlahAset.Size = new Size(65, 72);
+            lblJumlahAset.Size = new Size(43, 48);
             lblJumlahAset.TabIndex = 6;
             lblJumlahAset.Text = "0";
             // 
