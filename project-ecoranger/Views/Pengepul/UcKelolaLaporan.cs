@@ -15,7 +15,7 @@ namespace project_ecoranger.Views
     {
         MainForm mainform;
         LaporanContext laporanContext;
-        decimal totalBeratKeseluruhan,totalAset;
+        decimal? totalBeratKeseluruhan, totalAset;
 
         List<Laporan> listAllLaporan;
         public UcKelolaLaporan(MainForm mainform)

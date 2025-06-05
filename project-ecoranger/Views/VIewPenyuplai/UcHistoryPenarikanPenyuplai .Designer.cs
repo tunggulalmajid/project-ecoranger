@@ -156,7 +156,7 @@
             panel3.BackColor = Color.Transparent;
             panel3.BackgroundImage = Properties.Resources.tittleHistory_Penarikan;
             panel3.BackgroundImageLayout = ImageLayout.Zoom;
-            panel3.Location = new Point(845, 186);
+            panel3.Location = new Point(967, 188);
             panel3.Name = "panel3";
             panel3.Size = new Size(391, 99);
             panel3.TabIndex = 1;
@@ -184,7 +184,6 @@
             dgvHistoryPenarikan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvHistoryPenarikan.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvHistoryPenarikan.BackgroundColor = SystemColors.Control;
-            dgvHistoryPenarikan.BorderStyle = BorderStyle.None;
             dgvHistoryPenarikan.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
@@ -204,7 +203,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvHistoryPenarikan.DefaultCellStyle = dataGridViewCellStyle3;
             dgvHistoryPenarikan.GridColor = SystemColors.Control;
-            dgvHistoryPenarikan.Location = new Point(402, 313);
+            dgvHistoryPenarikan.Location = new Point(477, 313);
             dgvHistoryPenarikan.MultiSelect = false;
             dgvHistoryPenarikan.Name = "dgvHistoryPenarikan";
             dgvHistoryPenarikan.ReadOnly = true;
@@ -220,7 +219,7 @@
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dgvHistoryPenarikan.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            dgvHistoryPenarikan.Size = new Size(1439, 677);
+            dgvHistoryPenarikan.Size = new Size(1355, 631);
             dgvHistoryPenarikan.StandardTab = true;
             dgvHistoryPenarikan.TabIndex = 7;
             // 

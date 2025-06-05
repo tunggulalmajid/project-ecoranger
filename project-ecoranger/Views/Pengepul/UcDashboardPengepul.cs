@@ -19,7 +19,7 @@ namespace project_ecoranger.Views
         PenyuplaiContext penyuplaiContext;
         List<Transaksi> listTransaksi;
         int jumlahPenyuplai;
-        decimal totalAset;
+        decimal? totalAset;
         LaporanContext laporanContext;
         SaldoContext saldoContext;
         public UcDashboardPengepul(MainForm mainform)
@@ -32,24 +32,37 @@ namespace project_ecoranger.Views
 
             laporanContext = new LaporanContext();
             transaksiContext = new TransaksiContext();
+            
             SetSesion();
         }
         public void SetSesion()
         {
-            flowLayoutPanel1.Controls.Clear();
-            jumlahPenyuplai = penyuplaiContext.GetJumlahPenyuplai();
-            lblJumlahPenyuplai.Text = $"{jumlahPenyuplai}";
-
-            totalAset = laporanContext.GetTotalAsetForPengepul();
-            lblJumlahAset.Text = $"Rp.{totalAset}";
-
-            listTransaksi = transaksiContext.getAllTransaksiForPengepulDashboard(1);
-            mainform.kelolaPenyuplai.SetSesion(); 
+            mainform.kelolaPenyuplai.SetSesion();
             mainform.kelolaKonfirmasiTransaksi.SetSesion();
             mainform.kelolaSubKategori.SetSesion();
-            mainform.kelolaHistoryTransaksi.SetSesion();
             mainform.kelolaLaporan.SetSesion();
+            mainform.kelolaHistoryTransaksi.SetSesion();
+            mainform.kelolaHistoryPenukaran.SetSesion();
+            mainform.kelolaHistoryPenarikan.SetSesion();
 
+            SetJumlahPenyuplai();
+            SetJumlahAset();
+            TransaksiCard();
+        }
+        public void SetJumlahPenyuplai()
+        {
+            jumlahPenyuplai = penyuplaiContext.GetJumlahPenyuplai();
+            lblJumlahPenyuplai.Text = $"{jumlahPenyuplai}";
+        }
+        public void SetJumlahAset()
+        {
+            totalAset = laporanContext.GetTotalAsetForPengepul();
+            lblJumlahAset.Text = $"Rp.{totalAset}";
+        }
+        public void TransaksiCard()
+        {
+            listTransaksi = transaksiContext.getAllTransaksiForPengepulDashboard(1);
+            flowLayoutPanel1.Controls.Clear();
             int jarak = 400;
             foreach (var value in listTransaksi)
             {
@@ -202,9 +215,8 @@ namespace project_ecoranger.Views
                 flowLayoutPanel1.Controls.Add(fillCard);
                 jarak += fillCard.Height + 30;
             }
-
-      
         }
+        
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {

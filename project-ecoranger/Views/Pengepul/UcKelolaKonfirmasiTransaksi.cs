@@ -18,12 +18,14 @@ namespace project_ecoranger.Views
         List<Transaksi> listKonfirmasiTransaksi;
         TransaksiContext transaksiContext;  
         SaldoContext saldoContext;
+        PoinContext poinContext;
         public UcKelolaKonfirmasiTransaksi(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
             transaksiContext = new TransaksiContext();
             saldoContext = new SaldoContext();
+            poinContext = new PoinContext();
         }
         public void SetSesion()
         {
@@ -172,6 +174,7 @@ namespace project_ecoranger.Views
                     {
                         transaksiContext.konfirmasiTransaksi(value.idTransaksi, 2);
                         saldoContext.TambahSaldoForTransaksi(value.idTransaksi, value.beratSampah * value.hargaSampah);
+                        poinContext.TambahPoinForTransaksi(value.idTransaksi, value.beratSampah);
                         MessageBox.Show("Transaksi Sudah Diperoses", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         mainform.dashboardPengepul.SetSesion();
                     }

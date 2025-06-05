@@ -45,9 +45,9 @@
             panel2 = new Panel();
             panel3 = new Panel();
             btnKembali = new Panel();
-            dgvHistoryPenarikan = new DataGridView();
+            dgvHistoryPenukaran = new DataGridView();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvHistoryPenarikan).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvHistoryPenukaran).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -173,20 +173,19 @@
             btnKembali.TabIndex = 3;
             btnKembali.Click += btnKembali_Click;
             // 
-            // dgvHistoryPenarikan
+            // dgvHistoryPenukaran
             // 
-            dgvHistoryPenarikan.AllowUserToAddRows = false;
-            dgvHistoryPenarikan.AllowUserToDeleteRows = false;
+            dgvHistoryPenukaran.AllowUserToAddRows = false;
+            dgvHistoryPenukaran.AllowUserToDeleteRows = false;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = Color.White;
             dataGridViewCellStyle6.Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle6.ForeColor = Color.FromArgb(0, 0, 64);
-            dgvHistoryPenarikan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            dgvHistoryPenarikan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgvHistoryPenarikan.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvHistoryPenarikan.BackgroundColor = SystemColors.Control;
-            dgvHistoryPenarikan.BorderStyle = BorderStyle.None;
-            dgvHistoryPenarikan.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
+            dgvHistoryPenukaran.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dgvHistoryPenukaran.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvHistoryPenukaran.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvHistoryPenukaran.BackgroundColor = SystemColors.Control;
+            dgvHistoryPenukaran.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = SystemColors.Control;
             dataGridViewCellStyle7.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -194,8 +193,8 @@
             dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvHistoryPenarikan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            dgvHistoryPenarikan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvHistoryPenukaran.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dgvHistoryPenukaran.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = SystemColors.Window;
             dataGridViewCellStyle8.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -203,12 +202,12 @@
             dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvHistoryPenarikan.DefaultCellStyle = dataGridViewCellStyle8;
-            dgvHistoryPenarikan.GridColor = SystemColors.Control;
-            dgvHistoryPenarikan.Location = new Point(424, 269);
-            dgvHistoryPenarikan.MultiSelect = false;
-            dgvHistoryPenarikan.Name = "dgvHistoryPenarikan";
-            dgvHistoryPenarikan.ReadOnly = true;
+            dgvHistoryPenukaran.DefaultCellStyle = dataGridViewCellStyle8;
+            dgvHistoryPenukaran.GridColor = SystemColors.Control;
+            dgvHistoryPenukaran.Location = new Point(743, 269);
+            dgvHistoryPenukaran.MultiSelect = false;
+            dgvHistoryPenukaran.Name = "dgvHistoryPenukaran";
+            dgvHistoryPenukaran.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = SystemColors.Control;
             dataGridViewCellStyle9.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -216,28 +215,28 @@
             dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            dgvHistoryPenarikan.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            dgvHistoryPenarikan.RowHeadersWidth = 100;
+            dgvHistoryPenukaran.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dgvHistoryPenukaran.RowHeadersWidth = 100;
             dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dgvHistoryPenarikan.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            dgvHistoryPenarikan.Size = new Size(1476, 742);
-            dgvHistoryPenarikan.StandardTab = true;
-            dgvHistoryPenarikan.TabIndex = 7;
+            dgvHistoryPenukaran.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dgvHistoryPenukaran.Size = new Size(862, 674);
+            dgvHistoryPenukaran.StandardTab = true;
+            dgvHistoryPenukaran.TabIndex = 7;
             // 
             // UcHistoryPenukaranPoin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
-            Controls.Add(dgvHistoryPenarikan);
+            Controls.Add(dgvHistoryPenukaran);
             Controls.Add(btnKembali);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Name = "UcHistoryPenukaranPoin";
             Size = new Size(1920, 1060);
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvHistoryPenarikan).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvHistoryPenukaran).EndInit();
             ResumeLayout(false);
         }
 
@@ -256,6 +255,6 @@
         private Panel btnHistoryPenarikan;
         private Panel btnHistoryTransaksi;
         private Panel btnKembali;
-        private DataGridView dgvHistoryPenarikan;
+        private DataGridView dgvHistoryPenukaran;
     }
 }

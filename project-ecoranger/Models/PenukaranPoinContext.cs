@@ -74,5 +74,45 @@ namespace project_ecoranger.Models
                 return listPenukaranPoin;
             }
         }
+        public List<PenukaranPoin> GetHistoryPenukaranForPengepul()
+        {
+            List<PenukaranPoin> listPenukaranPoin = new List<PenukaranPoin>();
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = """
+                    select pp.id_penukaran_poin, pp.tanggal_penukaran, pp.nominal, p.nama
+                    from penukaran_poin pp
+                    join poin on (poin_id_poin = id_poin)
+                    join penyuplai p on (penyuplai_id_penyuplai = id_penyuplai)
+                    order by pp.tanggal_penukaran desc
+                    """;
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    {
+                        using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                PenukaranPoin penukaranPoin = new PenukaranPoin
+                                {
+                                    idPenukaranPoin = reader.GetInt32(0),
+                                    tanggalPenukaran = reader.GetDateTime(1),
+                                    nominal = reader.GetDecimal(2),
+                                    namaPenyuplai = reader.GetString(3)
+                                };
+                                listPenukaranPoin.Add(penukaranPoin);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error database: " + ex.Message);
+                }
+                return listPenukaranPoin;
+            }
+        }
     }
 }

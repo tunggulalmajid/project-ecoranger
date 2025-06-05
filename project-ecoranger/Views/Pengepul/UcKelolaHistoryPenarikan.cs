@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using project_ecoranger.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace project_ecoranger.Views
@@ -14,11 +15,25 @@ namespace project_ecoranger.Views
     public partial class UcKelolaHistoryPenarikan : UserControl
     {
         MainForm mainform;
+        PenarikanContext penarikanContext;
+        List<PenarikanSaldo> listHistoryPenarikan;
         public UcKelolaHistoryPenarikan(MainForm mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
+            penarikanContext = new PenarikanContext();
+
         }
+        public void SetSesion()
+        {
+            listHistoryPenarikan = penarikanContext.GetHistoryPenarikanSaldoForPengepul();
+            SetHistoryPenarikan();
+        }
+        public void SetHistoryPenarikan()
+        {
+            dgvHistoryPenarikan.DataSource = listHistoryPenarikan;
+        }
+
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {

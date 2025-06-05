@@ -55,32 +55,38 @@ namespace project_ecoranger.Models
             }
             return listAllLaporan;
         }
-        public decimal GetTotalBeratkeseluruhanForPengepul()
+        public decimal? GetTotalBeratkeseluruhanForPengepul()
         {
-            decimal totalBeratKeseluruhan = 0;
+            decimal? totalBeratKeseluruhan = 0;
             using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
             {
-                conn.Open();
-                string query = """
+                try
+                {
+                    conn.Open();
+                    string query = """
                     select sum(berat_sampah) from transaksi where status_transaksi_id_status_transaksi = 2;
                     """;
-                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
-                {
-                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
-                        if (reader.Read())
+                        using (NpgsqlDataReader reader = cmd.ExecuteReader())
                         {
-                            totalBeratKeseluruhan = reader.GetDecimal(0);
+                            if (reader.Read() && !reader.IsDBNull(0))
+                            {
+                                totalBeratKeseluruhan = reader.GetDecimal(0);
+                            }
                         }
-                        
                     }
+                }
+                catch(Exception ex)
+                {
+                    throw new Exception("Error : " + ex.Message);
                 }
             }
             return totalBeratKeseluruhan;
         }
-        public decimal GetTotalAsetForPengepul()
+        public decimal? GetTotalAsetForPengepul()
         {
-            decimal totalAset = 0;
+            decimal? totalAset = 0;
             using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
             {
                 conn.Open();
@@ -91,7 +97,7 @@ namespace project_ecoranger.Models
                 {
                     using (NpgsqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
+                        if (reader.Read() && !reader.IsDBNull(0) )
                         {
                             totalAset = reader.GetDecimal(0);
                         }
