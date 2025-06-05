@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel9 = new Panel();
             btnLogout = new Panel();
@@ -39,7 +44,9 @@
             panel2 = new Panel();
             panel3 = new Panel();
             btnBack = new Panel();
+            dgvHistoryPenukaran = new DataGridView();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvHistoryPenukaran).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -147,11 +154,11 @@
             // panel3
             // 
             panel3.BackColor = Color.Transparent;
-            panel3.BackgroundImage = Properties.Resources.tittleHistoryPenukaran;
+            panel3.BackgroundImage = Properties.Resources.tittleHistoryPenukaranPoin;
             panel3.BackgroundImageLayout = ImageLayout.Zoom;
-            panel3.Location = new Point(917, 171);
+            panel3.Location = new Point(822, 199);
             panel3.Name = "panel3";
-            panel3.Size = new Size(437, 158);
+            panel3.Size = new Size(538, 59);
             panel3.TabIndex = 1;
             // 
             // btnBack
@@ -165,11 +172,63 @@
             btnBack.TabIndex = 2;
             btnBack.Click += btnBack_Click;
             // 
+            // dgvHistoryPenukaran
+            // 
+            dgvHistoryPenukaran.AllowUserToAddRows = false;
+            dgvHistoryPenukaran.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(0, 0, 64);
+            dgvHistoryPenukaran.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dgvHistoryPenukaran.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvHistoryPenukaran.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvHistoryPenukaran.BackgroundColor = SystemColors.Control;
+            dgvHistoryPenukaran.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = SystemColors.Control;
+            dataGridViewCellStyle7.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvHistoryPenukaran.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dgvHistoryPenukaran.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvHistoryPenukaran.DefaultCellStyle = dataGridViewCellStyle8;
+            dgvHistoryPenukaran.GridColor = SystemColors.Control;
+            dgvHistoryPenukaran.Location = new Point(664, 287);
+            dgvHistoryPenukaran.MultiSelect = false;
+            dgvHistoryPenukaran.Name = "dgvHistoryPenukaran";
+            dgvHistoryPenukaran.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dgvHistoryPenukaran.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dgvHistoryPenukaran.RowHeadersWidth = 100;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvHistoryPenukaran.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dgvHistoryPenukaran.Size = new Size(862, 674);
+            dgvHistoryPenukaran.StandardTab = true;
+            dgvHistoryPenukaran.TabIndex = 8;
+            // 
             // UcKelolaHistoryPenukaran
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
+            Controls.Add(dgvHistoryPenukaran);
             Controls.Add(btnBack);
             Controls.Add(panel3);
             Controls.Add(panel1);
@@ -177,6 +236,7 @@
             Size = new Size(1920, 1060);
             Load += UcKelolaHistory_Load;
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvHistoryPenukaran).EndInit();
             ResumeLayout(false);
         }
 
@@ -193,5 +253,6 @@
         private Panel panel9;
         private Panel panel3;
         private Panel btnBack;
+        private DataGridView dgvHistoryPenukaran;
     }
 }

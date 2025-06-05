@@ -32,7 +32,7 @@ namespace project_ecoranger.Views
         }
         public void SetDgvHistoryPenukaran()
         {
-            dgvHistoryPenarikan.DataSource = listHistoryPenukaranPoin;
+            dgvHistoryPenukaran.DataSource = listHistoryPenukaranPoin;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

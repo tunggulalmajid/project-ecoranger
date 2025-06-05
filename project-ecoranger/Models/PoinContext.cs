@@ -42,8 +42,11 @@ namespace project_ecoranger.Models
                 return listPoin;
             }
         }
-        public void TambahPoin(int idPenyuplai, decimal nominal)
+        public void TambahPoinForTransaksi(int idTransaksi, decimal beratSampah)
         {
+            PenyuplaiContext penyuplaiContext = new PenyuplaiContext();
+            int idPenyuplai = penyuplaiContext.GetIdPenyuplaiUseTransaksi(idTransaksi);
+            decimal? nominal = SetNominalPoinForTransaksi(beratSampah);
             using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
             {
                 conn.Open();
@@ -73,6 +76,21 @@ namespace project_ecoranger.Models
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+        public decimal? SetNominalPoinForTransaksi (decimal berat)
+        {
+            decimal poinTetap = 1000;
+            decimal beratSampahPenyuplai = Math.Floor(berat);
+            int pengali = 0;
+            for (int i = 1; i <= beratSampahPenyuplai; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    pengali++;
+                }
+            }
+            decimal? nominal = pengali * poinTetap;
+            return nominal;
         }
     }
 }

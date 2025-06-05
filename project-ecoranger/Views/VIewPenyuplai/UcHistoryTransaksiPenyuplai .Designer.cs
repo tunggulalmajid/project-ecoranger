@@ -156,7 +156,7 @@
             panel3.BackColor = Color.Transparent;
             panel3.BackgroundImage = Properties.Resources.tittleHistoryTransaksi;
             panel3.BackgroundImageLayout = ImageLayout.Zoom;
-            panel3.Location = new Point(899, 186);
+            panel3.Location = new Point(940, 191);
             panel3.Name = "panel3";
             panel3.Size = new Size(391, 99);
             panel3.TabIndex = 1;
@@ -184,7 +184,6 @@
             dgvHistoryTransaksi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvHistoryTransaksi.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvHistoryTransaksi.BackgroundColor = SystemColors.Control;
-            dgvHistoryTransaksi.BorderStyle = BorderStyle.None;
             dgvHistoryTransaksi.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
@@ -204,7 +203,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvHistoryTransaksi.DefaultCellStyle = dataGridViewCellStyle3;
             dgvHistoryTransaksi.GridColor = SystemColors.Control;
-            dgvHistoryTransaksi.Location = new Point(383, 312);
+            dgvHistoryTransaksi.Location = new Point(402, 312);
             dgvHistoryTransaksi.MultiSelect = false;
             dgvHistoryTransaksi.Name = "dgvHistoryTransaksi";
             dgvHistoryTransaksi.ReadOnly = true;
@@ -220,7 +219,7 @@
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dgvHistoryTransaksi.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            dgvHistoryTransaksi.Size = new Size(1476, 677);
+            dgvHistoryTransaksi.Size = new Size(1457, 639);
             dgvHistoryTransaksi.StandardTab = true;
             dgvHistoryTransaksi.TabIndex = 6;
             // 
