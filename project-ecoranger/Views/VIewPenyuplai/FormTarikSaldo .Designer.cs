@@ -30,7 +30,7 @@
         {
             panel1 = new Panel();
             panel2 = new Panel();
-            panel3 = new Panel();
+            btnTarik = new Panel();
             panel4 = new Panel();
             cbNominal = new ComboBox();
             cbBank = new ComboBox();
@@ -61,15 +61,16 @@
             panel2.TabIndex = 2;
             panel2.Click += panel2_Click;
             // 
-            // panel3
+            // btnTarik
             // 
-            panel3.BackColor = Color.Transparent;
-            panel3.BackgroundImage = Properties.Resources.btnTarik;
-            panel3.BackgroundImageLayout = ImageLayout.Zoom;
-            panel3.Location = new Point(654, 849);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(269, 64);
-            panel3.TabIndex = 3;
+            btnTarik.BackColor = Color.Transparent;
+            btnTarik.BackgroundImage = Properties.Resources.btnTarik;
+            btnTarik.BackgroundImageLayout = ImageLayout.Zoom;
+            btnTarik.Location = new Point(654, 849);
+            btnTarik.Name = "btnTarik";
+            btnTarik.Size = new Size(269, 64);
+            btnTarik.TabIndex = 3;
+            btnTarik.Click += btnTarik_Click;
             // 
             // panel4
             // 
@@ -145,7 +146,7 @@
             Controls.Add(saldoValue);
             Controls.Add(label1);
             Controls.Add(panel4);
-            Controls.Add(panel3);
+            Controls.Add(btnTarik);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "FormTarikSaldo";
@@ -159,7 +160,7 @@
 
         private Panel panel1;
         private Panel panel2;
-        private Panel panel3;
+        private Panel btnTarik;
         private Panel panel4;
         private ComboBox cbBank;
         private TextBox tbRekening;

@@ -60,7 +60,7 @@ namespace project_ecoranger.Models
                 }
             }
         }
-        public void KurangiSaldo(int idPenyuplai, decimal nominal)
+        public void KurangiSaldoForPenarikan(int idSaldo, decimal nominal)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
             {
@@ -70,13 +70,13 @@ namespace project_ecoranger.Models
                     """;
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("idPenyuplai", idPenyuplai);
+                    cmd.Parameters.AddWithValue("idPenyuplai", idSaldo);
                     cmd.Parameters.AddWithValue("nominal", nominal);
                     cmd.ExecuteNonQuery();
                 }
             }
         }
-        public int GetIdSaldo(int idPenyuplai)
+        public int GetIdSaldoForKonfirmasi(int idPenarikan)
         {
             int idSaldo = 0;
             using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
@@ -87,7 +87,7 @@ namespace project_ecoranger.Models
                     """;
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("idPenyuplai", idPenyuplai);
+                    cmd.Parameters.AddWithValue("idPenyuplai", idPenarikan);
                     using (NpgsqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
@@ -100,4 +100,5 @@ namespace project_ecoranger.Models
             return idSaldo;
         }
     }
+
 }

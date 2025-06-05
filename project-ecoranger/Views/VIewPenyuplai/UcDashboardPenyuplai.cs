@@ -38,8 +38,6 @@ namespace project_ecoranger.Views
         public void setSesion(int id)
         {
             this.idPenyuplai = id;
-            poinContext.KurangiPoin(id, 100);
-            saldoContext.KurangiSaldo(id, 10000);
             SetSaldo(id);
             SetPoin(id);
             setListSampah(id);

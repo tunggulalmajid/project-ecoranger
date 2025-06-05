@@ -62,7 +62,7 @@ namespace project_ecoranger.Views
 
         private void panel5_Click(object sender, EventArgs e)
         {
-            FormTukarPoin formTukarPoin = new FormTukarPoin();
+            FormTukarPoin formTukarPoin = new FormTukarPoin(idPenyuplai);
             formTukarPoin.ShowDialog();
         }
     }
