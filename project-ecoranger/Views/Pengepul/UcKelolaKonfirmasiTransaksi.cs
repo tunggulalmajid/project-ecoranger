@@ -30,7 +30,11 @@ namespace project_ecoranger.Views
         public void SetSesion()
         {
             listKonfirmasiTransaksi =transaksiContext.getAllTransaksiForConfirmation();
-            int jarak = 400;
+            TransaksiCard();
+        }
+        
+        public void TransaksiCard()
+        {
             flowLayoutPanel1.Controls.Clear();
             foreach (var value in listKonfirmasiTransaksi)
             {
@@ -60,7 +64,7 @@ namespace project_ecoranger.Views
                 fillCard.Controls.Add(lblIdTransaksi);
                 fillCard.Controls.Add(btnTolak);
                 fillCard.Controls.Add(btnTerima);
-                fillCard.Location = new Point(jarak, 574);
+                fillCard.Location = new Point(100, 574);
                 fillCard.Name = "fillCard";
                 fillCard.Size = new Size(401, 388);
                 fillCard.TabIndex = 5;
@@ -181,10 +185,8 @@ namespace project_ecoranger.Views
                 };
 
                 this.Controls.Add(fillCard);
-                jarak += fillCard.Height + 30;
                 flowLayoutPanel1.Controls.Add(fillCard);
             }
-
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

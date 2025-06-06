@@ -27,15 +27,25 @@ namespace project_ecoranger.Views
         }
         public void SetSesion()
         {
-            flowLayoutPanel1.Controls.Clear();
             totalBeratKeseluruhan = laporanContext.GetTotalBeratkeseluruhanForPengepul();
-            lblTotalBerat.Text = $"{totalBeratKeseluruhan} Kg";
-
             totalAset = laporanContext.GetTotalAsetForPengepul();
-            lblJumlahAset.Text = $"Rp.{totalAset}";
-
             listAllLaporan = laporanContext.GetDataLaporanForPengepul();
-            foreach (var value in listAllLaporan) 
+            SetTotalAset(); 
+            SetTotalBerat();
+            SetLaporan();
+        }
+        public void SetTotalBerat()
+        {
+            lblTotalBerat.Text = $"{totalBeratKeseluruhan} Kg";
+        }
+        public void SetTotalAset()
+        {
+            lblJumlahAset.Text = $"Rp.{totalAset}";
+        }
+        public void SetLaporan()
+        {
+            flowLayoutPanel1.Controls.Clear();
+            foreach (var value in listAllLaporan)
             {
                 Panel fillCard2 = new Panel();
                 Label judul = new Label();
@@ -126,7 +136,7 @@ namespace project_ecoranger.Views
 
                 this.Controls.Add(fillCard2);
 
-                
+
                 flowLayoutPanel1.Controls.Add(fillCard2);
             }
         }

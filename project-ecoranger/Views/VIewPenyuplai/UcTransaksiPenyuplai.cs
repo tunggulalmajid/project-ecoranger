@@ -69,6 +69,7 @@ namespace project_ecoranger.Views
                 btnJual2.Click += (s, e) =>
                 {
                     JualSampah(id, namaSampah, namaKategori, harga, idPenyuplai);
+                    mainform.dashboardPenyuplai.setSesion(idPenyuplai);
                 };
 
                 judul.AutoSize = true;

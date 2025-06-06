@@ -42,7 +42,6 @@
             lblSaldo = new Label();
             panel5 = new Panel();
             lblPoin = new Label();
-            label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
@@ -209,16 +208,6 @@
             lblPoin.TabIndex = 7;
             lblPoin.Text = "0";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Roboto Condensed Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(836, 86);
-            label1.Name = "label1";
-            label1.Size = new Size(71, 29);
-            label1.TabIndex = 4;
-            label1.Text = "label1";
-            // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = Color.Transparent;
@@ -245,7 +234,6 @@
             BackgroundImage = Properties.Resources.background;
             Controls.Add(pictureBox1);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(label1);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
@@ -259,7 +247,6 @@
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

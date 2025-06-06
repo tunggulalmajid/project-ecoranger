@@ -26,7 +26,12 @@ namespace project_ecoranger.Views
         public void SetSesion()
         {
             listHistoryTransaksi = transaksiContext.GetAllTransaksiForHistoryPengepul();
+            SetHistoryTransaksi();
+        }
+        public void SetHistoryTransaksi()
+        {
             dgvHistoryTransaksi.DataSource = listHistoryTransaksi;
+
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

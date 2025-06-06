@@ -22,6 +22,8 @@ namespace project_ecoranger.Views
         decimal? totalAset;
         LaporanContext laporanContext;
         SaldoContext saldoContext;
+        PoinContext poinContext;
+
         public UcDashboardPengepul(MainForm mainform)
         {
             InitializeComponent();
@@ -32,7 +34,7 @@ namespace project_ecoranger.Views
 
             laporanContext = new LaporanContext();
             transaksiContext = new TransaksiContext();
-            
+            poinContext = new PoinContext();
             SetSesion();
         }
         public void SetSesion()
@@ -44,6 +46,7 @@ namespace project_ecoranger.Views
             mainform.kelolaHistoryTransaksi.SetSesion();
             mainform.kelolaHistoryPenukaran.SetSesion();
             mainform.kelolaHistoryPenarikan.SetSesion();
+            mainform.kelolaKonfirmasiPenarikan.SetSesion();
 
             SetJumlahPenyuplai();
             SetJumlahAset();
@@ -206,6 +209,7 @@ namespace project_ecoranger.Views
                     {
                         transaksiContext.konfirmasiTransaksi(value.idTransaksi, 2);
                         saldoContext.TambahSaldoForTransaksi(value.idTransaksi, value.beratSampah * value.hargaSampah);
+                        poinContext.TambahPoinForTransaksi(value.idTransaksi, value.beratSampah);
                         MessageBox.Show("Transaksi Sudah Diperoses", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         flowLayoutPanel1.Controls.Clear();
                         SetSesion();
