@@ -92,5 +92,30 @@ namespace project_ecoranger.Models
             decimal? nominal = pengali * poinTetap;
             return nominal;
         }
+        public void CreatePoin(string username, string password)
+        {
+            int idPenyuplai;
+            PenyuplaiContext penyuplaiContext = new PenyuplaiContext();
+            penyuplaiContext.GetIdAfterRegist(username, password, out idPenyuplai);
+            using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = """
+                        insert into poin(poin, penyuplai_id_penyuplai) values (0, @idPenyuplai)
+                        """;
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("idPenyuplai", idPenyuplai);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error : " + ex.Message);
+                }
+            }
+        }
     }
 }

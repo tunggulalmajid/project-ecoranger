@@ -25,6 +25,10 @@ namespace project_ecoranger.Views
         {
             penyuplaiContext = new PenyuplaiContext();
             listAllPenyuplai = penyuplaiContext.GetAllPenyuplai();
+            SetPenyuplai();
+        }
+        public void SetPenyuplai()
+        {
             dgvPenyuplai.DataSource = listAllPenyuplai;
         }
 

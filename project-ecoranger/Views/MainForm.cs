@@ -85,14 +85,14 @@ namespace project_ecoranger
             HideAllPage();
             //this.Controls.Add(dashboardPengepul);
             //dashboardPenyuplai.Visible = true;
-            dashboardPengepul.Visible = true;
+            //dashboardPengepul.Visible = true;
             //this.Controls.Add(dashboardPenyuplai);
-            //this.Controls.Add(loadingScreen);
+            this.Controls.Add(loadingScreen);
 
-            //timer = new System.Windows.Forms.Timer();
-            //timer.Interval = 2500;
-            //timer.Tick += timer_tick;
-            //timer.Start();
+            timer = new System.Windows.Forms.Timer();
+            timer.Interval = 2500;
+            timer.Tick += timer_tick;
+            timer.Start();
 
         }
         public void HideAllPage()

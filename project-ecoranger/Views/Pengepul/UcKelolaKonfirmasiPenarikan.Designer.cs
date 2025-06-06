@@ -39,6 +39,7 @@
             panel2 = new Panel();
             panel3 = new Panel();
             btnBack = new Panel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -151,7 +152,7 @@
             panel3.BackgroundImageLayout = ImageLayout.Zoom;
             panel3.Location = new Point(917, 171);
             panel3.Name = "panel3";
-            panel3.Size = new Size(437, 158);
+            panel3.Size = new Size(437, 62);
             panel3.TabIndex = 1;
             // 
             // btnBack
@@ -165,11 +166,21 @@
             btnBack.TabIndex = 2;
             btnBack.Click += btnBack_Click;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.BackColor = Color.Transparent;
+            flowLayoutPanel1.Location = new Point(389, 269);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1349, 700);
+            flowLayoutPanel1.TabIndex = 3;
+            // 
             // UcKelolaKonfirmasiPenarikan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(btnBack);
             Controls.Add(panel3);
             Controls.Add(panel1);
@@ -193,5 +204,6 @@
         private Panel panel9;
         private Panel panel3;
         private Panel btnBack;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

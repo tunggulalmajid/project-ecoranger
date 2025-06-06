@@ -32,7 +32,6 @@ namespace project_ecoranger.Views
             sampahContext = new SampahContext();
             saldoContext = new SaldoContext();
             poinContext = new PoinContext();
-            setSesion(1);
 
         }
         public void setSesion(int id)
@@ -50,7 +49,6 @@ namespace project_ecoranger.Views
             mainform.viewHistoryTransaksiPenyuplai.setSesion(id);
             mainform.viewHistoryPenarikanPenyuplai.setSesion(id);
             mainform.viewHistoryPenukaranPoin.setSesion(id);
-            label1.Text = $"Dashboard Penyediaan Barang{id} \n : ";
         }
         public void SetSaldo(int idPenyuplai)
         {

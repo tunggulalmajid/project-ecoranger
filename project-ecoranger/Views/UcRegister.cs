@@ -16,12 +16,15 @@ namespace project_ecoranger.Views
     {
         MainForm mainForm;
         PenyuplaiContext penyuplai;
+        SaldoContext saldoContext;
+        PoinContext poinContext;
         public UcRegister(MainForm mainForm)
         {
             InitializeComponent();
-           
             this.mainForm = mainForm;
             penyuplai = new PenyuplaiContext();
+            saldoContext = new SaldoContext();
+            poinContext = new PoinContext();
         }
 
         private void UcRegister_Load(object sender, EventArgs e)
@@ -76,6 +79,8 @@ namespace project_ecoranger.Views
                     {
                         penyuplai.RegisterPenyuplai(nama, nomorTelepon, email, username, password);
                         penyuplai.CreateAlamat(username, password);
+                        saldoContext.CreateSaldo(username, password);
+                        poinContext.CreatePoin(username, password);
                         MessageBox.Show("Registrasi Berhasil Dilakukan, silahkan login menggunakan username dan password yang telah dibuat", "register berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         mainForm.ShowPage(mainForm.loginPage);
                         clearTextBox();
