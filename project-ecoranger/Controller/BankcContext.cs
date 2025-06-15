@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
+using project_ecoranger.AbstractAndInterface;
+using project_ecoranger.Models;
 
-namespace project_ecoranger.Models
+namespace project_ecoranger.Controller
 {
-    internal class BankcContext
+    internal class BankcContext : IBankContext
     {
         readonly string connStr;
         public BankcContext()
@@ -25,9 +27,10 @@ namespace project_ecoranger.Models
                     """;
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
-                    using (NpgsqlDataReader reader = cmd.ExecuteReader()) 
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
                     {
-                        while (reader.Read()) { 
+                        while (reader.Read())
+                        {
                             Bank bank = new Bank
                             {
                                 idBank = reader.GetInt32(0),

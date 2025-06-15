@@ -4,19 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
+using project_ecoranger.AbstractAndInterface;
+using project_ecoranger.Models;
 
-namespace project_ecoranger.Models
+namespace project_ecoranger.Controller
 {
-    internal class LaporanContext
+    internal class LaporanContext : ILaporanContext
     {
         readonly string connStr;
-        public LaporanContext() 
-        { 
+        public LaporanContext()
+        {
             connStr = Connection.Connection.GetConnectionString();
         }
         public List<Laporan> GetDataLaporanForPengepul()
         {
-            List<Laporan> listAllLaporan = new List<Laporan>(); 
+            List<Laporan> listAllLaporan = new List<Laporan>();
             using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
             {
                 try
@@ -36,12 +38,13 @@ namespace project_ecoranger.Models
                         {
                             while (reader.Read())
                             {
-                               Laporan laporan = new Laporan{
-                                   namaSampah = reader.GetString(0),
-                                   kategoriSampah = reader.GetString(1),
-                                   totalAset = reader.GetDecimal(2),
-                                   totalBerat = reader.GetDecimal(3)
-                               };
+                                Laporan laporan = new Laporan
+                                {
+                                    namaSampah = reader.GetString(0),
+                                    kategoriSampah = reader.GetString(1),
+                                    totalAset = reader.GetDecimal(2),
+                                    totalBerat = reader.GetDecimal(3)
+                                };
                                 listAllLaporan.Add(laporan);
                             }
                         }
@@ -51,11 +54,11 @@ namespace project_ecoranger.Models
                 {
 
                 }
-                
+
             }
             return listAllLaporan;
         }
-        public decimal? GetTotalBeratkeseluruhanForPengepul()
+        public decimal? GetTotalBeratKeseluruhanForPengepul()
         {
             decimal? totalBeratKeseluruhan = 0;
             using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
@@ -77,7 +80,7 @@ namespace project_ecoranger.Models
                         }
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     throw new Exception("Error : " + ex.Message);
                 }
@@ -97,7 +100,7 @@ namespace project_ecoranger.Models
                 {
                     using (NpgsqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read() && !reader.IsDBNull(0) )
+                        if (reader.Read() && !reader.IsDBNull(0))
                         {
                             totalAset = reader.GetDecimal(0);
                         }

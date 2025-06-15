@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using project_ecoranger.Controller;
 using project_ecoranger.Models;
 
 namespace project_ecoranger.Views
@@ -87,29 +88,36 @@ namespace project_ecoranger.Views
                 MessageBox.Show("Mohon lengkapi semua field yang diperlukan.");
                 return;
             }
-            try
+            if (nomorRekening.Length < 10 || nomorRekening.Length > 15)
             {
-                Int64 fixedNomorRekening = Convert.ToInt64(tbRekening.Text);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Nomor rekening harus berupa angka.");
-                return;
-            }
-
-            int idBank = GetIdBank(namaBank);
-
-            if (nominal > saldo)
-            {
-                MessageBox.Show("Saldo tidak mencukupi untuk penarikan ini.");
+                MessageBox.Show("Nomor rekening harus terdiri dari 10 hingga 15 digit.");
             }
             else
             {
-                penarikanContext.InsertPenarikanSaldo(nominal, idsaldo, idStatusPenarikan, nomorRekening, idBank);
-                MessageBox.Show($"Permintaan penarikan Saldo sebesar Rp.{nominal} ke rekening {nomorRekening} dalam bank {namaBank} Berhasil Dikirim ke admin, silahkan tunggu konfirmasi.", "informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                mainform.dashboardPenyuplai.setSesion(idPenyuplai);
-                this.Close();
+                try
+                {
+                    Int64 fixedNomorRekening = Convert.ToInt64(tbRekening.Text);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Nomor rekening harus berupa angka.");
+                    return;
+                }
+
+                int idBank = GetIdBank(namaBank);
+                if (nominal > saldo)
+                {
+                    MessageBox.Show("Saldo tidak mencukupi untuk penarikan ini.");
+                }
+                else
+                {
+                    penarikanContext.InsertPenarikanSaldo(nominal, idsaldo, idStatusPenarikan, nomorRekening, idBank);
+                    MessageBox.Show($"Permintaan penarikan Saldo sebesar Rp.{nominal} ke rekening {nomorRekening} dalam bank {namaBank} Berhasil Dikirim ke admin, silahkan tunggu konfirmasi.", "informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    mainform.dashboardPenyuplai.setSesion(idPenyuplai);
+                    this.Close();
+                }
             }
+           
         }
     }
 }

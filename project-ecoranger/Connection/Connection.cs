@@ -11,7 +11,7 @@ namespace project_ecoranger.Connection
         private static string connectionString;
         public static string GetConnectionString()
         {
-            connectionString = "Host=localhost;Username=postgres;Password=Gunungsari;Database=ecorangerv2";
+            connectionString = "Host=localhost;Username=postgres;Password=Gunungsari;Database=ecoranger";
             return connectionString;
         }
     }

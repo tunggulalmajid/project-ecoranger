@@ -8,7 +8,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using project_ecoranger.Models;
+using project_ecoranger.Controller;
 
 namespace project_ecoranger.Views
 {

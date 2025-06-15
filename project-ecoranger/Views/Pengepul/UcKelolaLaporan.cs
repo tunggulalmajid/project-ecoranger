@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using project_ecoranger.Controller;
 using project_ecoranger.Models;
 
 namespace project_ecoranger.Views
@@ -27,7 +28,7 @@ namespace project_ecoranger.Views
         }
         public void SetSesion()
         {
-            totalBeratKeseluruhan = laporanContext.GetTotalBeratkeseluruhanForPengepul();
+            totalBeratKeseluruhan = laporanContext.GetTotalBeratKeseluruhanForPengepul();
             totalAset = laporanContext.GetTotalAsetForPengepul();
             listAllLaporan = laporanContext.GetDataLaporanForPengepul();
             SetTotalAset(); 
