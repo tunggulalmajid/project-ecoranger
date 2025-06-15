@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
+using project_ecoranger.AbstractAndInterface;
 
 namespace project_ecoranger.Models
 {
-    internal class LaporanContext
+    internal class LaporanContext : ILaporanContext
     {
         readonly string connStr;
         public LaporanContext() 
         { 
             connStr = Connection.Connection.GetConnectionString();
         }
-        public List<Laporan> GetDataLaporanForPengepul()
+        public List<Laporan> GetDataLaporanForPengepul() 
         {
             List<Laporan> listAllLaporan = new List<Laporan>(); 
             using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
@@ -55,7 +56,7 @@ namespace project_ecoranger.Models
             }
             return listAllLaporan;
         }
-        public decimal? GetTotalBeratkeseluruhanForPengepul()
+        public decimal? GetTotalBeratKeseluruhanForPengepul()
         {
             decimal? totalBeratKeseluruhan = 0;
             using (NpgsqlConnection conn = new NpgsqlConnection(connStr))

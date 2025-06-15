@@ -27,7 +27,7 @@ namespace project_ecoranger.Views
         }
         public void SetSesion()
         {
-            totalBeratKeseluruhan = laporanContext.GetTotalBeratkeseluruhanForPengepul();
+            totalBeratKeseluruhan = laporanContext.GetTotalBeratKeseluruhanForPengepul();
             totalAset = laporanContext.GetTotalAsetForPengepul();
             listAllLaporan = laporanContext.GetDataLaporanForPengepul();
             SetTotalAset(); 

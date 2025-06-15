@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
+using project_ecoranger.AbstractAndInterface;
 
 namespace project_ecoranger.Models
 {
-    internal class PenarikanContext
+    internal class PenarikanContext : IPenarikanContext
     {
         readonly string connStr;
         public PenarikanContext()
