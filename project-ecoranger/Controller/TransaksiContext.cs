@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
+using project_ecoranger.AbstractAndInterface;
+using project_ecoranger.Models;
 
-namespace project_ecoranger.Models
+namespace project_ecoranger.Controller
 {
-    internal class TransaksiContext
+    internal class TransaksiContext : ITransaksiContext
     {
         readonly string connStr;
         public TransaksiContext()
@@ -171,7 +173,7 @@ namespace project_ecoranger.Models
                 {
                     throw new Exception($"Terjadi Kesalahan Dalam Database : {ex.Message}");
                 }
-                
+
                 return listHistoryTransaksi;
             }
         }

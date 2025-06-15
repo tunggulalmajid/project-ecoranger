@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
+using project_ecoranger.AbstractAndInterface;
+using project_ecoranger.Models;
 
-namespace project_ecoranger.Models
+namespace project_ecoranger.Controller
 {
-    internal class SaldoContext
+    internal class SaldoContext : ISaldoContext
     {
         readonly string connStr;
         public SaldoContext()
@@ -112,7 +114,7 @@ namespace project_ecoranger.Models
                 {
                     throw new Exception("Error : " + ex.Message);
                 }
-               
+
             }
             return idSaldo;
         }
@@ -141,7 +143,7 @@ namespace project_ecoranger.Models
                 }
             }
         }
-       
+
     }
 
 }

@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
+using project_ecoranger.AbstractAndInterface;
+using project_ecoranger.Models;
 
-namespace project_ecoranger.Models
+namespace project_ecoranger.Controller
 {
-    internal class PenukaranPoinContext
+    internal class PenukaranPoinContext : IPenukaranPoinContext
     {
         readonly string connStr;
         public PenukaranPoinContext()
@@ -22,7 +24,7 @@ namespace project_ecoranger.Models
                 string query = """
                     INSERT INTO penukaran_poin (tanggal_penukaran, nominal, poin_id_poin) VALUES (@tanggalPenukaran,MONEY(@nominal), @idPoin);
                     """;
-                using ( NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("tanggalPenukaran", DateTime.Now);
                     cmd.Parameters.AddWithValue("nominal", nominal);
@@ -34,7 +36,7 @@ namespace project_ecoranger.Models
         }
         public List<PenukaranPoin> GetHistoryPenukaranForPenyuplai(int idPenyuplai)
         {
-            List <PenukaranPoin> listPenukaranPoin = new List<PenukaranPoin>();
+            List<PenukaranPoin> listPenukaranPoin = new List<PenukaranPoin>();
             using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
             {
                 try

@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
+using project_ecoranger.AbstractAndInterface;
+using project_ecoranger.Models;
 
-namespace project_ecoranger.Models
+namespace project_ecoranger.Controller
 {
-    internal class PoinContext
+    internal class PoinContext : IPoinContext
     {
         readonly string connStr;
         public PoinContext()
@@ -77,7 +79,7 @@ namespace project_ecoranger.Models
                 }
             }
         }
-        public decimal? SetNominalPoinForTransaksi (decimal berat)
+        public decimal? SetNominalPoinForTransaksi(decimal berat)
         {
             decimal poinTetap = 1000;
             decimal beratSampahPenyuplai = Math.Floor(berat);

@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
 using project_ecoranger.AbstractAndInterface;
+using project_ecoranger.Models;
 
-namespace project_ecoranger.Models
+namespace project_ecoranger.Controller
 {
     internal class PenarikanContext : IPenarikanContext
     {
@@ -27,10 +28,10 @@ namespace project_ecoranger.Models
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("tanggalPenarikan", DateTime.Now);
-                    cmd.Parameters.AddWithValue("nominal", nominal); 
-                    cmd.Parameters.AddWithValue("idSaldo", idSaldo); 
-                    cmd.Parameters.AddWithValue("statusPenarikan", idStatusPenarikan); 
-                    cmd.Parameters.AddWithValue("nomorRekening", nomorRekening); 
+                    cmd.Parameters.AddWithValue("nominal", nominal);
+                    cmd.Parameters.AddWithValue("idSaldo", idSaldo);
+                    cmd.Parameters.AddWithValue("statusPenarikan", idStatusPenarikan);
+                    cmd.Parameters.AddWithValue("nomorRekening", nomorRekening);
                     cmd.Parameters.AddWithValue("idBank", idBank);
                     cmd.ExecuteNonQuery();
                 }
@@ -60,7 +61,8 @@ namespace project_ecoranger.Models
                         {
                             while (reader.Read())
                             {
-                                PenarikanSaldo penarikanSaldo = new PenarikanSaldo{
+                                PenarikanSaldo penarikanSaldo = new PenarikanSaldo
+                                {
                                     idPenarikanSaldo = reader.GetInt32(0),
                                     tanggalPenarikan = reader.GetDateTime(1),
                                     nominal = reader.GetDecimal(2),
@@ -171,7 +173,7 @@ namespace project_ecoranger.Models
                 return listPenarikanSaldo;
             }
         }
-        public void KonfirmasiPenarikan (int idPenarikan, int idStatusPenarikan)
+        public void KonfirmasiPenarikan(int idPenarikan, int idStatusPenarikan)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
             {
@@ -195,5 +197,5 @@ namespace project_ecoranger.Models
             }
         }
     }
-    
+
 }

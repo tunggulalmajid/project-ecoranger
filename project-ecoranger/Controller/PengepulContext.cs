@@ -1,13 +1,14 @@
-﻿  using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
+using project_ecoranger.AbstractAndInterface;
 
-namespace project_ecoranger.Models
+namespace project_ecoranger.Controller
 {
-    internal class PengepulContext
+    internal class PengepulContext : IPengepulContext
     {
         readonly string connStr;
         public PengepulContext()
@@ -36,7 +37,7 @@ namespace project_ecoranger.Models
                         }
                     }
                 }
-            
+
             }
         }
     }

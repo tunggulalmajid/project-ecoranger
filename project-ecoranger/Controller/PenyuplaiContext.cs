@@ -6,10 +6,12 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
+using project_ecoranger.AbstractAndInterface;
+using project_ecoranger.Models;
 
-namespace project_ecoranger.Models
+namespace project_ecoranger.Controller
 {
-    internal class PenyuplaiContext
+    internal class PenyuplaiContext : IPenyuplaiContext
     {
         public readonly string connStr;
         public PenyuplaiContext()
@@ -39,7 +41,7 @@ namespace project_ecoranger.Models
                             }
                         }
                     }
-                    
+
                 }
                 catch (Exception ex)
                 {
@@ -147,8 +149,8 @@ namespace project_ecoranger.Models
                                 {
                                     nama = reader.GetString(reader.GetOrdinal("nama")),
                                     noTelp = reader.GetInt64(reader.GetOrdinal("nomor_telepon")),
-                                    alamat = reader.IsDBNull(reader.GetOrdinal("alamat"))? null : reader.GetString(reader.GetOrdinal("alamat")),
-                                    email = reader.GetString(reader.GetOrdinal("email")) ,
+                                    alamat = reader.IsDBNull(reader.GetOrdinal("alamat")) ? null : reader.GetString(reader.GetOrdinal("alamat")),
+                                    email = reader.GetString(reader.GetOrdinal("email")),
                                     username = reader.GetString(reader.GetOrdinal("username")),
                                     password = reader.GetString(reader.GetOrdinal("password"))
                                 };
@@ -187,7 +189,7 @@ namespace project_ecoranger.Models
                 }
             }
         }
-        public void UpdateAlamat (int idPenyuplai,string jalan, string desa, string kecamatan, string kabupaten)
+        public void UpdateAlamat(int idPenyuplai, string jalan, string desa, string kecamatan, string kabupaten)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connStr))
             {
@@ -285,6 +287,6 @@ namespace project_ecoranger.Models
             return idPenyuplai;
 
         }
-        
+
     }
 }
